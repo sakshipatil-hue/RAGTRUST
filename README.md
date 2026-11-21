@@ -1,4 +1,4 @@
-# RAG Reliability Engineer — Advanced Dashboard
+# Intelligent RAG Evaluation & Reliability Framework
 
 A dark, technical Streamlit observability dashboard for the pilot scorecard.
 
