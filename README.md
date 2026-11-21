@@ -124,11 +124,6 @@ The Streamlit dashboard includes:
 - Decision monitoring
 - Individual question and evidence inspection
 
-**Screenshots**
-
-Add actual dashboard screenshots to `assets/` and display them here:
-
-![RAGTrust Dashboard](assets/dashboard_overview.png)
 
 ## Run Locally
 
