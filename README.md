@@ -1,8 +1,7 @@
-# RAGTrust
+# RAGTrust : Intelligent RAG Evaluation & Reliability Framework
 ### Can Your RAG System Prove What It Says?
 
 <p align="center">
- **Intelligent RAG Evaluation & Reliability Framework**
   <br/>
   Evaluating retrieval quality, verifying AI-generated claims, and identifying when a system should abstain.
 </p>
