@@ -1,0 +1,402 @@
+[
+  {
+    "Question_ID":"Q002",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":2
+  },
+  {
+    "Question_ID":"Q003",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":2
+  },
+  {
+    "Question_ID":"Q004",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.6667,
+    "Supported_Claims":2,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q005",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":1
+  },
+  {
+    "Question_ID":"Q007",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.5,
+    "Supported_Claims":3,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q008",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":2
+  },
+  {
+    "Question_ID":"Q009",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.3333,
+    "Supported_Claims":1,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q012",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q014",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":1
+  },
+  {
+    "Question_ID":"Q015",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":4
+  },
+  {
+    "Question_ID":"Q017",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.6667,
+    "Supported_Claims":2,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q019",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.6,
+    "Supported_Claims":3,
+    "Total_Claims":5
+  },
+  {
+    "Question_ID":"Q020",
+    "Category":"single_fact",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.5,
+    "Supported_Claims":1,
+    "Total_Claims":2
+  },
+  {
+    "Question_ID":"Q022",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.1667,
+    "Supported_Claims":1,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q023",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q025",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":2
+  },
+  {
+    "Question_ID":"Q026",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":8
+  },
+  {
+    "Question_ID":"Q027",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q028",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.5714,
+    "Supported_Claims":4,
+    "Total_Claims":7
+  },
+  {
+    "Question_ID":"Q029",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q031",
+    "Category":"multi_hop",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.4286,
+    "Supported_Claims":3,
+    "Total_Claims":7
+  },
+  {
+    "Question_ID":"Q034",
+    "Category":"unanswerable",
+    "Answerability":"Unanswerable",
+    "Decision":"ABSTAIN",
+    "Reason":"Insufficient evidence for an answer.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q035",
+    "Category":"unanswerable",
+    "Answerability":"Unanswerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Potential unsupported answer to an unanswerable question.",
+    "Faithfulness":0.3333,
+    "Supported_Claims":2,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q037",
+    "Category":"unanswerable",
+    "Answerability":"Unanswerable",
+    "Decision":"ABSTAIN",
+    "Reason":"Insufficient evidence for an answer.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q038",
+    "Category":"unanswerable",
+    "Answerability":"Unanswerable",
+    "Decision":"ABSTAIN",
+    "Reason":"Insufficient evidence for an answer.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q040",
+    "Category":"unanswerable",
+    "Answerability":"Unanswerable",
+    "Decision":"ABSTAIN",
+    "Reason":"Insufficient evidence for an answer.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q041",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.2222,
+    "Supported_Claims":2,
+    "Total_Claims":9
+  },
+  {
+    "Question_ID":"Q042",
+    "Category":"unanswerable",
+    "Answerability":"Unanswerable",
+    "Decision":"ABSTAIN",
+    "Reason":"Insufficient evidence for an answer.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q043",
+    "Category":"cross_paper_disagreement_and_tension",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.1667,
+    "Supported_Claims":1,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q044",
+    "Category":"cross_paper_disagreement_and_tension",
+    "Answerability":"Answerable",
+    "Decision":"ABSTAIN",
+    "Reason":"No claims passed the evidence support threshold.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":4
+  },
+  {
+    "Question_ID":"Q045",
+    "Category":"cross_paper_disagreement_and_tension",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.4444,
+    "Supported_Claims":4,
+    "Total_Claims":9
+  },
+  {
+    "Question_ID":"Q047",
+    "Category":"cross_paper_disagreement_and_tension",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.3333,
+    "Supported_Claims":1,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q048",
+    "Category":"cross_paper_disagreement_and_tension",
+    "Answerability":"Answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Evidence support is incomplete or uncertain.",
+    "Faithfulness":0.1667,
+    "Supported_Claims":1,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q052",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":5
+  },
+  {
+    "Question_ID":"Q053",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":5
+  },
+  {
+    "Question_ID":"Q054",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.1667,
+    "Supported_Claims":1,
+    "Total_Claims":6
+  },
+  {
+    "Question_ID":"Q056",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":5
+  },
+  {
+    "Question_ID":"Q057",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.5,
+    "Supported_Claims":2,
+    "Total_Claims":4
+  },
+  {
+    "Question_ID":"Q059",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  },
+  {
+    "Question_ID":"Q060",
+    "Category":"partially_answerable",
+    "Answerability":"Partially answerable",
+    "Decision":"HUMAN_REVIEW",
+    "Reason":"Partial answer requires human verification.",
+    "Faithfulness":0.0,
+    "Supported_Claims":0,
+    "Total_Claims":3
+  }
+]

@@ -1,0 +1,1089 @@
+[
+  {
+    "Question_ID": "Q001",
+    "Total_Claims": 3,
+    "Supported_Claims": 1,
+    "Faithfulness_Score": 0.3333,
+    "Claim_Details": [
+      {
+        "claim": "In the opening mortgage example of the Karimi et al. survey of algorithmic recourse, the rejected applicant wants answers to two specific questions:\nWhy was the loan rejected (Q1)?",
+        "verdict": "neutral",
+        "support_score": 0.01033418346196413,
+        "contradiction_score": 0.009065572172403336,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 4,
+        "supporting_evidence": "109, 234] and accordingly act [114, 115] to alleviate an unfavorable situation, thus\nexercising temporally extended agency [226]."
+      },
+      {
+        "claim": "How can the loan be obtained in the future (Q2)?",
+        "verdict": "entailment",
+        "support_score": 0.9833434820175171,
+        "contradiction_score": 0.00038178174872882664,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 4,
+        "supporting_evidence": "Concretely, in the example of the previous section,\nrecourse is offered when the loan applicant is given answers to both questions: provided explana-\ntion(s) as to why the loan was rejected (Q1) and offered recommendation(s) on how to obtain the\nloan in the future (Q2)."
+      },
+      {
+        "claim": "This is based on the statement from : \"We aimed to assist this individual in overcoming their difficult situation—that is, to achieve algorithmic recourse, which was contingent on offering answers to two questions: why and how?",
+        "verdict": "neutral",
+        "support_score": 0.000940868048928678,
+        "contradiction_score": 2.0654068066505715e-05,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 20,
+        "supporting_evidence": "We aimed to assist this individual in overcoming their dif-\nficult situation—that is, to achieve algorithmic recourse, which was contingent on offering answers\nto two questions: why and how?"
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q006",
+    "Total_Claims": 2,
+    "Supported_Claims": 1,
+    "Faithfulness_Score": 0.5,
+    "Claim_Details": [
+      {
+        "claim": "According to the Karimi et al. survey , the existence of multiple equally costly recourse actions is referred to as \"burden.\" The survey discusses how evaluating the cost of recourse actions over different subpopulations can be used to assess group fairness.",
+        "verdict": "entailment",
+        "support_score": 0.9980776309967041,
+        "contradiction_score": 0.00011402545351302251,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 16,
+        "supporting_evidence": "[209] evaluate group fairness via aggregating and comparing the cost of recourse\n(namely, burden) over individuals of different subpopulations."
+      },
+      {
+        "claim": "However, the specific term \"burden\" related to multiple equally costly recourse actions is mentioned in the context of evaluating the cost of recourse actions across different groups.",
+        "verdict": "neutral",
+        "support_score": 0.0007445081719197333,
+        "contradiction_score": 0.0005416081403382123,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 16,
+        "supporting_evidence": "For instance, Ustun et al."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q010",
+    "Total_Claims": 5,
+    "Supported_Claims": 2,
+    "Faithfulness_Score": 0.4,
+    "Claim_Details": [
+      {
+        "claim": "According to Jiang et al. [2024], model multiplicity (MM) is defined as a situation where multiple near-optimal models can be trained with similar test accuracies.",
+        "verdict": "entailment",
+        "support_score": 0.7946656942367554,
+        "contradiction_score": 0.17681938409805298,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 4,
+        "supporting_evidence": "hat for a single machine learning task, multiple\nnear-optimal models can be trained with similar test accu-\nracies [Breiman, 2001; Marx et al., 2020; Black et al., 2022b]."
+      },
+      {
+        "claim": "The key aspect of robustness against MM is that a counterfactual explanation (CE) for an aggregated prediction must be valid across a subset of the models in the set.",
+        "verdict": "entailment",
+        "support_score": 0.5496258735656738,
+        "contradiction_score": 7.450507109751925e-05,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 5,
+        "supporting_evidence": "That is, the solution should be a subset of models\nunder MM and their (valid) CEs, from which the prediction\nresults are decided."
+      },
+      {
+        "claim": "Specifically, for an input \\( x \\), a set of models \\( M \\), an aggregated prediction \\( a_g(M, x) \\), and a CE \\( x' \\) for \\( a_g(M, x) \\), robustness against MM requires that \\( x' \\) is valid across some subset \\( M' \\subseteq M \\), meaning for any \\( M_i \\in M' \\), \\( M_i(x') \\neq a_g(M, x) \\).",
+        "verdict": "neutral",
+        "support_score": 0.05956311151385307,
+        "contradiction_score": 0.0001314831752097234,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 4,
+        "supporting_evidence": "Robustness against MM re-\nquires that 푥′ is valid across some subset M′ ⊆M,\ni.e."
+      },
+      {
+        "claim": "This definition implies that a CE for an aggregated prediction might not be valid for all the aggregated models, which can lead to confusion and misinterpretation.",
+        "verdict": "entailment",
+        "support_score": 0.9841212034225464,
+        "contradiction_score": 7.186285074567422e-05,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 4,
+        "supporting_evidence": "This\nhas important implications for CEs, with one being that a CE\nfor an aggregated prediction may not even be valid for all of\nthe aggregated models, which would likely confound users’\nexpectations, leading to the following high-level deﬁnition:\nRobustness against MM."
+      },
+      {
+        "claim": "Therefore, the robustness against MM ensures that the CE remains valid across at least some of the models in the set, thereby maintaining consistency and reliability in the counterfactual explanations.",
+        "verdict": "neutral",
+        "support_score": 0.0031205809209495783,
+        "contradiction_score": 0.0005446189898066223,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 4,
+        "supporting_evidence": "In this setting, it is assumed that the prediction\n4"
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q011",
+    "Total_Claims": 4,
+    "Supported_Claims": 0,
+    "Faithfulness_Score": 0.0,
+    "Claim_Details": [
+      {
+        "claim": "Based on the retrieved evidence, none of the studies mentioned in the Jiang et al. survey ran user experiments specifically on the effect of non-robust counterfactual explanations.",
+        "verdict": "neutral",
+        "support_score": 0.0017523475689813495,
+        "contradiction_score": 0.00020874360052403063,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Flexible and robust\ncounterfactual explanations with minimal satisﬁable per-\nturbations."
+      },
+      {
+        "claim": "The evidence provided focuses on the robustness of counterfactual explanations, particularly discussing concepts like C-robustness and K-robustness, and the costs associated with making counterfactual explanations robust.",
+        "verdict": "neutral",
+        "support_score": 0.003757020691409707,
+        "contradiction_score": 0.0034477971494197845,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "In general, this is signiﬁcantly smaller than\nthe increase incurred when perturbations take place and robustness is not accounted for, as reported before\n(generally between 5× and 10× the ideal cost, with up to 100×)."
+      },
+      {
+        "claim": "However, there is no direct mention of user experiments related to the effect of non-robust counterfactual explanations.",
+        "verdict": "neutral",
+        "support_score": 0.0011592141818255186,
+        "contradiction_score": 0.0003763884014915675,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Flexible and robust\ncounterfactual explanations with minimal satisﬁable per-\nturbations."
+      },
+      {
+        "claim": "Therefore, we cannot determine from the given evidence whether any of these studies conducted such user experiments.",
+        "verdict": "neutral",
+        "support_score": 0.0014278360176831484,
+        "contradiction_score": 0.044308602809906006,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "Importantly, we ﬁnd that the cost when accounting for robustness is between 1× and\n7× the ideal cost, i.e., when not accounting for robustness."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q013",
+    "Total_Claims": 3,
+    "Supported_Claims": 2,
+    "Faithfulness_Score": 0.6667,
+    "Claim_Details": [
+      {
+        "claim": "According to the retrieved evidence, a mechanism of missing values is classified as 'missing not at random' (MNAR) when neither missing completely at random (MCAR) nor missing at random (MAR) holds.",
+        "verdict": "entailment",
+        "support_score": 0.9725292921066284,
+        "contradiction_score": 0.0012234406312927604,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 20,
+        "supporting_evidence": "From Table 2, we observed that the obtained actions were quantitatively and qualitatively different from each other due\nto missing just one single feature."
+      },
+      {
+        "claim": "This classification is based on the categorization provided in [Evidence 2 | Source: ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf | Page: 3], which states:\n\n(i) Missing completely at random (MCAR) if M˜x is independent of [D];\n(ii) Missing at random (MAR) if M˜x depends only on O˜x;\n(iii) Missing not at random (MNAR) if neither MCAR nor MAR holds.",
+        "verdict": "neutral",
+        "support_score": 0.018736517056822777,
+        "contradiction_score": 0.00015607518434990197,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 3,
+        "supporting_evidence": "In\nstatistics, mechanisms of missing values are categorized into three types depending on the relationship between M˜x\nand O˜x [Rubin, 1976]: (i) missing completely at random (MCAR) if M˜x is independent of [D]; (ii) missing at random\n(MAR) if M˜x depends only on O˜x; (iii) missing not at random (MNAR) if neither MCAR nor MAR holds."
+      },
+      {
+        "claim": "Therefore, MNAR occurs when the pattern of missing values cannot be explained solely by the observed features or is not random.",
+        "verdict": "entailment",
+        "support_score": 0.9787741303443909,
+        "contradiction_score": 0.00015827728202566504,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 3,
+        "supporting_evidence": "andom\n(MAR) if M˜x depends only on O˜x; (iii) missing not at random (MNAR) if neither MCAR nor MAR holds."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q016",
+    "Total_Claims": 2,
+    "Supported_Claims": 0,
+    "Faithfulness_Score": 0.0,
+    "Claim_Details": [
+      {
+        "claim": "Based on the provided evidence, the five datasets used in the experiments of Kanamori et al. are:\nAdult\nAustralian Credit\nGerman Credit\nGiveMeCredit\nCOMPAS\n\nThese datasets are mentioned as being \"highly heterogeneous\" and commonly used in the context of consequential decision-making settings, particularly in the field of algorithmic recourse.",
+        "verdict": "neutral",
+        "support_score": 0.0002827700518537313,
+        "contradiction_score": 0.0010352181270718575,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 12,
+        "supporting_evidence": "As a result, datasets are often tabular \u0002, comprising heteroge-\nneous features, with a mix of numeric (real, integer), binary, categorical, or ordinal variables."
+      },
+      {
+        "claim": "No other datasets are specifically identified in the given evidence.",
+        "verdict": "neutral",
+        "support_score": 0.0007183834677562118,
+        "contradiction_score": 0.002317968523129821,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 12,
+        "supporting_evidence": "al instances\nthat also satisfy the encoding constraints."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q018",
+    "Total_Claims": 7,
+    "Supported_Claims": 1,
+    "Faithfulness_Score": 0.1429,
+    "Claim_Details": [
+      {
+        "claim": "Virgolin and Fracaros focus on C-setbacks rather than on all C-perturbations due to their emphasis on robustness.",
+        "verdict": "entailment",
+        "support_score": 0.5744648575782776,
+        "contradiction_score": 0.0003196778998244554,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "To\naccount for robustness, we are interested in un-\nderstanding whether perturbations can prevent\nus to reach z, hence we will proceed by focusing\nexclusively on C-setbacks."
+      },
+      {
+        "claim": "According to [Evidence 1, Page: 7], C-setbacks are considered more interesting than C-perturbations because they are the subset of perturbations that play against the user.",
+        "verdict": "neutral",
+        "support_score": 0.0014837747439742088,
+        "contradiction_score": 1.099417931982316e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "C-setbacks are arguably more interesting\nthan C-perturbations because C-setbacks are the\nsubset of these perturbations that plays against\nthe user."
+      },
+      {
+        "claim": "While some C-perturbations might be advantageous, enabling the system to reach \\(z\\) with less intervention than initially provided, C-setbacks are specifically chosen to understand whether perturbations can prevent reaching \\(z\\).",
+        "verdict": "neutral",
+        "support_score": 0.005160636268556118,
+        "contradiction_score": 0.004636184312403202,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 32,
+        "supporting_evidence": "tness and respective perturbations to (features in) C (i.e., C-setbacks), recall that\naccounting for this notion of robustness is intended to provide counterfactual explanations with minimal\nadditional intervention cost, the maximal C-setback were to happen."
+      },
+      {
+        "claim": "Therefore, the interest lies in understanding how robust the system is against C-setbacks, which are perturbations that act against the user's intentions.",
+        "verdict": "neutral",
+        "support_score": 0.004685837309807539,
+        "contradiction_score": 5.2080176828894764e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "C-setbacks are arguably more interesting\nthan C-perturbations because C-setbacks are the\nsubset of these perturbations that plays against\nthe user."
+      },
+      {
+        "claim": "Additionally, [Evidence 3, Page: 32] highlights that focusing on C-setbacks ensures that any C-setback results in invalidation, meaning all perturbations to features in \\(C\\) should report 1.",
+        "verdict": "neutral",
+        "support_score": 0.0007299421122297645,
+        "contradiction_score": 0.0008325661765411496,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 32,
+        "supporting_evidence": "The frequency of this phenomenon depends on the data set."
+      },
+      {
+        "claim": "This is crucial for providing counterfactual explanations with minimal additional intervention cost, as per the robustness criteria.",
+        "verdict": "entailment",
+        "support_score": 0.9879414439201355,
+        "contradiction_score": 8.26654868433252e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 32,
+        "supporting_evidence": "tness and respective perturbations to (features in) C (i.e., C-setbacks), recall that\naccounting for this notion of robustness is intended to provide counterfactual explanations with minimal\nadditional intervention cost, the maximal C-setback were to happen."
+      },
+      {
+        "claim": "Hence, the choice to focus on C-setbacks over all C-perturbations is driven by the need to ensure robustness and validity in counterfactual explanations.",
+        "verdict": "neutral",
+        "support_score": 0.37100085616111755,
+        "contradiction_score": 2.8980990464333445e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "To\naccount for robustness, we are interested in un-\nderstanding whether perturbations can prevent\nus to reach z, hence we will proceed by focusing\nexclusively on C-setbacks."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q021",
+    "Total_Claims": 7,
+    "Supported_Claims": 4,
+    "Faithfulness_Score": 0.5714,
+    "Claim_Details": [
+      {
+        "claim": "Based on the retrieved evidence, Virgolin and Fracaros can account for C-robustness cheaply in the search process, while K-robustness is more expensive and only approximate.",
+        "verdict": "neutral",
+        "support_score": 0.0060500153340399265,
+        "contradiction_score": 0.011971910484135151,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "We do not ﬁnd\nmajor diﬀerences based on the setting of m for computing the K-robustness score, except for the tails of\nthe respective distributions on Hou, and slightly less so on Pro (for both types of f)."
+      },
+      {
+        "claim": "The evidence suggests that accounting for C-robustness does not significantly increase the runtime cost.",
+        "verdict": "entailment",
+        "support_score": 0.9982709884643555,
+        "contradiction_score": 5.127790063852444e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "The ﬁgure shows that accounting for C-robustness comes at no signiﬁcant extra cost\nin runtime."
+      },
+      {
+        "claim": "It states, \"unt for it, in particular for increasing m in the calculation of the K-robustness score.",
+        "verdict": "entailment",
+        "support_score": 0.9974276423454285,
+        "contradiction_score": 0.0002259032626170665,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "unt for it, in particular for increasing m in the calculation of the\nK-robustness score."
+      },
+      {
+        "claim": "The figure shows that accounting for C-robustness comes at no significant extra cost in runtime.\" Additionally, it mentions, \"Fortunately, the experimental results of B.2 suggest that small values of m are often sufficient to obtain good K-robustness scores.\"\n\nOn the other hand, the evidence indicates that accounting for K-robustness can come at a relatively large additional cost in runtime, which appears to be linear in m.",
+        "verdict": "entailment",
+        "support_score": 0.9981018900871277,
+        "contradiction_score": 0.00010720074351411313,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "Conversely, accounting for K-robustness can come at a relatively large additional cost\nin runtime, which appears to be linear in m (note that m grows exponentially in the plots)."
+      },
+      {
+        "claim": "It also notes, \"Fig. 15 expands on the results reported in Fig. 11 by including different values of m.",
+        "verdict": "neutral",
+        "support_score": 0.0001868640392785892,
+        "contradiction_score": 0.00021895738609600812,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "In all cases, the outcome of the"
+      },
+      {
+        "claim": "We do not find major differences based on the setting of m for computing the K-robustness score, except for the tails of the respective distributions on Hou, and slightly less so on Pro (for both types of f).\"\n\nFurthermore, the evidence points out that the cost increase from accounting for robustness alone is limited, up to 6.5 times the ideal cost.",
+        "verdict": "entailment",
+        "support_score": 0.9602656364440918,
+        "contradiction_score": 0.00020024475816171616,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "On average, the cost that comes from accounting for robustness alone is limited (up\nto 6.5× the ideal cost, see Inc), especially in light of the results found for when perturbations take place,\ndescribed in Sec."
+      },
+      {
+        "claim": "However, it also mentions that this cost increases further when perturbations take place, leading to",
+        "verdict": "neutral",
+        "support_score": 0.0001984122209250927,
+        "contradiction_score": 0.00022693858772981912,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 33,
+        "supporting_evidence": "On average, the cost that comes from accounting for robustness alone is limited (up\nto 6.5× the ideal cost, see Inc), especially in light of the results found for when perturbations take place,\ndescribed in Sec."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q024",
+    "Total_Claims": 6,
+    "Supported_Claims": 1,
+    "Faithfulness_Score": 0.1667,
+    "Claim_Details": [
+      {
+        "claim": "The term \"multiplicity\" in Jiang et al.'s model multiplicity differs from the multiplicity described in the Karimi et al. survey's Rashomon-effect footnote as evidenced by the following points:\n\n- In the context of Jiang et al.'s work, \"multiplicity\" refers to the phenomenon where multiple models can produce similar predictions for the same input data.",
+        "verdict": "neutral",
+        "support_score": 0.018542371690273285,
+        "contradiction_score": 8.047913433983922e-05,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "Selective ensembles for consistent predic-\ntions."
+      },
+      {
+        "claim": "This concept is discussed in [Black et al., 2022b], where the authors explore opportunities, concerns, and solutions related to model multiplicity.",
+        "verdict": "entailment",
+        "support_score": 0.9936175346374512,
+        "contradiction_score": 4.1457162296865135e-05,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "Model multiplicity: Opportunities, con-\ncerns, and"
+      },
+      {
+        "claim": "They argue that this multiplicity can lead to diverse outcomes and thus presents both challenges and potential benefits in terms of robustness and fairness.",
+        "verdict": "neutral",
+        "support_score": 0.0027734548784792423,
+        "contradiction_score": 0.00012068203068338335,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 9,
+        "supporting_evidence": "Promoting counterfactual robustness through di-\nversity."
+      },
+      {
+        "claim": "- On the other hand, the Rashomon effect, mentioned in the Karimi et al. survey, refers to the situation where different models or algorithms provide conflicting explanations for the same prediction.",
+        "verdict": "neutral",
+        "support_score": 0.0011713526910170913,
+        "contradiction_score": 0.00031561998184770346,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "nts\nJiang, Rago and Toni were partially funded by J.P."
+      },
+      {
+        "claim": "This concept is explored in [Black et al., 2022a] and [Black et al., 2022b], where the authors discuss how selective ensembles can be used to generate consistent predictions across different models, thereby addressing the Rashomon effect.",
+        "verdict": "neutral",
+        "support_score": 0.0003799715777859092,
+        "contradiction_score": 0.0002465665456838906,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "Rago and Toni were partially funded by the Eu-\nropean Research Council (ERC) under the European Union’s\nHorizon 2020 research and innovation programme (grant\nagreement No."
+      },
+      {
+        "claim": "Therefore, while both concepts involve multiple models producing different results, they address different aspects of model behavior: one focuses on the diversity of predictions themselves, and the other addresses the inconsistency in explanations provided by these models.",
+        "verdict": "neutral",
+        "support_score": 0.006988936569541693,
+        "contradiction_score": 0.0002997045230586082,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 9,
+        "supporting_evidence": "Counterfactual explanations and\nmodel multiplicity: a relational veriﬁcation view."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q030",
+    "Total_Claims": 4,
+    "Supported_Claims": 1,
+    "Faithfulness_Score": 0.25,
+    "Claim_Details": [
+      {
+        "claim": "Kanamori et al. want users to be able to hide feature values because some recent studies have highlighted the risk that an adversary can use recourse actions to infer private information about the data held by decision-makers [Pawelczyk et al., 2023].",
+        "verdict": "entailment",
+        "support_score": 0.9614920020103455,
+        "contradiction_score": 2.2730097043677233e-05,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 21,
+        "supporting_evidence": "Since recent studies have pointed out the risk that an\nadversary can leverage recourse actions to infer private information about the data held by decision-makers [Pawelczyk\net al., 2023], it is important to allow users to avoid disclosing some feature values corresponding to their"
+      },
+      {
+        "claim": "This risk is particularly concerning when users have privacy concerns regarding certain feature values.",
+        "verdict": "neutral",
+        "support_score": 0.049663618206977844,
+        "contradiction_score": 0.0009919479489326477,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 1,
+        "supporting_evidence": "To alleviate this risk, it is important to allow users to avoid disclosing\nsome feature values corresponding to their private information (e.g., their income)."
+      },
+      {
+        "claim": "Regarding the privacy risk of recourse described by the Karimi et al. survey, it relates to the ability of adversaries to infer private information about the data held by decision-makers through recourse actions.",
+        "verdict": "contradiction",
+        "support_score": 0.02613721415400505,
+        "contradiction_score": 0.947932243347168,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 1,
+        "supporting_evidence": "Indeed, some recent studies\nhave pointed out the risk that an adversary can leverage recourse actions to infer private information about the data held\nby decision-makers [Pawelczyk et al., 2023]."
+      },
+      {
+        "claim": "The Karimi et al. survey emphasizes the importance of allowing users to avoid disclosing some feature values corresponding to their private information, such as income, to mitigate this risk.",
+        "verdict": "neutral",
+        "support_score": 0.0009605286177247763,
+        "contradiction_score": 0.007508347276598215,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 21,
+        "supporting_evidence": "data held by decision-makers [Pawelczyk\net al., 2023], it is important to allow users to avoid disclosing some feature values corresponding to their private\ninformation (e.g., income)."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q032",
+    "Total_Claims": 8,
+    "Supported_Claims": 4,
+    "Faithfulness_Score": 0.5,
+    "Claim_Details": [
+      {
+        "claim": "Based on the provided evidence, an action computed on a single imputed instance can fail for the original instance under the following circumstances:\n**Different Valid Actions**: As observed in [Evidence 1, Page: 8], the action obtained by ImputationAR differs from the optimal action for the original instance \\( x \\) and is not valid for \\( x \\).",
+        "verdict": "neutral",
+        "support_score": 0.29147785902023315,
+        "contradiction_score": 0.0008101314888335764,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 2,
+        "supporting_evidence": "Using the existing\nAR method for the imputed instance ˆx, we obtain an optimal action a that decreases the feature “#ExistingLoans\" by 1."
+      },
+      {
+        "claim": "Similarly, while RobustAR is valid for \\( x \\), it has a significantly higher cost compared to the optimal action.",
+        "verdict": "entailment",
+        "support_score": 0.9977900981903076,
+        "contradiction_score": 0.00010939876665361226,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "We also see that while the action obtained by RobustAR\nis valid for x, it has a significantly higher cost than that of the optimal one."
+      },
+      {
+        "claim": "**Higher Cost Actions**: [Evidence 1, Page: 8] indicates that while RobustAR is valid for \\( x \\), it incurs a higher cost compared to the optimal action.",
+        "verdict": "entailment",
+        "support_score": 0.9935559630393982,
+        "contradiction_score": 1.0796632523124572e-05,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "We also see that while the action obtained by RobustAR\nis valid for x, it has a significantly higher cost than that of the optimal one."
+      },
+      {
+        "claim": "This suggests that the optimal action might be more cost-effective but less valid for the original instance.",
+        "verdict": "neutral",
+        "support_score": 0.0016360561130568385,
+        "contradiction_score": 0.00010530065628699958,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "We also see that while the action obtained by RobustAR\nis valid for x, it has a significantly higher cost than that of the optimal one."
+      },
+      {
+        "claim": "**Inconsistent Validity Across Instances**: [Evidence 2, Page: 2] provides an example where an optimal action for an imputed instance \\( \\hat{x} \\) (which is valid for \\( \\hat{x} \\)) is not valid for the original instance \\( x \\).",
+        "verdict": "entailment",
+        "support_score": 0.9705911874771118,
+        "contradiction_score": 0.0001250727364094928,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "We observe that the action obtained by ImputationAR is\ndifferent from the optimal one in Table 1(a) and not valid for x."
+      },
+      {
+        "claim": "This inconsistency highlights that actions derived for imputed instances may not align with the original instance's characteristics.",
+        "verdict": "entailment",
+        "support_score": 0.9773799777030945,
+        "contradiction_score": 3.880821168422699e-05,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 2,
+        "supporting_evidence": "It suggests that valid actions for an imputed instance ˆx can be different from those for its original instance x, even if\nthe prediction results before and after imputation are the same, i.e., h(x) = h(ˆx)."
+      },
+      {
+        "claim": "The expected gap to the optimal action is driven by these inconsistencies and differences in validity between the imputed instance and the original instance.",
+        "verdict": "neutral",
+        "support_score": 0.0020912678446620703,
+        "contradiction_score": 0.000337152712745592,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 2,
+        "supporting_evidence": "Even if a suggested action is valid for the\nimputed instance ˆx, it may lead to risky decision-making"
+      },
+      {
+        "claim": "The optimal action for the original instance \\( x \\) might be more effective but less valid due to the nature of the imputation process, which introduces plausible",
+        "verdict": "neutral",
+        "support_score": 0.0018668518168851733,
+        "contradiction_score": 0.0002724846126511693,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 2,
+        "supporting_evidence": "It suggests that valid actions for an imputed instance ˆx can be different from those for its original instance x, even if\nthe prediction results before and after imputation are the same, i.e., h(x) = h(ˆx)."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q033",
+    "Total_Claims": 3,
+    "Supported_Claims": 0,
+    "Faithfulness_Score": 0.0,
+    "Claim_Details": [
+      {
+        "claim": "Based on the evidence provided, ARMIN achieved a valid ratio of 1.75 on the WineQuality dataset when evaluated under the MCAR (Missing Completely At Random) scenario with D∗=2.",
+        "verdict": "contradiction",
+        "support_score": 0.004651619587093592,
+        "contradiction_score": 0.6705711483955383,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 21,
+        "supporting_evidence": "Scikit-\nlearn 1.0.2 3 is publicly available under the BSD-3-Clause license."
+      },
+      {
+        "claim": "This result is shown in Figure 2 of the document, which indicates that ARMIN attained good balances between the valid ratio and average cost compared to other methods like ImputationAR and RobustAR.",
+        "verdict": "neutral",
+        "support_score": 0.000279013707768172,
+        "contradiction_score": 4.6841454604873434e-05,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Compared to the baselines, our ARMIN attained good balances\nbetween the valid ratio and cost for almost all the datasets and classifiers; that is, it achieved higher valid ratios than\nImputationAR and lower costs than RubustAR."
+      },
+      {
+        "claim": "The figure specifically mentions the WineQuality dataset as an example where ARMIN's valid ratio was 1.75, while RobustAR had a higher average cost.",
+        "verdict": "neutral",
+        "support_score": 0.006002367008477449,
+        "contradiction_score": 0.0002113004302373156,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "For example, the average cost of RobustAR for the LR classifier on the WineQuality dataset\nwas 3.59 times higher than that of ARMIN."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q036",
+    "Total_Claims": 3,
+    "Supported_Claims": 0,
+    "Faithfulness_Score": 0.0,
+    "Claim_Details": [
+      {
+        "claim": "Based on the retrieved evidence, there is no specific percentage provided regarding the preference of users for robust counterfactual explanations over non-robust ones.",
+        "verdict": "neutral",
+        "support_score": 0.06591816246509552,
+        "contradiction_score": 0.05416935682296753,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 17,
+        "supporting_evidence": "We remark that in all our experiments, CoGS always succeeded in discovering a\ncounterfactual example for which f predicts t, except for having a mean success rate of 99% (st.dev."
+      },
+      {
+        "claim": "The evidence focuses on the robustness and costs associated with counterfactual explanations but does not contain direct information about user preferences.",
+        "verdict": "neutral",
+        "support_score": 0.0013766636839136481,
+        "contradiction_score": 0.03410520404577255,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "terfactual explanations for general user preferences\non variable machine learning systems."
+      },
+      {
+        "claim": "Therefore, the exact percentage of users who preferred robust counterfactual explanations over non-robust ones cannot be determined from the given sources.",
+        "verdict": "neutral",
+        "support_score": 0.0016810828819870949,
+        "contradiction_score": 0.0008117007091641426,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 17,
+        "supporting_evidence": "We remark that in all our experiments, CoGS always succeeded in discovering a\ncounterfactual example for which f predicts t, except for having a mean success rate of 99% (st.dev."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q039",
+    "Total_Claims": 7,
+    "Supported_Claims": 3,
+    "Faithfulness_Score": 0.4286,
+    "Claim_Details": [
+      {
+        "claim": "Based on the provided evidence, the valid ratio of ARMIN changes with the sampling size \\(N\\) when the classifier is a random forest.",
+        "verdict": "neutral",
+        "support_score": 0.006832388695329428,
+        "contradiction_score": 0.004680152982473373,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "richer) people are less\ninclined to reveal their income [Josse et al., 2019]."
+      },
+      {
+        "claim": "However, the specific relationship between the valid ratio and the sampling size \\(N\\) is not directly stated in the evidence.",
+        "verdict": "neutral",
+        "support_score": 0.0013009790563955903,
+        "contradiction_score": 0.00013246365415398031,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "We\ncollected test instances x that were predicted as “expe-\nriencing 90 days past due delinquency"
+      },
+      {
+        "claim": "From [Evidence 3 | Source: ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf | Page: 7], it is observed that as the number of constraints increases depending on \\(N\\) and \\(h\\), the valid ratio for different datasets and classifiers like EmployeeAttrition (RF) and StudentPerformance (RF) varies.",
+        "verdict": "neutral",
+        "support_score": 0.021297575905919075,
+        "contradiction_score": 0.10526108741760254,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "In Appendix D, we also report the average\nsign agreement score [Krishna et al., 2022] that evaluates the qualitative similarity between a and the optimal action a∗\nof x and the average computational time for each instance."
+      },
+      {
+        "claim": "Specifically, for the WineQuality (RF) dataset, the valid ratio ranges from 0.6 to 1.0, and the average cost ranges from 0.6 to 1.1.",
+        "verdict": "entailment",
+        "support_score": 0.851473867893219,
+        "contradiction_score": 0.030865665525197983,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": ")\n0.4\n0.6\n0.8\n1.0\nValid Ratio\n1.50\n1.75\n2.00\n2.25\n2.50\n2.75\n3.00\nAverage Cost\nEmployeeAttrition (RF)\n0.6\n0.7\n0.8\nValid Ratio\n12\n14\n16\n18\nAverage Cost\nStudentPerformance (RF)\n0.6\n0.8\n1.0\nValid Ratio\n0.6\n0.7\n0.8\n0.9\n1.0\n1.1\nAverage Cost\nWineQuality (RF)\nFigure 2: Experimental results of our baseline comparison under the MCAR situation, where D∗= 2."
+      },
+      {
+        "claim": "The evidence suggests that ARMIN achieves good balances between the valid ratio and average cost compared to other methods like ImputationAR and RobustAR.",
+        "verdict": "entailment",
+        "support_score": 0.9905015230178833,
+        "contradiction_score": 0.0002708901884034276,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Compared to the baselines, our ARMIN attained good balances\nbetween the valid ratio and cost for almost all the datasets and classifiers; that is, it achieved higher valid ratios than\nImputationAR and lower costs than RubustAR."
+      },
+      {
+        "claim": "It indicates that ARMIN generally achieves higher valid ratios than ImputationAR and lower costs than RobustAR across various datasets and classifiers.",
+        "verdict": "entailment",
+        "support_score": 0.9975294470787048,
+        "contradiction_score": 9.046922059496865e-05,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Compared to the baselines, our ARMIN attained good balances\nbetween the valid ratio and cost for almost all the datasets and classifiers; that is, it achieved higher valid ratios than\nImputationAR and lower costs than RubustAR."
+      },
+      {
+        "claim": "However, without more specific data points or a direct statement about how the valid ratio changes with \\(N\\) specifically for a random forest classifier, we cannot determine the exact relationship between the valid ratio and the sampling size \\(N\\).",
+        "verdict": "neutral",
+        "support_score": 0.0007879051263444126,
+        "contradiction_score": 0.0001504516403656453,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 8,
+        "supporting_evidence": "To sim-\nulate the MAR (resp."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q046",
+    "Total_Claims": 8,
+    "Supported_Claims": 3,
+    "Faithfulness_Score": 0.375,
+    "Claim_Details": [
+      {
+        "claim": "Based on the provided evidence, it appears that the term 'plausibility' is not used in the exact same sense across the three sources mentioned: Karimi et al., Jiang et al., and Virgolin and Fracaros.",
+        "verdict": "neutral",
+        "support_score": 0.0026869275607168674,
+        "contradiction_score": 0.001423056237399578,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 5,
+        "supporting_evidence": "A\nmore\nconservative\nformu-\nlation\nis\nused\nin\n[Dominguez-Olmedo et al., 2022;\nLeofante and Lomuscio, 2023],\nwhere the authors take\nan adversarial ML and/or veriﬁcation angle, and deﬁne 휎as\na 푝-norm ball around the CE."
+      },
+      {
+        "claim": "In the evidence from Robust Counterfactual Explanations in Machine Learning.pdf, the term 'plausibility' is not directly addressed.",
+        "verdict": "contradiction",
+        "support_score": 0.03425431251525879,
+        "contradiction_score": 0.6542891263961792,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 5,
+        "supporting_evidence": "A\nmore\nconservative\nformu-\nlation\nis\nused\nin\n[Dominguez-Olmedo et al., 2022;\nLeofante and Lomuscio, 2023],\nwhere the authors take\nan adversarial ML and/or veriﬁcation angle, and deﬁne 휎as\na 푝-norm ball around the CE."
+      },
+      {
+        "claim": "Instead, it discusses different characterizations of uncertainty or noise in machine learning models, such as probability distributions and adversarial attacks.",
+        "verdict": "neutral",
+        "support_score": 0.0008307501557283103,
+        "contradiction_score": 0.0025911733973771334,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 5,
+        "supporting_evidence": "For instance, [Pawelczyk et al., 2023a;\nRaman et al., 2023] assume noise could be sampled from\nsome\nprobability\ndistribution\n[Pawelczyk et al., 2023a;\nRaman et al., 2023]."
+      },
+      {
+        "claim": "In the evidence from A Survey of Algorithmic Recourse.pdf, the term 'plausibility' is discussed in relation to actionability constraints.",
+        "verdict": "entailment",
+        "support_score": 0.9356396198272705,
+        "contradiction_score": 0.012387086637318134,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "3.3\nActionability and Plausibility Constraints\n3.3.1\nPlausibility."
+      },
+      {
+        "claim": "Specifically, it mentions three categories of plausibility: domain-consistency, density-consistency, and prototypical-consistency.",
+        "verdict": "entailment",
+        "support_score": 0.9972225427627563,
+        "contradiction_score": 0.00012606637028511614,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Existing literature has formalized plausibility constraint as one of three cat-\negories: domain-consistency, density-consistency, and prototypical-consistency."
+      },
+      {
+        "claim": "Domain-consistency restricts the counterfactual instance to the range of admissible values for the domain of features, while density-consistency focuses on likely states in the empirical distribution of features.",
+        "verdict": "entailment",
+        "support_score": 0.9979488253593445,
+        "contradiction_score": 0.00016649214376229793,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Whereas domain-\nconsistency restricts the counterfactual instance to the range of admissible values for the domain\nof features [113], density-consistency focuses on likely states in the (empirical) distribution of\nfeatures [63, 64, 109, 111, 131, 183]"
+      },
+      {
+        "claim": "The paper by Karimi et al. [114] (referenced in the evidence from A Survey of Algorithmic Recourse.pdf) provides a formalization of plausibility constraints, but it does not directly address the term 'plausibility' in the context of algorithmic recourse or counterfactual explanations.",
+        "verdict": "contradiction",
+        "support_score": 0.006001658271998167,
+        "contradiction_score": 0.5537068247795105,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Whereas xCF = xF + δ in (1) is a linear constraint, computing xCF = xSCF(a;xF) in (2) involves\nperforming the three step abduction-action-prediction process of Pearl et al."
+      },
+      {
+        "claim": "Therefore, we cannot determine if the term 'plausibility' is used in the same sense by Karimi et al., Jiang et al., and Virgolin and Fracaros based solely",
+        "verdict": "neutral",
+        "support_score": 0.004347996786236763,
+        "contradiction_score": 0.0015818036627024412,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Whereas domain-\nconsistency restricts the counterfactual instance to the range of admissible values for the domain\nof features [113], density-consistency focuses on likely states in the (empirical) distribution of\nfeatures [63, 64, 109, 111, 131, 183]"
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q049",
+    "Total_Claims": 8,
+    "Supported_Claims": 1,
+    "Faithfulness_Score": 0.125,
+    "Claim_Details": [
+      {
+        "claim": "Jiang et al. and Virgolin and Fracaros both discuss the relationship between cost and robustness in counterfactual explanations (CEs), but their findings are not necessarily contradictory.",
+        "verdict": "neutral",
+        "support_score": 0.0026889636646956205,
+        "contradiction_score": 0.00029519590316340327,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "E methods in the general\ncase."
+      },
+      {
+        "claim": "Jiang et al.  propose that moving away from single-instance CEs towards sets of CEs can lead to a relaxed form of robustness where sets of explanations for similar inputs contain similar CEs.",
+        "verdict": "neutral",
+        "support_score": 0.001353454659692943,
+        "contradiction_score": 6.08072332397569e-05,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Under some assumptions, the authors prove that a\nrelaxed form of robustness can be satisﬁed whereby sets of\nexplanations generated for similar inputs are guaranteed to\ncontain similar CEs."
+      },
+      {
+        "claim": "They also mention that several works discuss the trade-off between the cost of a CE and its robustness, with increasing cost often being necessary for improving robustness.",
+        "verdict": "neutral",
+        "support_score": 0.00046310771722346544,
+        "contradiction_score": 0.00013813145051244646,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Speciﬁcally, increasing cost is often dis-\ncussed as a necessary condition for improving a CE’s ro-\nbustness [Upadhyay et al., 2021; Pawelczyk et al., 2023a]."
+      },
+      {
+        "claim": "Virgolin and Fracaros  provide empirical evidence showing that there is a trade-off between the cost of a CE and its robustness.",
+        "verdict": "neutral",
+        "support_score": 0.0026698666624724865,
+        "contradiction_score": 0.004390778485685587,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Under some assumptions, the authors prove that a\nrelaxed form of robustness can be satisﬁed whereby sets of\nexplanations generated for similar inputs are guaranteed to\ncontain similar CEs."
+      },
+      {
+        "claim": "Figures 9 and 10 in their paper illustrate how the relative cost for robustness varies depending on the configuration of accounting for robustness and the type of perturbation applied.",
+        "verdict": "neutral",
+        "support_score": 0.0007196732913143933,
+        "contradiction_score": 0.0001318093854933977,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 24,
+        "supporting_evidence": "re 10:\nCost in terms of diﬀerent conﬁgurations of accounting for robustness and under diﬀerent perturbations, relative\nto the ideal cost (with neural network)."
+      },
+      {
+        "claim": "They demonstrate that when no notion of robustness is accounted for, the relative cost is typically much higher compared to when the right notion of robustness is considered.",
+        "verdict": "entailment",
+        "support_score": 0.9979003667831421,
+        "contradiction_score": 0.00011087753955507651,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 23,
+        "supporting_evidence": "Due to perturbations, t perturbations, the relative cost for when no notion of robustness\nis accounted for (label None) is typically much larger than the one for when the right notion of robustness is accounted for\n(matching color between box and label)."
+      },
+      {
+        "claim": "While both studies acknowledge the existence of a cost-robustness trade-off, they approach the topic from slightly different angles.",
+        "verdict": "neutral",
+        "support_score": 0.006538433954119682,
+        "contradiction_score": 0.00011316232848912477,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 7,
+        "supporting_evidence": "Speciﬁcally, increasing cost is often dis-\ncussed as a necessary condition for improving a CE’s ro-\nbustness [Upadhyay et al., 2021; Pawelczyk et al., 2023a]."
+      },
+      {
+        "claim": "Jiang et al. focus more on theoretical aspects and the potential benefits of generating diverse sets",
+        "verdict": "neutral",
+        "support_score": 0.0032000441569834948,
+        "contradiction_score": 0.06047661602497101,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 23,
+        "supporting_evidence": "The vertical axis for Inc is in logarithmic scale."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q050",
+    "Total_Claims": 8,
+    "Supported_Claims": 4,
+    "Faithfulness_Score": 0.5,
+    "Claim_Details": [
+      {
+        "claim": "The papers describe the role of sparsity in counterfactual robustness across model changes and input perturbations in several ways:\n**Sparse Recommendations**: Counterfactual explanations (CEs) typically recommend changing only a subset of the features (sparse form of intervention).",
+        "verdict": "entailment",
+        "support_score": 0.9977756142616272,
+        "contradiction_score": 4.404443461680785e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 1,
+        "supporting_evidence": "Since CEs typically prescribe a sparse form of intervention (i.e., only\na subset of the features should be changed), we study the eﬀect of addressing robustness separately for\nthe features that are recommended to be changed and those that are not."
+      },
+      {
+        "claim": "This sparsity is studied separately for features that are recommended to be changed (C-robustness) and those that are not (K-robustness).",
+        "verdict": "neutral",
+        "support_score": 0.020445870235562325,
+        "contradiction_score": 0.0013349258806556463,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "ures whose value is prescribed to\nbe changed (C-robustness), or those whose value is prescribed to be kept as is (K-robustness)."
+      },
+      {
+        "claim": "**Robustness to Adverse Perturbations**: The robustness of CEs to adverse perturbations is examined.",
+        "verdict": "entailment",
+        "support_score": 0.9974167346954346,
+        "contradiction_score": 0.00011448138684500009,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 1,
+        "supporting_evidence": "We consider a further\naspect to improve the usability of CEs: robustness to adverse perturbations, which may naturally happen\ndue to unfortunate circumstances."
+      },
+      {
+        "claim": "This robustness is defined for two types of features: those whose values are prescribed to be changed (C-robustness) and those whose values are prescribed to be kept as is (K-robustness).",
+        "verdict": "entailment",
+        "support_score": 0.9749149680137634,
+        "contradiction_score": 0.0011596090625971556,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "ures whose value is prescribed to\nbe changed (C-robustness), or those whose value is prescribed to be kept as is (K-robustness)."
+      },
+      {
+        "claim": "**Impact on Feasibility of Correcting Perturbations**: The studies indicate that non-robust CEs are more susceptible to making it impossible for users to correct perturbations through additional interventions.",
+        "verdict": "neutral",
+        "support_score": 0.07655804604291916,
+        "contradiction_score": 4.784355405718088e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "Moreover,\nnon-robust counterfactual explanations are more susceptible to make it impossible for the user to remedy\nperturbations by additional intervention, and the cost of additional intervention is larger for non-robust\ncounterfactual explanations than for robust ones."
+      },
+      {
+        "claim": "Additionally, the cost of additional intervention is higher for non-robust CEs compared to robust ones.",
+        "verdict": "entailment",
+        "support_score": 0.9978673458099365,
+        "contradiction_score": 8.731187699595466e-05,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "Moreover,\nnon-robust counterfactual explanations are more susceptible to make it impossible for the user to remedy\nperturbations by additional intervention, and the cost of additional intervention is larger for non-robust\ncounterfactual explanations than for robust ones."
+      },
+      {
+        "claim": "**Effectiveness of Robustness Accounting**: The experimental results suggest that accounting for robustness for features in C (prescribed to be changed) counters well-perturbed C features, and similarly, accounting for robustness for features in K (prescribed to be kept as is) counters well-perturbed K features.",
+        "verdict": "neutral",
+        "support_score": 0.14613527059555054,
+        "contradiction_score": 0.011281193234026432,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "Our experimental results suggest that accounting for robustness for features in C results in countering\nwell perturbations to C, and similarly, accounting for robustness for features in K results in countering well\nperturbations to K."
+      },
+      {
+        "claim": "However, robustness for C features does not significantly",
+        "verdict": "neutral",
+        "support_score": 0.00228649890050292,
+        "contradiction_score": 0.0008173459209501743,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 26,
+        "supporting_evidence": "Moreover, even though f can learn non-linear feature interactions, accounting for C\n(or K) has limited eﬀect on contrasting perturbations to K (resp., C)."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q051",
+    "Total_Claims": 4,
+    "Supported_Claims": 0,
+    "Faithfulness_Score": 0.0,
+    "Claim_Details": [
+      {
+        "claim": "Based on the retrieved evidence, Virgolin and Fracaros use two black-box model families: random forests and neural networks with a standard multi-layer perceptron architecture.",
+        "verdict": "neutral",
+        "support_score": 0.011963102966547012,
+        "contradiction_score": 0.04737325757741928,
+        "supporting_source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "supporting_page": 9,
+        "supporting_evidence": "[Sharma et al., 2022] Shubham Sharma, Alan H."
+      },
+      {
+        "claim": "They train these models on a GPU.",
+        "verdict": "contradiction",
+        "support_score": 0.011048522777855396,
+        "contradiction_score": 0.7642086148262024,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 1,
+        "supporting_evidence": "∗Corresponding author\nEmail address: marco.virgolin@cwi.nl (Marco Virgolin)\nPreprint submitted to a journal\nSeptember 26, 2022\narXiv:2201.09051v3  [cs.LG]  23 Sep 2022"
+      },
+      {
+        "claim": "However, the specific GPU model used is not mentioned in the provided evidence.",
+        "verdict": "neutral",
+        "support_score": 0.0008501430274918675,
+        "contradiction_score": 0.0006794310756959021,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 11,
+        "supporting_evidence": "We use Scikit-learn’s implementations [41]."
+      },
+      {
+        "claim": "The evidence only states that they use Scikit-learn's implementations of these models and that the experiments are conducted on a GPU.",
+        "verdict": "neutral",
+        "support_score": 0.00026932707987725735,
+        "contradiction_score": 0.0012015813263133168,
+        "supporting_source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "supporting_page": 11,
+        "supporting_evidence": "We use Scikit-learn’s implementations [41]."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q055",
+    "Total_Claims": 6,
+    "Supported_Claims": 3,
+    "Faithfulness_Score": 0.5,
+    "Claim_Details": [
+      {
+        "claim": "The Karimi et al. survey describes three categories of plausibility constraint:\nDomain-consistency: This category restricts the counterfactual instance to the range of admissible values for the domain of features .",
+        "verdict": "entailment",
+        "support_score": 0.5711944103240967,
+        "contradiction_score": 0.00045223257620818913,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "Whereas domain-\nconsistency restricts the counterfactual instance to the range of admissible values for the domain\nof features [113], density-consistency focuses on likely states in the (empirical) distribution of\nfeatures [63, 64, 109, 111, 131, 183]"
+      },
+      {
+        "claim": "Density-consistency: This category focuses on likely states in the (empirical) distribution of features .",
+        "verdict": "entailment",
+        "support_score": 0.9976529479026794,
+        "contradiction_score": 7.789581286488101e-05,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "r the domain\nof features [113], density-consistency focuses on likely states in the (empirical) distribution of\nfeatures [63, 64, 109, 111, 131, 183] identifying instances close to the data manifold."
+      },
+      {
+        "claim": "It identifies instances close to the data manifold.",
+        "verdict": "entailment",
+        "support_score": 0.9778569936752319,
+        "contradiction_score": 0.004883280489593744,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "A third class\nof plausibility constraints selects counterfactual instances that are either directly present in the\ndataset [189, 241] or close to a prototypical example of the dataset [11, 12, 124, 131, 225]."
+      },
+      {
+        "claim": "Prototypical-consistency: This category selects counterfactual instances that are either directly present in the dataset or close to a prototypical example of the dataset .",
+        "verdict": "entailment",
+        "support_score": 0.992188572883606,
+        "contradiction_score": 0.0014164131134748459,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "A third class\nof plausibility constraints selects counterfactual instances that are either directly present in the\ndataset [189, 241] or close to a prototypical example of the dataset [11, 12, 124, 131, 225]."
+      },
+      {
+        "claim": "Regarding which category users find most satisfying in user studies, the retrieved evidence does not provide specific information about user satisfaction with these categories.",
+        "verdict": "entailment",
+        "support_score": 0.6985839009284973,
+        "contradiction_score": 0.0018879553535953164,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "[186] and may thus be\nnon-parametric and arbitrary involved."
+      },
+      {
+        "claim": "Therefore, it cannot be determined from the given evidence.",
+        "verdict": "neutral",
+        "support_score": 0.0007094632601365447,
+        "contradiction_score": 0.0013269138289615512,
+        "supporting_source": "A Survey of Algorithmic Recourse.pdf",
+        "supporting_page": 10,
+        "supporting_evidence": "[186] and may thus be\nnon-parametric and arbitrary involved."
+      }
+    ]
+  },
+  {
+    "Question_ID": "Q058",
+    "Total_Claims": 5,
+    "Supported_Claims": 2,
+    "Faithfulness_Score": 0.4,
+    "Claim_Details": [
+      {
+        "claim": "Kanamori et al. trained XGBoost classifiers on each dataset to obtain optimal actions for test instances with missing values.",
+        "verdict": "entailment",
+        "support_score": 0.9952083230018616,
+        "contradiction_score": 0.0008609163342043757,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 20,
+        "supporting_evidence": "As with the\nexperiments in the main paper, we trained XGBoost classifiers on each dataset and obtained an optimal action for each\ntest instance with missing values by the existing AR method based on MILO [Cui et al., 2015, Kanamori et al., 2020]."
+      },
+      {
+        "claim": "For the XGBoost classifier in the appendix, they used a total number of trees ranging from 4 to 11, but specific numbers were not provided in the given evidence.",
+        "verdict": "neutral",
+        "support_score": 0.002913775620982051,
+        "contradiction_score": 0.006357625126838684,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 19,
+        "supporting_evidence": "Indeed, in our preliminary experiments, we\n1https://scikit-learn.org/stable/modules/classes.html#module-sklearn.impute\n19"
+      },
+      {
+        "claim": "The maximum depth of the trees was not specified either.",
+        "verdict": "neutral",
+        "support_score": 0.00011323694343445823,
+        "contradiction_score": 0.011752034537494183,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 20,
+        "supporting_evidence": "Figure 5 present the experimental results."
+      },
+      {
+        "claim": "mentions that solving the formulated problem is challenging for a large N and a complex classifier h, such as a random forest classifier with over 200 decision trees.",
+        "verdict": "entailment",
+        "support_score": 0.9978241920471191,
+        "contradiction_score": 0.00010104549437528476,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 19,
+        "supporting_evidence": "However, solving the formulated problem is challenging for a large N and a\ncomplex classifier h (e.g., a random forest classifier with over 200 decision trees)."
+      },
+      {
+        "claim": "While XGBoost is mentioned, it does not provide specific details about the number of trees or maximum depth used.",
+        "verdict": "neutral",
+        "support_score": 0.0021636118181049824,
+        "contradiction_score": 0.00043405365431681275,
+        "supporting_source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "supporting_page": 22,
+        "supporting_evidence": "Here, we generate the\nincomplete instance ˜x by dropping the value of the feature “PercentInstallTrades\" in its original instance x."
+      }
+    ]
+  }
+]

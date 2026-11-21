@@ -1,0 +1,202 @@
+[
+  {
+    "Question_ID": "Q001",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.3333,
+    "Supported_Claims": 1,
+    "Total_Claims": 3
+  },
+  {
+    "Question_ID": "Q006",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.5,
+    "Supported_Claims": 1,
+    "Total_Claims": 2
+  },
+  {
+    "Question_ID": "Q010",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.4,
+    "Supported_Claims": 2,
+    "Total_Claims": 5
+  },
+  {
+    "Question_ID": "Q011",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "ABSTAIN",
+    "Reason": "No claims passed the evidence support threshold.",
+    "Faithfulness": 0.0,
+    "Supported_Claims": 0,
+    "Total_Claims": 4
+  },
+  {
+    "Question_ID": "Q013",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.6667,
+    "Supported_Claims": 2,
+    "Total_Claims": 3
+  },
+  {
+    "Question_ID": "Q016",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "ABSTAIN",
+    "Reason": "No claims passed the evidence support threshold.",
+    "Faithfulness": 0.0,
+    "Supported_Claims": 0,
+    "Total_Claims": 2
+  },
+  {
+    "Question_ID": "Q018",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.1429,
+    "Supported_Claims": 1,
+    "Total_Claims": 7
+  },
+  {
+    "Question_ID": "Q021",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.5714,
+    "Supported_Claims": 4,
+    "Total_Claims": 7
+  },
+  {
+    "Question_ID": "Q024",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.1667,
+    "Supported_Claims": 1,
+    "Total_Claims": 6
+  },
+  {
+    "Question_ID": "Q030",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.25,
+    "Supported_Claims": 1,
+    "Total_Claims": 4
+  },
+  {
+    "Question_ID": "Q032",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.5,
+    "Supported_Claims": 4,
+    "Total_Claims": 8
+  },
+  {
+    "Question_ID": "Q033",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Decision": "ABSTAIN",
+    "Reason": "Insufficient evidence for an answer.",
+    "Faithfulness": 0.0,
+    "Supported_Claims": 0,
+    "Total_Claims": 3
+  },
+  {
+    "Question_ID": "Q036",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Decision": "ABSTAIN",
+    "Reason": "Insufficient evidence for an answer.",
+    "Faithfulness": 0.0,
+    "Supported_Claims": 0,
+    "Total_Claims": 3
+  },
+  {
+    "Question_ID": "Q039",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Potential unsupported answer to an unanswerable question.",
+    "Faithfulness": 0.4286,
+    "Supported_Claims": 3,
+    "Total_Claims": 7
+  },
+  {
+    "Question_ID": "Q046",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.375,
+    "Supported_Claims": 3,
+    "Total_Claims": 8
+  },
+  {
+    "Question_ID": "Q049",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.125,
+    "Supported_Claims": 1,
+    "Total_Claims": 8
+  },
+  {
+    "Question_ID": "Q050",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Evidence support is incomplete or uncertain.",
+    "Faithfulness": 0.5,
+    "Supported_Claims": 4,
+    "Total_Claims": 8
+  },
+  {
+    "Question_ID": "Q051",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Partial answer requires human verification.",
+    "Faithfulness": 0.0,
+    "Supported_Claims": 0,
+    "Total_Claims": 4
+  },
+  {
+    "Question_ID": "Q055",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Partial answer requires human verification.",
+    "Faithfulness": 0.5,
+    "Supported_Claims": 3,
+    "Total_Claims": 6
+  },
+  {
+    "Question_ID": "Q058",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Decision": "HUMAN_REVIEW",
+    "Reason": "Partial answer requires human verification.",
+    "Faithfulness": 0.4,
+    "Supported_Claims": 2,
+    "Total_Claims": 5
+  }
+]

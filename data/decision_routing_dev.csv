@@ -1,0 +1,21 @@
+Question_ID,Category,Answerability,Decision,Reason,Faithfulness,Supported_Claims,Total_Claims
+Q001,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.3333,1,3
+Q006,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5,1,2
+Q010,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.4,2,5
+Q011,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,4
+Q013,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.6667,2,3
+Q016,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,2
+Q018,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.1429,1,7
+Q021,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5714,4,7
+Q024,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.1667,1,6
+Q030,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.25,1,4
+Q032,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5,4,8
+Q033,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q036,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q039,unanswerable,Unanswerable,HUMAN_REVIEW,Potential unsupported answer to an unanswerable question.,0.4286,3,7
+Q046,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.375,3,8
+Q049,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.125,1,8
+Q050,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5,4,8
+Q051,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.0,0,4
+Q055,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.5,3,6
+Q058,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.4,2,5

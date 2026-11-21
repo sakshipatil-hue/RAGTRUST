@@ -1,0 +1,41 @@
+Question_ID,Category,Answerability,Decision,Reason,Faithfulness,Supported_Claims,Total_Claims
+Q002,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,2
+Q003,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,2
+Q004,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.6667,2,3
+Q005,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,1
+Q007,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5,3,6
+Q008,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,2
+Q009,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.3333,1,3
+Q012,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,3
+Q014,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,1
+Q015,single_fact,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,4
+Q017,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.6667,2,3
+Q019,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.6,3,5
+Q020,single_fact,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5,1,2
+Q022,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.1667,1,6
+Q023,multi_hop,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,6
+Q025,multi_hop,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,2
+Q026,multi_hop,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,8
+Q027,multi_hop,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,3
+Q028,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.5714,4,7
+Q029,multi_hop,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,3
+Q031,multi_hop,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.4286,3,7
+Q034,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q035,unanswerable,Unanswerable,HUMAN_REVIEW,Potential unsupported answer to an unanswerable question.,0.3333,2,6
+Q037,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q038,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q040,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q041,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.2222,2,9
+Q042,unanswerable,Unanswerable,ABSTAIN,Insufficient evidence for an answer.,0.0,0,3
+Q043,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.1667,1,6
+Q044,cross_paper_disagreement_and_tension,Answerable,ABSTAIN,No claims passed the evidence support threshold.,0.0,0,4
+Q045,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.4444,4,9
+Q047,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.3333,1,3
+Q048,cross_paper_disagreement_and_tension,Answerable,HUMAN_REVIEW,Evidence support is incomplete or uncertain.,0.1667,1,6
+Q052,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.0,0,5
+Q053,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.0,0,5
+Q054,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.1667,1,6
+Q056,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.0,0,5
+Q057,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.5,2,4
+Q059,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.0,0,3
+Q060,partially_answerable,Partially answerable,HUMAN_REVIEW,Partial answer requires human verification.,0.0,0,3

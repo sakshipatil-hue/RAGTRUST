@@ -1,0 +1,1322 @@
+[
+  {
+    "Question_ID": "Q002",
+    "Question": "According to the Karimi et al. survey, how should recourse actions be interpreted instead of as independent shifts to feature values?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "As interventions in a causal model of the world (e.g., a structural causal model) in which the actions take place, so that downstream effects on other variables can be accounted for.",
+    "Generated_Answer": "According to the Karimi et al. survey, recourse actions should be interpreted as interventions in a causal model of the world, rather than as independent shifts to feature values. Specifically, Karimi et al. suggest that actions may be interpreted as interventions in a causal model where actions will take place, not as independent feature manipulations derived from contrastive explanations.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 4,
+        "chunk_id": 3,
+        "content": "ns (a.k.a. flipsets [223]) that should\nbe performed to achieve a favorable outcome in the future. In this regard, several works have used\ncontrastive explanations to directly infer actionable recommendations [109, 209, 223, 234] where\nactions are considered as independent shifts to the feature values of the individual (P) that results\nin the contrast (Q). Recent work, however, has cautioned against this approach, citing the implicit\nassumption of independently manipulable features as a potential limitation that may lead to sub-\noptimal or infeasible actions [21, 114, 146, 226]. To overcome this, Karimi et al. [114] suggest that\nactions may instead be interpreted as interventions in a causal model of the world in which actions\nwill take place and not as independent feature manipulations derived from contrastive explana-\ntions. Formulated in this manner, for example, using a structural causal model (SCM) [184],\nthe downstream effects of interventions on other variables in the model"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 2,
+        "chunk_id": 4,
+        "content": "experiments on real datasets, we demonstrated that our ARMIN provides incomplete instances with\nquantitatively and qualitatively better actions than existing AR methods.\n1.1\nRelated work\nAlgorithmic Recourse (AR), also referred to as Counterfactual Explanation, has attracted increasing attention [Verma\net al., 2020], and several methods for providing recourse actions have been proposed [Wachter et al., 2018, Ustun et al.,\n2019, Mothilal et al., 2020, Kanamori et al., 2021, Pawelczyk et al., 2020, Karimi et al., 2020a]. On the other hand,\nrecent studies pointed out various issues, e.g., causality [Karimi et al., 2020b, 2021], privacy [Pawelczyk et al., 2023],\ntransparency [Rawal and Lakkaraju, 2020, Kanamori et al., 2022], and so on [Barocas et al., 2020, Venkatasubramanian\nand Alfano, 2020]. One of the critical problems is robustness to the perturbations of features [Slack et al., 2021,\nDominguez-Olmedo et al., 2022]. These studies are motivated by the fact that actions are often"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 4,
+        "chunk_id": 0,
+        "content": "A Survey of Algorithmic Recourse\n95:3\nto “understand what could be changed to receive a desired result in the future” [234]. This plurality\nof overlapping definitions, and the evolving consensus therein, motivates us to attempt to present\na unified definition under the umbrella of recourse.\nIntuitively, the commonality shared among these definitions is the desire to assist individuals\nwho are negatively affected by automated decision-making systems to improve their circumstances\n(captured in the individual’s feature set) to overcome the adverse decision (from the predictive\nmodel). Such assistance may take on the form of explanations (where they need to get to) or rec-\nommendations (what actions should they perform to get there).\nTherefore, we submit that recourse can be achieved by an affected individual if they can un-\nderstand [69, 109, 234] and accordingly act [114, 115] to alleviate an unfavorable situation, thus\nexercising temporally extended agency [226]. Concretely, in the"
+      }
+    ],
+    "Latency_Seconds": 8.95,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q003",
+    "Question": "Which distance function does the Karimi et al. survey say Wachter et al. use as dist?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "The Manhattan distance, weighted by the inverse median absolute deviation (MAD).",
+    "Generated_Answer": "According to the context provided, Wachter et al. use the Manhattan distance, weighted by the inverse of the median absolute deviation (MAD). Specifically, the distance function used is defined as:\n\n\\[ \\text{dist}(x, x_F) = \\sum_{k \\in [D]} \\frac{|x_k - x_F^k|}{\\text{MAD}_k} \\]\n\nWhere:\n- \\( \\text{MAD}_k = \\text{median}_j \\left( |X_j^k - \\text{median}_l \\left( X_l^k \\right)| \\right) \\)\n\nSo, Wachter et al. use the Manhattan distance, but it is weighted by the inverse of the median absolute deviation (MAD).",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 8,
+        "chunk_id": 4,
+        "content": "(|Xj,k −medianl ∈P(Xl,k)|).\n(3)\nThis distance has several desirable properties, including accounting and correcting for the dif-\nferent ranges across features through the MAD heuristic, robustness to outliers with the use of the\nmedian absolute difference, and, finally, favoring sparse solutions through the use of ℓ1 Manhattan\ndistance.\nKarimi et al. [113] propose a weighted combination of ℓp norms as a flexible measure across\na variety of situations. The weights, α, β,γ,ζ as shown in the following, allow practitioners to\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 8,
+        "chunk_id": 3,
+        "content": "solve the formulations defined here.\n3.1\nOptimization Objective\nGenerally, it is difficult to define dissimilarity (dist) between individuals or cost functions for ef-\nfort expended by individuals. Notably, this challenge was first discussed in the algorithmic fairness\nliterature [73, 107] and later echoed throughout the algorithmic recourse community [21, 226]. In\nfact, “the law provides no formal guidance as to the proper metric for determining what reasons\nare most salient” [208]. Despite this, existing works have presented various ad hoc formulations\nwith sensible intuitive justifications or practical allowance, which we review in the following.\n3.1.1\nOn dist. Wachter et al. [234] define dist as the Manhattan distance, weighted by the\ninverse median absolute deviation (MAD):\ndist(x,xF) =\n\u0002\nk ∈[D]\n|xk −xF\nk |\nMADk\nMADk = medianj ∈P(|Xj,k −medianl ∈P(Xl,k)|).\n(3)\nThis distance has several desirable properties, including accounting and correcting for the dif-\nferent ranges across"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 9,
+        "chunk_id": 1,
+        "content": ". Similar to Karimi et al. [113], various works explore ℓp norms to measure cost of\nactions. Ramakrishnan et al. [190] explore ℓ1, ℓ2 norm as well as constant cost if specific actions are\nundertaken; Karimi et al. [114, 115] minimize the ℓ2 norm between xF and the action a assignment\n(i.e., ||θ||2); and Cui et al. [55] explore combinations of ℓ0, ℓ1, ℓ2 norms over a user-specified cost\nmatrix. Encoding individual-dependent restrictions is critical—for example, obtaining credit is\nmore difficult for an foreign student than for a local resident.\nBeyond ℓp norms, the work of Ustun et al. [223] propose the total- and maximum-log percentile\nshift measures, to automatically account for the distribution of points in the dataset—for example,\ncost(a;xF) = max\nk ∈[D]\n\u0003\u0003Qk\n\u0004xF\nk + θk\n\u0005 −Qk\n\u0004xF\nk\n\u0005\u0003\u0003 ,\n(5)\nwhere Qk(·) is the CDF of xk in the target population. This type of metric naturally accounts for\nthe relative difficulty of moving to unlikely (high or low percentile) regions of the data"
+      }
+    ],
+    "Latency_Seconds": 10.12,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q004",
+    "Question": "Into which three categories does the Karimi et al. survey divide the actionability of a variable?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "(I) Actionable (and mutable), e.g., bank balance; (II) Mutable but non-actionable, e.g., credit score; (III) Immutable (and non-actionable), e.g., birthplace.",
+    "Generated_Answer": "According to the context provided, the Karimi et al. survey divides the actionability of a variable into three categories:\n\n1. **Mutable but non-actionable** (e.g., credit score)\n2. **Immutable (and non-actionable)** (e.g., birthplace)\n3. **Mutable and actionable** (e.g., bank balance)\n\nThe context explains that mutable but non-actionable variables are not directly actionable by the individual but may change due to changes in their causal ancestors. The immutable (and non-actionable) variables remain constant and cannot be changed. The mutable and actionable variables can be directly influenced by the individual.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 10,
+        "chunk_id": 1,
+        "content": "he type of recourse offered.\nWhereas xCF = xF + δ in (1) is a linear constraint, computing xCF = xSCF(a;xF) in (2) involves\nperforming the three step abduction-action-prediction process of Pearl et al. [186] and may thus be\nnon-parametric and arbitrary involved. A closed-form expression for deterministically computing\nthe counterfactual in additive noise models is presented in the work of Karimi et al. [114], and\nprobabilistic derivations for more general SCMs are presented in another work by Karimi et al.\n[115].\n3.3\nActionability and Plausibility Constraints\n3.3.1\nPlausibility. Existing literature has formalized plausibility constraint as one of three cat-\negories: domain-consistency, density-consistency, and prototypical-consistency. Whereas domain-\nconsistency restricts the counterfactual instance to the range of admissible values for the domain\nof features [113], density-consistency focuses on likely states in the (empirical) distribution of\nfeatures [63, 64, 109, 111, 131, 183]"
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 10,
+        "chunk_id": 3,
+        "content": "le) (e.g., bank balance);\n(II) Mutable but non-actionable (e.g., credit score);\n(III) Immutable (and non-actionable) (e.g., birthplace).\nIntuitively, mutable but non-actionable variables are not directly actionable by the individual but\nmay change as a consequence of a change to its causal ancestors (e.g., regular debt payment).\nHaving identified the set of actionable variables, an intervention can change the value of a\nvariable unconditionally (e.g., bank balance can increase or decrease), or conditionally to a specific\nvalue [114] or in a specific direction [223]. Karimi et al. [114] present the following examples to\nshow that the actionable feasibility of an intervention on Xi may be contingent on any number of\nconditions:\n(i) Pre-intervention value of the intervened variable (i.e., xF\ni )—for example, an individual’s age\ncan only increase (i.e., [xSCF\nage ≥xF\nage]);\n(ii) Pre-intervention value of other variables (i.e., {xF\nj }j ⊂[d]\\i)—for example, an individual cannot\napply for"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 4,
+        "chunk_id": 3,
+        "content": "ns (a.k.a. flipsets [223]) that should\nbe performed to achieve a favorable outcome in the future. In this regard, several works have used\ncontrastive explanations to directly infer actionable recommendations [109, 209, 223, 234] where\nactions are considered as independent shifts to the feature values of the individual (P) that results\nin the contrast (Q). Recent work, however, has cautioned against this approach, citing the implicit\nassumption of independently manipulable features as a potential limitation that may lead to sub-\noptimal or infeasible actions [21, 114, 146, 226]. To overcome this, Karimi et al. [114] suggest that\nactions may instead be interpreted as interventions in a causal model of the world in which actions\nwill take place and not as independent feature manipulations derived from contrastive explana-\ntions. Formulated in this manner, for example, using a structural causal model (SCM) [184],\nthe downstream effects of interventions on other variables in the model"
+      }
+    ],
+    "Latency_Seconds": 8.18,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q005",
+    "Question": "How does the Karimi et al. survey define the 'coverage' property of a recourse algorithm?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Coverage is the number of individuals for which the algorithm can identify a plausible counterfactual instance (through either recourse type), if at least one solution existed.",
+    "Generated_Answer": "According to the context provided, the Karimi et al. survey defines coverage as the number of individuals for which the algorithm can identify a plausible counterfactual instance (through either recourse type), if at least one solution exists [113].",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 13,
+        "chunk_id": 3,
+        "content": "tively) if one existed, or terminate and return N/A otherwise.\n4.1.2\nPerfect Coverage. Coverage is defined as the number of individuals for which the algo-\nrithm can identify a plausible counterfactual instance (through either recourse type), if at least one\nsolution existed [113]. Communicating the domain of applicability to users is critical for building\ntrust [161, 234], and ideally the algorithm offers recourse to all individuals (i.e., perfect coverage).\n4.1.3\nEfficient Runtime. As explanations/recommendations are likely to be offered in conversa-\ntional settings [101, 105, 157, 212, 240], it is desirable to generate recourse in near-real time. De-\nspite the general underreporting of runtime complexities in the literature, in Table 1 we highlight\nthose algorithms that report efficient wall-clock runtimes that may enable interaction between the\nalgorithm and individual.\n4.1.4\nAccess. Different optimization approaches may require various levels of access to the\nunderlying dataset"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 2,
+        "chunk_id": 4,
+        "content": "experiments on real datasets, we demonstrated that our ARMIN provides incomplete instances with\nquantitatively and qualitatively better actions than existing AR methods.\n1.1\nRelated work\nAlgorithmic Recourse (AR), also referred to as Counterfactual Explanation, has attracted increasing attention [Verma\net al., 2020], and several methods for providing recourse actions have been proposed [Wachter et al., 2018, Ustun et al.,\n2019, Mothilal et al., 2020, Kanamori et al., 2021, Pawelczyk et al., 2020, Karimi et al., 2020a]. On the other hand,\nrecent studies pointed out various issues, e.g., causality [Karimi et al., 2020b, 2021], privacy [Pawelczyk et al., 2023],\ntransparency [Rawal and Lakkaraju, 2020, Kanamori et al., 2022], and so on [Barocas et al., 2020, Venkatasubramanian\nand Alfano, 2020]. One of the critical problems is robustness to the perturbations of features [Slack et al., 2021,\nDominguez-Olmedo et al., 2022]. These studies are motivated by the fact that actions are often"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 20,
+        "chunk_id": 4,
+        "content": "equire new definitions and techniques, and relies on the cross-disciplinary exper-\ntise of a panel of technical and social scientists. It is our hope that this document may guide further\ndiscussion and progress in this direction.\nACKNOWLEDGMENTS\nA.-H. Karimi sincerely thanks the senior authors for encouraging him to undertake the daunting\ntask of writing a first draft, which eventually resulted in this article. A.-H. Karimi is also appre-\nciative of Julius von Kügelgen and Umang Bhatt for fruitful discussions on recourse and fairness,\nMuhammad Waleed Gondal, and the anonymous reviewers for constructive feedback throughout,\nand NSERC and CLS for generous funding support.\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      }
+    ],
+    "Latency_Seconds": 8.31,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q007",
+    "Question": "Which four forms of robustness does the Jiang et al. survey of robust counterfactual explanations identify?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Robustness against Model Changes (MC), Model Multiplicity (MM), Noisy Execution (NE), and Input Changes (IC).",
+    "Generated_Answer": "The Jiang et al. survey does not appear to be referenced in the provided context. However, based on the information given about related work, the four forms of robustness identified in the context are:\n\n1. **C-robustness**: Concerned with adverse perturbations to the features that a counterfactual explanation prescribes to change.\n2. **K-robustness**: Concerned with keeping features as they are, which are subject to adverse perturbations.\n3. **Adverse perturbations to the features that a counterfactual explanation prescribes to change**.\n4. **Adverse perturbations to keep features as they are**.\n\nThese concepts are introduced in the context provided from the paper \"On the Robustness of Sparse Counterfactual Explanations\" by Zhang et al., 2023.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 10,
+        "chunk_id": 1,
+        "content": "terfactual explanations for general user preferences\non variable machine learning systems. arXiv:2309.16146,\n2023.\n[Wang et al., 2023b] Yongjie Wang, Hangwei Qian, Yongjie\nLiu, Wei Guo, and Chunyan Miao. Flexible and robust\ncounterfactual explanations with minimal satisﬁable per-\nturbations. In CIKM, 2023.\n[Zhang et al., 2023] Songming Zhang, Xiaofeng Chen, Ship-\ning Wen, and Zhongshan Li. Density-based reliable and\nrobust explainer for counterfactual explanation. Expert\nSyst. Appl., 226:120214, 2023.\n10"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 28,
+        "chunk_id": 1,
+        "content": "ul\nin practice, we studied how they can be made robust to adverse perturbations that may naturally happen\ndue to unfortunate circumstances, to ensure that the intervention they prescribe remains valid, and potential\nadditional intervention cost that may be needed remains limited. We presented novel notions of robustness,\nwhich concern adverse perturbations to the features that a counterfactual explanation prescribes to change\n(C-robustness) and to keep as they are (K-robustness), respectively. We have annotated ﬁve existing data\nsets with reasonable perturbations and plausibility constraints and developed a competitive counterfactual\nsearch algorithm to search for (robust) counterfactual explanations. Our experimental results show that,\nmost often than not, counterfactual explanations do not happen to be robust by accident. Consequently, if\nadverse perturbations take place, counterfactual explanations may require a much larger cost to be realized\nthan anticipated, or even make it"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 27,
+        "chunk_id": 1,
+        "content": "g the meta-information in web\nsources and the papers that describe the data sets. We have no doubt that domain experts would make\nmuch better choices than ours. Nevertheless, we argue that this is not an important limitation because, as\nlong as the community agrees that our choices are reasonable, they suﬃce to provide a sensible test bed\nfor benchmarking robustness. Hopefully, other researchers will ﬁnd our annotations to be useful for future\nexperiments on the robustness of counterfactual explanations. Similarly, we hope that other researchers will\nﬁnd CoGS to be an interesting algorithm to benchmark against.\n11. Related work\nA number of works in literature propose several new desiderata that are largely orthogonal to our notions\nof robustness but can be important to enhance the practical usability of counterfactual explanations. For\nexample, Dandl et al. [51] consider, besides proximity of z to x according to diﬀerent distances, whether\nother training points x′ are suﬃciently close"
+      }
+    ],
+    "Latency_Seconds": 13.2,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q008",
+    "Question": "What does the Validity after Retraining (VaR) metric measure, according to Jiang et al.?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "The percentage of counterfactual explanations that remain valid after the model they were generated for is updated.",
+    "Generated_Answer": "According to the context provided, the Validity after Retraining (VaR) metric measures the percentage of counterfactual explanations (CEs) that remain valid after the model for which they were generated is updated. Specifically, it evaluates how many CEs remain valid after retraining the model using different strategies such as retraining from scratch using shifted datasets, different portions of the original dataset, incremental retraining, or retraining with varying initialisation conditions.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 6,
+        "content": "CEs\nagainst MC is Validity after Retraining (VaR). Roughly speak-\ning, VaR measures the percentage of CEs that remain\nvalid after the model for which they were generated is up-\ndated. Common update strategies involve retraining from\nscratch using shifted datasets [Upadhyay et al., 2021] or dif-\nferent portions of the original dataset [Hamman et al., 2023],\nincremental retraining [Jiang et al., 2023b], and retraining\nwith varying initialisation conditions [Black et al., 2022c].\nThis metric is also referred to as recourse outcome\ninstability [Pawelczyk et al., 2023b] and recourse reliabil-\nity [Fonseca et al., 2023], the latter being deﬁned for CEs in\na multi-agent multi-step setting. A probabilistic formulation\nof this property is also given in [Bui et al., 2022], where the\nauthors compute lower and upper bounds on the probability\nof a CE remaining valid after retraining of linear models.\nTo quantify robustness against plausible model changes,\nthe Δ-robustness metric was proposed in"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 7,
+        "content": "CE remaining valid after retraining of linear models.\nTo quantify robustness against plausible model changes,\nthe Δ-robustness metric was proposed in [Jiang et al., 2023b].\nIntuitively, a CE is said to be Δ-robust if its validity is pre-\nserved across the whole family of models that can be ob-\n2"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 1,
+        "content": "iction result to-\ngether with the CEs, with the robustness of the latter driving\nthe former. That is, the solution should be a subset of models\nunder MM and their (valid) CEs, from which the prediction\nresults are decided.\n5.1\nRobustness Metrics\nThe robustness evaluation for the ﬁxed prediction scenario\nis very similar to the VaR for robustness against MC prob-\nlem, using validity under alternative models. These models\ncould be arbitrary models trained on (diﬀerent portions of)\nthe same dataset with high accuracy. Thus, the same valid-\nity metric gives an intuitive evaluation of how robust the CEs\nare.\nFor the pending prediction scenario, [Jiang et al., 2024]\npropose desirable properties to characterise the optimal re-\nsulting set of models and CEs. Non-emptiness requires that\nthe resulting set be not empty, and ideally it should contain\nmore than one model and CE such that the prediction result\nis collectively determined by multiple models with their ex-\nplanations (non-triviality)."
+      }
+    ],
+    "Latency_Seconds": 7.31,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q009",
+    "Question": "How do Jiang et al. describe the invalidation rate (IR) formalised by Pawelczyk et al. (2023a)?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "IR is the expectation of the difference between the predicted label of the CE and the labels predicted for its noisy variants; empirically it can be approximated by sampling noise vectors.",
+    "Generated_Answer": "The invalidation rate (IR) formalised by Pawelczyk et al. (2023a) is described as the expectation of the difference between the predicted label of a counterfactual explanation (CE) and those predicted for its noisy variants. Specifically, it is given by:\n\n\\[ \\text{IR} = E_{\\sigma}[M(x') - M(x' + \\sigma)] \\]\n\nWhere \\( M(x') \\) is the predicted label of the CE, \\( M(x' + \\sigma) \\) is the predicted label of the noisy variant of the CE, and \\( \\sigma \\) represents the noise. The expectation is taken over the distribution of noise.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 6,
+        "content": "iﬀerent characterisations of 휎have been proposed\nin the literature.\nFor instance, [Pawelczyk et al., 2023a;\nRaman et al., 2023] assume noise could be sampled from\nsome\nprobability\ndistribution\n[Pawelczyk et al., 2023a;\nRaman et al., 2023].\nA\nmore\nconservative\nformu-\nlation\nis\nused\nin\n[Dominguez-Olmedo et al., 2022;\nLeofante and Lomuscio, 2023],\nwhere the authors take\nan adversarial ML and/or veriﬁcation angle, and deﬁne 휎as\na 푝-norm ball around the CE. A specialised version of the\nlatter is given in [Virgolin and Fracaros, 2023], in which a\nset of feature-speciﬁc perturbation vectors is obtained from\ndomain knowledge.\n6.1\nRobustness Metrics\n[Pawelczyk et al., 2023a] formalise the notion of invalidation\nrate (IR) of a CE as the expectation of the diﬀerence between\nthe predicted label of the CE and those predicted for its noisy\nvariants, i.e. E휎[푀(푥′) −푀(푥′ + 휎)]. When used to empir-\nically evaluate CEs, the expectation component can be ap-\nproximated by sampling a certain number of"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 1,
+        "chunk_id": 2,
+        "content": "months and loan amount £10퐾being rejected\nby a model. In this example, a CE could demonstrate that in-\ncreasing the income to £55퐾would result in the application\nbeing accepted.\nGiven the critical nature of many scenarios in which CEs\nare deployed, e.g. in ﬁnancial or medical settings, it is of\nutmost importance that the recourse they provide is valid,\ni.e. it gives the intended change in outcome, and thus trust-\nworthy. However, recent work has demonstrated that state-\nof-the-art methods for obtaining CEs host major drawbacks\nwhen it comes to the robustness, i.e.\nthe validity under\nchanging conditions, of the CEs they generate. In particu-\nlar, [Pawelczyk et al., 2022] showed that popular approaches\nfor generating CEs may return explanations that are indistin-\nguishable from adversarial examples. Broadly speaking, this\nmeans that CEs are extremely susceptible to small changes\noccurring in the setting they were generated for. To under-\nstand the implications of this, let us return to"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 5,
+        "content": "the assumption that\nthe user receiving them will follow them to the letter. In prac-\ntice, achieving the prescribed feature values exactly might\nnot always be feasible, especially for the continuous features.\nContinuing from the example given in Section 1, a CE may\nsuggest a salary increase of £5342.04 but achieving this ex-\nact change could be beyond the loan applicant’s control. In\nsome other cases, even if the prescribed change is achievable,\nthe user may inadvertently introduce some noise in the im-\nplementation of the recourse. Broadly speaking, robustness\nto NE requires that a CE be invariant to these small changes:\nRobustness against NE.\nAssume an input 푥and a model 푀. Let 푥′ be a CE\nfor 푥. Robustness against NE requires that whenever\na small perturbation 휎is applied to 푥′, validity is\nnot aﬀected, i.e. 푀(푥′) = 푀(푥′ + 휎).\nDiﬀerent characterisations of 휎have been proposed\nin the literature.\nFor instance, [Pawelczyk et al., 2023a;\nRaman et al., 2023] assume noise could be"
+      }
+    ],
+    "Latency_Seconds": 11.4,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q012",
+    "Question": "What new capability does the Kanamori et al. paper add to algorithmic recourse?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "A framework of algorithmic recourse (named ARMIN) that works even when the input instance contains missing values.",
+    "Generated_Answer": "The Kanamori et al. paper adds the capability of providing ordered counterfactual explanations through mixed-integer linear optimization. Specifically, it presents \"Ordered counterfactual explanation by mixed-integer linear optimization\" in the 35th AAAI Conference on Artificial Intelligence, where they introduce an approach that generates a sequence of counterfactual instances that lead to a desired outcome, ordered by the degree of change required. This is an improvement over previous methods which might provide unordered counterfactual instances.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 2,
+        "chunk_id": 4,
+        "content": "experiments on real datasets, we demonstrated that our ARMIN provides incomplete instances with\nquantitatively and qualitatively better actions than existing AR methods.\n1.1\nRelated work\nAlgorithmic Recourse (AR), also referred to as Counterfactual Explanation, has attracted increasing attention [Verma\net al., 2020], and several methods for providing recourse actions have been proposed [Wachter et al., 2018, Ustun et al.,\n2019, Mothilal et al., 2020, Kanamori et al., 2021, Pawelczyk et al., 2020, Karimi et al., 2020a]. On the other hand,\nrecent studies pointed out various issues, e.g., causality [Karimi et al., 2020b, 2021], privacy [Pawelczyk et al., 2023],\ntransparency [Rawal and Lakkaraju, 2020, Kanamori et al., 2022], and so on [Barocas et al., 2020, Venkatasubramanian\nand Alfano, 2020]. One of the critical problems is robustness to the perturbations of features [Slack et al., 2021,\nDominguez-Olmedo et al., 2022]. These studies are motivated by the fact that actions are often"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 11,
+        "chunk_id": 0,
+        "content": "Algorithmic Recourse with Missing Values\nA PREPRINT\nKaggle.\nIBM HR Analytics Employee Attrition & Performance.\nhttps://www.kaggle.com/pavansubhasht/\nibm-hr-analytics-attrition-dataset, 2017. Accessed: 2023-01-26.\nK. Kanamori, T. Takagi, K. Kobayashi, and H. Arimura. DACE: Distribution-aware counterfactual explanation by mixed-integer\nlinear optimization. In Proceedings of the 29th International Joint Conference on Artificial Intelligence, pages 2855–2862, 2020.\nK. Kanamori, T. Takagi, K. Kobayashi, Y. Ike, K. Uemura, and H. Arimura. Ordered counterfactual explanation by mixed-integer\nlinear optimization. In Proceedings of the 35th AAAI Conference on Artificial Intelligence, pages 11564–11574, 2021.\nK. Kanamori, T. Takagi, K. Kobayashi, and Y. Ike. Counterfactual explanation trees: Transparent and consistent actionable recourse\nwith decision trees. In Proceedings of the 25th International Conference on Artificial Intelligence and Statistics, pages 1846–1870,\n2022.\nA.-H. Karimi, G."
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 3,
+        "chunk_id": 4,
+        "content": "ts of explanations\ncan be found elsewhere [21, 36, 157, 226]. Other works of interest are available on XAI [1, 2, 32, 68,\n79, 86, 94, 139, 150, 163], causal and counterfactual inference, [82, 95, 166, 185, 186, 206, 245], and\noptimization [33, 174, 214].\n2\nBACKGROUND\n2.1\nRecourse Definitions\nIn its relatively young field, algorithmic recourse has been defined as, for example, “an actionable\nset of changes a person can undertake in order to improve their outcome” [109], “the ability of\na person to obtain a desired outcome from a fixed model” [223], and “the systematic process of\nreversing unfavorable decisions by algorithms and bureaucracies across a range of counterfactual\nscenarios” [226]. Similarly, legal recourse pertains to actions by individuals or corporations to rem-\nedy legal difficulties [235]. Parallel to this, explanations aim to, at least in part, assist data-subjects\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      }
+    ],
+    "Latency_Seconds": 7.94,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q014",
+    "Question": "Which imputation methods does Kanamori et al. use for its ImputationAR baseline?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Mean imputation, k-NN imputation, and MICE.",
+    "Generated_Answer": "Kanamori et al. use three major imputation methods for their ImputationAR baseline:\n\n1. Mean imputation\n2. k-NN imputation [Troyanskaya et al., 2001]\n3. MICE [van Buuren and Groothuis-Oudshoorn, 2011]\n\nThese methods are employed as part of the ImputationAR baseline by Kanamori et al. as described in the context provided.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 8,
+        "chunk_id": 1,
+        "content": "ng values. Thus, we consider\ntwo baselines by extending the existing methods. One is ImputationAR, which applies an existing AR method to the\nimputed instance ˆx by an existing imputation method including mean imputation, k-NN imputation [Troyanskaya et al.,\n2001], and MICE [van Buuren and Groothuis-Oudshoorn, 2011]. The other baseline is RobustAR [Dominguez-Olmedo\net al., 2022], where we replace its uncertainty set with a set of N imputation candidates sampled over I˜x.\n5.1\nComparison under MCAR situation\nFirstly, we examined each method under the MCAR situation. To simulate the MCAR mechanism, we randomly\nselected a few features for each test instance x and dropped its values of the selected features. We set the total number\nof missing features D∗∈{1, 2, 3}. We measured the valid ratio, which is the ratio that an obtained action a is valid for\nthe original instance x (i.e., h(x + a) = +1) and the average cost c(a). In Appendix D, we also report the average\nsign agreement score"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 18,
+        "chunk_id": 2,
+        "content": "methods\nwith an imputation method. Let i: ˜\nX →X be an imputation method that replaces the missing values of a given\nincomplete instance ˜x ∈˜\nX with some plausible values and returns an imputed instance ˆx ∈X. Our ImputationAR\nwith an imputation method i consists of the following two steps:\n1. For a given instance ˜x ∈˜\nX with missing values, we obtain its imputed instance ˆx = i(˜x) by applying the\nimputation method i.\n2. We optimize an action for the imputed instance ˆx instead of ˜x by calculating an optimal action a∗for ˆx using\nthe existing method for solving the problem (1).\nAs an imputation method i, we employ three major methods: mean imputation [Little and Rubin, 2019], k-NN\nimputation [Troyanskaya et al., 2001], and MICE [van Buuren and Groothuis-Oudshoorn, 2011]. We implemented each\n18"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 3,
+        "chunk_id": 4,
+        "content": "andom\n(MAR) if M˜x depends only on O˜x; (iii) missing not at random (MNAR) if neither MCAR nor MAR holds. Note that\nexisting methods for missing data analysis often rely on the MAR or MCAR assumption for their soundness [Little and\nRubin, 2019]. In our experiments of Section 5, we evaluated the efficacy of our method in each situation.\nA common approach to handling missing values is imputation that replaces them with plausible values and obtains\nimputed instances ˆx ∈X. There exist several practical methods, such as multivariate imputation by chained equa-\ntions (MICE) [van Buuren and Groothuis-Oudshoorn, 2011] and k-nearest neighbor (k-NN) imputation [Troyanskaya\net al., 2001].\n3"
+      }
+    ],
+    "Latency_Seconds": 7.07,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q015",
+    "Question": "What sample size N and confidence parameter rho does Kanamori et al. set for ARMIN in its main experiments?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "N = 100 and rho = 0.75.",
+    "Generated_Answer": "Based on the information provided in the context, Kanamori et al. did not explicitly set specific sample sizes \\(N\\) and confidence parameters \\(\\rho\\) for their main experiments in the paper \"Algorithmic Recourse with Missing Values\". The context mentions sensitivity analyses of the sampling size \\(N\\) but does not specify the exact values used in the main experiments. Similarly, it discusses the sensitivity analyses of the confidence parameter \\(\\rho\\) but does not detail the specific values used in the main experiments. Therefore, the information about the exact sample size \\(N\\) and confidence parameter \\(\\rho\\) used in the main experiments cannot be determined from the given context.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 21,
+        "chunk_id": 0,
+        "content": "Algorithmic Recourse with Missing Values\nA PREPRINT\nD.2\nComplete results of MCAR situation\nWe show complete experimental results under the MCAR mechanism. Figures 6 to 8 present the complete experimental\nresults of our baseline comparison under the MCAR situation with D∗∈{1, 2, 3}. We also show the results of the\naverage computational time in Tables 3 to 5 and the average sign agreement score in Figures 9 to 11.\nD.3\nAdditional results of trade-off analysis\nFigures 12 and 13 shows the additional results of our path analysis under the MAR and MNAR situations, respectively.\nWe also show the results of the sensitivity analyses of the confidence parameter ρ in Figure 14, where we considered the\nMCAR situation and set D∗= 2.\nD.4\nSensitivity analyses of sampling size\nTo examine the sensitivity with respect to the sampling size N of our ARMIN, we conducted its sensitivity analyses by\nvarying the values of N. We used the LR classifier on each dataset under the MCAR mechanism and set D∗= 2. We"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 9,
+        "chunk_id": 2,
+        "content": "x) = 0.29)\n(b) Path analysis of the confidence parameter ρ\nFigure 4: Experimental results of our trade-off analyses on the GiveMeCredit dataset. (a) Experimental results of the\nsensitivity analyses of the confidence parameter ρ with 95% confidence intervals. (b) Experimental results of the path\nanalyses under the MAR situation. Here, we selected two examples, and additional examples are shown in Appendix D.\n5.3\nAnalysis of trade-off between validity and cost\nFinally, we analyze the trade-off between the validity and cost of our ARMIN by varying its confidence parameter\nρ ∈{0.5, 0.55, . . . , 0.9}. We show the results on the GiveMeCredit dataset under the MAR and MNAR situation.\nFigure 4(a) shows the results of the valid ratio and average cost for each ρ. We observed that while both the valid\nratio and average cost are increased by increasing ρ, the increase of the valid ratio was almost saturated when ρ ≥0.6.\nThis result suggests that there exists an appropriate value of ρ that makes"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 30,
+        "chunk_id": 0,
+        "content": "Algorithmic Recourse with Missing Values\nA PREPRINT\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n0.6\n0.7\n0.8\n0.9\nValid Ratio\nFICO\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n1.8\n2.0\n2.2\n2.4\n2.6\nAverage Cost\nFICO\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n0.4\n0.6\n0.8\nValid Ratio\nEmployeeAttrition\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n0.5\n1.0\n1.5\n2.0\n2.5\nAverage Cost\nEmployeeAttrition\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n0.70\n0.75\n0.80\n0.85\nValid Ratio\nStudentPerformance\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n5.0\n7.5\n10.0\n12.5\n15.0\nAverage Cost\nStudentPerformance\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\nValid Ratio\nWineQuality\n0.5\n0.6\n0.7\n0.8\n0.9\nConﬁdence Parameter ρ\n1\n2\n3\n4\n5\nAverage Cost\nWineQuality\nFigure 14: Experimental results of our sensitivity analyses of the confidence parameter ρ.\n100\n200\n300\n400\n500\nSampling Size N\n0.82\n0.83\n0.84\n0.85\nValid Ratio\nFICO\n100\n200\n300\n400\n500\nSampling Size N\n2.0\n2.2\n2.4\nAverage Cost\nFICO\n100\n200\n300\n400\n500\nSampling"
+      }
+    ],
+    "Latency_Seconds": 10.32,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q017",
+    "Question": "What two definitions of robustness do Virgolin and Fracaros propose for counterfactual explanations?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "One for the features the counterfactual explanation prescribes to change and one for the features it prescribes to keep as they are (C-robustness and K-robustness).",
+    "Generated_Answer": "Virgolin and Fracaros propose two definitions of robustness for counterfactual explanations:\n\n1. **C-robustness**: This concerns adverse perturbations to the features that a counterfactual explanation prescribes to change.\n2. **K-robustness**: This concerns adverse perturbations to the features that a counterfactual explanation prescribes to keep as they are.\n\nThese definitions are introduced in the context of ensuring that the intervention prescribed by counterfactual explanations remains valid even when faced with natural adverse perturbations.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "On the Robustness of Sparse Counterfactual Explanations\nto Adverse Perturbations\nMarco Virgolin∗\nCentrum Wiskunde & Informatica, Science Park 123, 1098 XG Amsterdam, the Netherlands\nSaverio Fracaros\nUniversity of Trieste, via Weiss 2, 34128 Trieste, Italy\nAbstract\nCounterfactual explanations (CEs) are a powerful means for understanding how decisions made by algorithms\ncan be changed. Researchers have proposed a number of desiderata that CEs should meet to be practically\nuseful, such as requiring minimal eﬀort to enact, or complying with causal models. We consider a further\naspect to improve the usability of CEs: robustness to adverse perturbations, which may naturally happen\ndue to unfortunate circumstances. Since CEs typically prescribe a sparse form of intervention (i.e., only\na subset of the features should be changed), we study the eﬀect of addressing robustness separately for\nthe features that are recommended to be changed and those that are not. Our deﬁnitions are workable\nin"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 28,
+        "chunk_id": 1,
+        "content": "ul\nin practice, we studied how they can be made robust to adverse perturbations that may naturally happen\ndue to unfortunate circumstances, to ensure that the intervention they prescribe remains valid, and potential\nadditional intervention cost that may be needed remains limited. We presented novel notions of robustness,\nwhich concern adverse perturbations to the features that a counterfactual explanation prescribes to change\n(C-robustness) and to keep as they are (K-robustness), respectively. We have annotated ﬁve existing data\nsets with reasonable perturbations and plausibility constraints and developed a competitive counterfactual\nsearch algorithm to search for (robust) counterfactual explanations. Our experimental results show that,\nmost often than not, counterfactual explanations do not happen to be robust by accident. Consequently, if\nadverse perturbations take place, counterfactual explanations may require a much larger cost to be realized\nthan anticipated, or even make it"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 27,
+        "chunk_id": 3,
+        "content": "al explanations\nare studied through the lens of causality. For recent surveys on counterfactual explanations, the reader is\nreferred to [58, 16, 59].\nWe now focus on works that deal with some notion of robustness and/or perturbations explicitly. Artelt\net al. [60] present theoretical results on the eﬀect of perturbations (e.g., under linear f), evaluate the eﬀect\nof diﬀerent type of perturbations (Gaussian, uniform, masking) with three classiﬁers, and ﬁnd that coun-\nterfactual explanations that obey plausibility constraints are more robust than counterfactual explanations\nthat do not. Diﬀerently from us, Artelt et al. do not consider sparsity and do not optimize for robust-\nness.\nThe work by Karimi et al. [50] extends [49] to consider possible uncertainties in causal modelling.\nIn [17], it is shown that a malicious actor can, in principle, jointly optimize small perturbations and the\nmodel f such that, when applying the perturbations to points of a speciﬁc group (e.g., white males),"
+      }
+    ],
+    "Latency_Seconds": 9.56,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q019",
+    "Question": "Which counterfactual search algorithm do Virgolin and Fracaros use for their robustness experiments?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "CoGS (Counterfactual Genetic Search), their own genetic algorithm.",
+    "Generated_Answer": "Virgolin and Fracaros use the Counterfactual Genetic Search (CoGS) algorithm for their robustness experiments. This is mentioned in the context on page 28 of \"On the Robustness of Sparse Counterfactual Explanations\":\n\n\"To provide experimental results concerning robustness (Sec. 9), we firstly seek a counterfactual search algorithm that performs best overall among several candidates. To that end, we consider and benchmark the following algorithms from the literature, that can operate upon black-box f: Diverse Counterfactual Explanations (DiCE) [22], Growing Spheres (GrSp) [23], LOcal Rule-based Explanations (LORE) [20, 42], and the Nelder-Mead method (NeMe) [43, 44]. Furthermore, we devise our own algorithm, a genetic algorithm that we name Counterfactual Genetic Search (CoGS)2.\"\n\nTherefore, the counterfactual search algorithm used for robustness experiments is CoGS.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "On the Robustness of Sparse Counterfactual Explanations\nto Adverse Perturbations\nMarco Virgolin∗\nCentrum Wiskunde & Informatica, Science Park 123, 1098 XG Amsterdam, the Netherlands\nSaverio Fracaros\nUniversity of Trieste, via Weiss 2, 34128 Trieste, Italy\nAbstract\nCounterfactual explanations (CEs) are a powerful means for understanding how decisions made by algorithms\ncan be changed. Researchers have proposed a number of desiderata that CEs should meet to be practically\nuseful, such as requiring minimal eﬀort to enact, or complying with causal models. We consider a further\naspect to improve the usability of CEs: robustness to adverse perturbations, which may naturally happen\ndue to unfortunate circumstances. Since CEs typically prescribe a sparse form of intervention (i.e., only\na subset of the features should be changed), we study the eﬀect of addressing robustness separately for\nthe features that are recommended to be changed and those that are not. Our deﬁnitions are workable\nin"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 11,
+        "chunk_id": 3,
+        "content": "ls on the diﬀerent data sets. For the\ndiscovery of counterfactual examples, we consider observations x such that f(x)̸ = t, from the test sets of\nthe cross-validation.\n7.3. Counterfactual search algorithms\nTo provide experimental results concerning robustness (Sec. 9), we ﬁrstly seek a counterfactual search\nalgorithm that performs best overall among several candidates. To that end, we consider and benchmark\nthe following algorithms from the literature, that can operate upon black-box f: Diverse Counterfactual\nExplanations (DiCE) [22], Growing Spheres (GrSp) [23], LOcal Rule-based Explanations (LORE) [20, 42],\nand the Nelder-Mead method (NeMe) [43, 44]. Furthermore, we devise our own algorithm, a genetic algorithm\nthat we name Counterfactual Genetic Search (CoGS)2.\nThe settings used for the algorithms are reported in Table 3. We describe the algorithms below. Note\nthat all of the algorithms are heuristics with no guarantee of discovering optimal (i.e., minimal distance)\ncounterfactual"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 28,
+        "chunk_id": 1,
+        "content": "ul\nin practice, we studied how they can be made robust to adverse perturbations that may naturally happen\ndue to unfortunate circumstances, to ensure that the intervention they prescribe remains valid, and potential\nadditional intervention cost that may be needed remains limited. We presented novel notions of robustness,\nwhich concern adverse perturbations to the features that a counterfactual explanation prescribes to change\n(C-robustness) and to keep as they are (K-robustness), respectively. We have annotated ﬁve existing data\nsets with reasonable perturbations and plausibility constraints and developed a competitive counterfactual\nsearch algorithm to search for (robust) counterfactual explanations. Our experimental results show that,\nmost often than not, counterfactual explanations do not happen to be robust by accident. Consequently, if\nadverse perturbations take place, counterfactual explanations may require a much larger cost to be realized\nthan anticipated, or even make it"
+      }
+    ],
+    "Latency_Seconds": 13.39,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q020",
+    "Question": "How many sampled K-neighbors (m) do Virgolin and Fracaros use to compute the K-robustness score in their reported results?",
+    "Category": "single_fact",
+    "Answerability": "Answerable",
+    "Reference_Answer": "m = 64.",
+    "Generated_Answer": "Virgolin and Fracaros use an approximation of the ground-truth by calculating the K-robustness score over 1000 samples of the counterfactual example. This is mentioned in the context as:\n\n\"We approximate the ground-truth of the true K-robustness by calculating the K-robustness score over 1000 samples over the counterfactual example discovered using a specific m.\"",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 32,
+        "chunk_id": 4,
+        "content": "ing m for K-robustness\nWe report results on setting the hyper-parameter m for computing K-robustness scores (see Eq. (8)). In\nparticular, we run CoGS accounting for K-robustness in the loss function, for m ∈{0, 4, 16, 64}. Note that\nusing m = 0 corresponds to not accounting for K-robustness.\nB.2.1. Achieved K-robustness\nWe consider how increasing m improves K-robustness, using an an approximated ground-truth.\nWe\napproximate the ground-truth of the true K-robustness by calculating the K-robustness score over 1000\nsamples over the counterfactual example discovered using a speciﬁc m.\n32"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 10,
+        "chunk_id": 0,
+        "content": "Figure 4: Example of K-perturbations. The counterfactual example zv is vulnerable to K-perturbations because these can lead\nto the red area; the same is not true for zb. If it is not plausible to reduce blood pressure, then K-perturbations to zv can lead\nto permanent invalidity. Else, they can be resolved with further intervention, in terms of blood pressure.\nfunction that returns 1 for K-neighbors that share the same class of z (i.e., f(z)), and 0 for those that do\nnot. Taken a random sample of m K-neighbors, we deﬁne the following score:\nK-robustness score(z, m) = 1\nm\nm\nX\ni=1\n1f(z)(z′\ni).\n(8)\nWe remark that even if K-robustness score(z, m) = 1, we are not guaranteed that z is K-robust, because\nthe score is an approximation. Still, this score can be used to determine which counterfactual examples are\npreferable to pursue in that they are associated with a smaller risk that adverse perturbations will invalidate\nthem (permanently or not).\n7. Experimental setup\nIn this section, we"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 33,
+        "chunk_id": 1,
+        "content": "unt for it, in particular for increasing m in the calculation of the\nK-robustness score. The ﬁgure shows that accounting for C-robustness comes at no signiﬁcant extra cost\nin runtime. This follows from the fact that we can use Deﬁnition 4 and thus only need to compute the\nmaximal C-setback. Conversely, accounting for K-robustness can come at a relatively large additional cost\nin runtime, which appears to be linear in m (note that m grows exponentially in the plots). Fortunately, the\nexperimental results of B.2 suggest that small values of m are often suﬃcient to obtain good K-robustness\nscores.\nB.2.3. Additional cost from accounting for robustness\nFig. 15 expands on the results reported in Fig. 11 by including diﬀerent values of m. We do not ﬁnd\nmajor diﬀerences based on the setting of m for computing the K-robustness score, except for the tails of\nthe respective distributions on Hou, and slightly less so on Pro (for both types of f). Accounting for C-\nand K-robustness at the same"
+      }
+    ],
+    "Latency_Seconds": 7.92,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q022",
+    "Question": "Under which robustness category does the Jiang et al. survey place Virgolin and Fracaros, how does it describe their perturbations and method, and what model access does the original paper assume?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "The survey covers the work under robustness against Noisy Executions (NE). It describes it as using feature-specific perturbation vectors obtained from domain knowledge, with a robustness term similar to IR added to the loss and minimised by a genetic algorithm. The original paper assumes access only to the model's predictions (no parameters or gradients).",
+    "Generated_Answer": "The Jiang et al. survey places the work of Virgolin and Fracaros under the category of robust counterfactual explanations that are resilient to adverse perturbations. According to the context provided, Virgolin and Fracaros consider robustness to adverse perturbations, which may naturally occur due to unfortunate circumstances. They study the effect of addressing robustness separately for the features that are recommended to be changed and those that are not, focusing on the sparse form of intervention required by counterfactual explanations.\n\nIn terms of model access, the original paper assumes access to the original model on which the counterfactual explanations are generated, but it does not specify any assumptions regarding the model types and architectures for the alternative models. The Jiang et al. survey discusses the problem of deciding the prediction result together with counterfactual explanations, driven by the robustness of the latter. This implies that the original paper does not explicitly address the scenario where the prediction result for one input is pending and decided by all models under Multi-Model (MM) framework, unlike the concerns raised by Black et al. in their work.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "On the Robustness of Sparse Counterfactual Explanations\nto Adverse Perturbations\nMarco Virgolin∗\nCentrum Wiskunde & Informatica, Science Park 123, 1098 XG Amsterdam, the Netherlands\nSaverio Fracaros\nUniversity of Trieste, via Weiss 2, 34128 Trieste, Italy\nAbstract\nCounterfactual explanations (CEs) are a powerful means for understanding how decisions made by algorithms\ncan be changed. Researchers have proposed a number of desiderata that CEs should meet to be practically\nuseful, such as requiring minimal eﬀort to enact, or complying with causal models. We consider a further\naspect to improve the usability of CEs: robustness to adverse perturbations, which may naturally happen\ndue to unfortunate circumstances. Since CEs typically prescribe a sparse form of intervention (i.e., only\na subset of the features should be changed), we study the eﬀect of addressing robustness separately for\nthe features that are recommended to be changed and those that are not. Our deﬁnitions are workable\nin"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 0,
+        "content": "result is ﬁxed to one produced by one of the original models,\nand the robustness target is to guard the CE validity against\npotential future changes in the classiﬁer: a robust CE should\nideally remain valid under the alternative models. This form\nof robustness is very similar to robustness against MC. The\ndiﬀerences are that the MM problem does not assume a data\ndistribution shift causing the model shifts, and there are no\nassumptions on the model types and architectures for the\noriginal model on which the CEs are generated and for the\nalternative models.\nRecent advances have also raised concerns about when the\nprediction result for one input is pending and to be decided by\nall the models under MM, instead of assuming a result from\none original model [Black et al., 2022a]. [Jiang et al., 2024]\ninvestigate the problem of deciding the prediction result to-\ngether with the CEs, with the robustness of the latter driving\nthe former. That is, the solution should be a subset of models\nunder"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 7,
+        "content": "CE remaining valid after retraining of linear models.\nTo quantify robustness against plausible model changes,\nthe Δ-robustness metric was proposed in [Jiang et al., 2023b].\nIntuitively, a CE is said to be Δ-robust if its validity is pre-\nserved across the whole family of models that can be ob-\n2"
+      }
+    ],
+    "Latency_Seconds": 13.8,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q023",
+    "Question": "What model information do ARMIN's MILO formulations encode, and what access/solution trade-offs does the Karimi et al. survey associate with solver-based recourse?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "ARMIN formulates recourse for model families using their internal representations: a linear classifier uses its coefficient vector; a ReLU network uses neuron coefficient vectors and weights; and a tree ensemble uses tree weights, leaf predictions and regions. The Karimi et al. survey says (M)ILP/verification-based solver approaches typically offer optimality and perfect coverage, but rely on white-box access to fixed model parameters. Therefore, ARMIN's MILO formulations require the corresponding model structure and parameters; Kanamori et al. do not themselves label this access level 'white-box'.",
+    "Generated_Answer": "ARMIN's MILO formulations encode the model information necessary to generate counterfactual explanations, which includes the decision function \\( f \\) of the classifier \\( h \\) and the logistic loss \\( l_{\\text{logistic}} \\). Specifically, the formulations extend existing MILO-based AR methods to accommodate the given classifier \\( h \\).\n\nRegarding the access/solution trade-offs associated with solver-based recourse as discussed in the Karimi et al. survey, the paper mentions that solving the formulated problem is challenging for large \\( N \\) and complex classifiers \\( h \\), such as random forests with many decision trees. The survey notes that the complexity increases due to the total number of constraints in the formulated problem, which depends on both \\( N \\) and the complexity of \\( h \\). This implies that while solver-based approaches can provide optimal solutions, they may face computational challenges when dealing with large datasets and complex models. The trade-off lies in the balance between the quality of the solution (ensuring optimality) and the computational resources required to solve the problem efficiently.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 2,
+        "chunk_id": 4,
+        "content": "experiments on real datasets, we demonstrated that our ARMIN provides incomplete instances with\nquantitatively and qualitatively better actions than existing AR methods.\n1.1\nRelated work\nAlgorithmic Recourse (AR), also referred to as Counterfactual Explanation, has attracted increasing attention [Verma\net al., 2020], and several methods for providing recourse actions have been proposed [Wachter et al., 2018, Ustun et al.,\n2019, Mothilal et al., 2020, Kanamori et al., 2021, Pawelczyk et al., 2020, Karimi et al., 2020a]. On the other hand,\nrecent studies pointed out various issues, e.g., causality [Karimi et al., 2020b, 2021], privacy [Pawelczyk et al., 2023],\ntransparency [Rawal and Lakkaraju, 2020, Kanamori et al., 2022], and so on [Barocas et al., 2020, Venkatasubramanian\nand Alfano, 2020]. One of the critical problems is robustness to the perturbations of features [Slack et al., 2021,\nDominguez-Olmedo et al., 2022]. These studies are motivated by the fact that actions are often"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 19,
+        "chunk_id": 3,
+        "content": "∗), +1), where llogistic is the logistic loss and f is the decision\nfunction of h such that h(x) = sgn(f(x)).\n3. If h(ˆx∗+ ˆa∗) = +1, then return ˆa∗\n4. Update an action ˆa∗by adding the constraint h(ˆx∗+ a) = +1 to the MILO formulation and solving the\nMILO problem, and go to Step 2.\nThe above algorithm avoids increasing constraints by sequentially adding the constraints one by one to the MILO\nformulation. Because the action ˆa∗obtained by the algorithm satisfies h(ˆx′ + ˆa∗) = +1 for all ˆx′ ∈({ˆx} ∪S) and\nminimizes its cost, we can guarantee that ˆa∗is an optimal solution to the problem (12). In our experiments, we observed\nthat the above algorithm often stopped after about 10 iterations even for N ≥100, and it was faster than adding all the\nconstraints to the MILO formulation.\nC.3\nARMIN\nHeuristic solution approach. As shown in (4), (10) and (11), we can formulate (3) as a MILO problem by extending\nthe existing MILO-based AR methods. However, solving the formulated problem is"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 19,
+        "chunk_id": 4,
+        "content": "4), (10) and (11), we can formulate (3) as a MILO problem by extending\nthe existing MILO-based AR methods. However, solving the formulated problem is challenging for a large N and a\ncomplex classifier h (e.g., a random forest classifier with over 200 decision trees). This is because the total number of\nconstraints in the formulated problem increases depending on N and h. Indeed, in our preliminary experiments, we\n1https://scikit-learn.org/stable/modules/classes.html#module-sklearn.impute\n19"
+      }
+    ],
+    "Latency_Seconds": 15.25,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q025",
+    "Question": "How is Virgolin and Fracaros's K-robustness score estimated, and how is it related—but not equivalent—to Jiang et al.'s invalidation rate (IR)?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Virgolin and Fracaros sample m K-neighbors and average an indicator that is 1 when a sampled neighbor has the same class as the counterfactual z and 0 otherwise. It estimates the fraction of K-neighbors that preserve z's class. Jiang et al. define IR as the expected difference between the CE's predicted label and labels of noisy variants, approximated by sampling noise vectors; they describe the robustness term in Virgolin and Fracaros as similar to IR. The measures are related because both assess sensitivity to perturbations using sampling, but they are not the same quantity: the K-score is a same-class fraction over K-neighbors, whereas IR is an expected label difference over noisy variants.",
+    "Generated_Answer": "The context provided does not contain any information about Virgolin and Fracaros's K-robustness score estimation or its relation to Jiang et al.'s invalidation rate (IR). Therefore, the information requested is not available in the retrieved evidence.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 31,
+        "chunk_id": 2,
+        "content": "erature of robustness, and eﬀect of increasing m for the computation of the\nK-robustness score.\nB.1. Invalidity of counterfactual explanations\nWe now show whether the fact that best-found counterfactual explanations are typically not robust is\nassociated with a greater chance that perturbations can make them invalid, i.e., such that f(z′)̸ = t where z′\nis the point to which z⋆is shifted by the perturbation. Here, we do not consider whether further intervention\nmay or may not be possible. Fig. 12 shows the average frequency with which perturbations cause invalidity.\n31"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 33,
+        "chunk_id": 1,
+        "content": "unt for it, in particular for increasing m in the calculation of the\nK-robustness score. The ﬁgure shows that accounting for C-robustness comes at no signiﬁcant extra cost\nin runtime. This follows from the fact that we can use Deﬁnition 4 and thus only need to compute the\nmaximal C-setback. Conversely, accounting for K-robustness can come at a relatively large additional cost\nin runtime, which appears to be linear in m (note that m grows exponentially in the plots). Fortunately, the\nexperimental results of B.2 suggest that small values of m are often suﬃcient to obtain good K-robustness\nscores.\nB.2.3. Additional cost from accounting for robustness\nFig. 15 expands on the results reported in Fig. 11 by including diﬀerent values of m. We do not ﬁnd\nmajor diﬀerences based on the setting of m for computing the K-robustness score, except for the tails of\nthe respective distributions on Hou, and slightly less so on Pro (for both types of f). Accounting for C-\nand K-robustness at the same"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 32,
+        "chunk_id": 4,
+        "content": "ing m for K-robustness\nWe report results on setting the hyper-parameter m for computing K-robustness scores (see Eq. (8)). In\nparticular, we run CoGS accounting for K-robustness in the loss function, for m ∈{0, 4, 16, 64}. Note that\nusing m = 0 corresponds to not accounting for K-robustness.\nB.2.1. Achieved K-robustness\nWe consider how increasing m improves K-robustness, using an an approximated ground-truth.\nWe\napproximate the ground-truth of the true K-robustness by calculating the K-robustness score over 1000\nsamples over the counterfactual example discovered using a speciﬁc m.\n32"
+      }
+    ],
+    "Latency_Seconds": 8.21,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q026",
+    "Question": "How does the independence-of-features assumption in Virgolin and Fracaros relate to the limitation of independently manipulable features raised in the Karimi et al. survey?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Karimi et al. caution that assuming independently manipulable features may lead to suboptimal or infeasible actions. Virgolin and Fracaros assume independence and acknowledge that, if feature i depends on feature j, changing or perturbing j implicitly changes i, so the C/K separation may not remain meaningful.",
+    "Generated_Answer": "The independence-of-features assumption in the context of counterfactual explanations, as discussed in the paper \"On the Robustness of Sparse Counterfactual Explanations\" (Page 26), relates to the limitation of independently manipulable features mentioned in the Karimi et al. survey (Page 4).\n\nIn the Karimi et al. survey, it is highlighted that the implicit assumption of independently manipulable features can lead to sub-optimal or infeasible actions. This limitation arises because the survey suggests that actions should be interpreted as interventions in a causal model rather than independent feature manipulations derived from contrastive explanations.\n\nThe independence-of-features assumption, as described in the \"On the Robustness of Sparse Counterfactual Explanations\" paper, simplifies the introduction of concepts by assuming feature independence. However, this assumption is often unrealistic in real-world scenarios, as stated in the paper. The authors note that while this assumption is commonly made in literature due to the lack of causal models, it can lead to limitations such as the inability to change one feature without affecting others if they are causally dependent.\n\nThus, the independence-of-features assumption, which simplifies the explanation process, can lead to sub-optimal or infeasible actions when applied to real-world scenarios where features are not truly independent. This aligns with the caution raised in the Karimi et al. survey about the limitations of independently manipulable features.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 4,
+        "chunk_id": 3,
+        "content": "ns (a.k.a. flipsets [223]) that should\nbe performed to achieve a favorable outcome in the future. In this regard, several works have used\ncontrastive explanations to directly infer actionable recommendations [109, 209, 223, 234] where\nactions are considered as independent shifts to the feature values of the individual (P) that results\nin the contrast (Q). Recent work, however, has cautioned against this approach, citing the implicit\nassumption of independently manipulable features as a potential limitation that may lead to sub-\noptimal or infeasible actions [21, 114, 146, 226]. To overcome this, Karimi et al. [114] suggest that\nactions may instead be interpreted as interventions in a causal model of the world in which actions\nwill take place and not as independent feature manipulations derived from contrastive explana-\ntions. Formulated in this manner, for example, using a structural causal model (SCM) [184],\nthe downstream effects of interventions on other variables in the model"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 3,
+        "chunk_id": 2,
+        "content": "f f nearby x\n(e.g., to explain f’s local behavior) [15, 21, 22].\nFor the sake of readability, we provide formal deﬁnitions only for the case when all features are numerical\n(i.e., x ∈Rd, d1 = d, d2 = 0). For completeness, we include explanations of how to deal with categorical\nfeatures in the running text. Furthermore, we assume feature independence. While this assumption is rarely\nentirely met in real-world practice, it is commonly done in literature due to the lack of causal models (e.g.,\nonly four works consider causality in Sec. 11), and allows us to greatly simplify the introduction of the\nconcepts hereby presented. We discuss the limitations that arise from this assumption in Sec. 10.\nA counterfactual explanation is represented by a description of how x needs to be changed to obtain\nz. In other words, a counterfactual explanation is a prescription on what interventions should be made to\nreach the respective counterfactual example. For example, under the assumption of"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 26,
+        "chunk_id": 4,
+        "content": "ndence, as done here, one models the neighborhood of a counterfactual example with a box (under L1)\nor a hyper-sphere (under L2). However, if certain features have a causal dependency on other features, this\nneighborhood morphs into other, possibly very complex shapes (e.g., when this dependency is not linear).\nImportantly, if feature i depends on j, then one cannot change j without having that i implicitly changes\ntoo. Similarly, a perturbation happening to j would implicitly alter i. As our framework currently assumes\nindependence, it is important to study to what extent separation between C and K remains possible and\nmeaningful. For many real-world problems, it is reasonable to expect that there exist groups of features\nthat are truly independent from other groups of features. Thus, the study of robustness for C and K could\nbe carried out at a higher level, i.e., of feature groups in future work.\nThere is a number of further aspects worth mentioning when one wishes to implement a"
+      }
+    ],
+    "Latency_Seconds": 19.1,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q027",
+    "Question": "What do Kanamori et al. and Virgolin and Fracaros each report about the cost penalty of seeking robustness?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Kanamori et al. find RobustAR's average cost always larger than ARMIN's, and ARMIN's cost rises sharply when the confidence parameter rho exceeds about 0.9. Virgolin and Fracaros find that robust counterfactuals cost between 1x and 7x the ideal cost, which is still much less than the extra intervention non-robust ones need when perturbations occur.",
+    "Generated_Answer": "Based on the provided context, Kanamori et al. and Virgolin and Fracaros do not have specific reports about the cost penalty of seeking robustness in the context of sparse counterfactual explanations. The context discusses findings from On the Robustness of Sparse Counterfactual Explanations.pdf, which mentions that the cost when accounting for robustness is between 1× and 7× the ideal cost, whereas the increase in cost without considering robustness can be between 5× and 10× the ideal cost, with up to 100×. \n\nThe context also indicates that Kanamori et al. and Virgolin and Fracaros might be part of the broader discussion on robustness trade-offs in machine learning, but their specific contributions regarding the cost penalty of seeking robustness are not detailed in the provided information.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 26,
+        "chunk_id": 0,
+        "content": "can be suboptimal. Importantly, we ﬁnd that the cost when accounting for robustness is between 1× and\n7× the ideal cost, i.e., when not accounting for robustness. In general, this is signiﬁcantly smaller than\nthe increase incurred when perturbations take place and robustness is not accounted for, as reported before\n(generally between 5× and 10× the ideal cost, with up to 100×).\nThese results conﬁrm that even though robust counterfactual explanations are, in principle, more costly\nto pursue than non-robust ones, if random perturbations take place, robust counterfactual explanations\nrequire much less additional intervention than non-robust ones.\n10. Discussion\nOur experimental results provide a positive answer to all three research questions. Most often than\nnot, counterfactual explanations are not robust, be it in terms of the features whose value is prescribed to\nbe changed (C-robustness), or those whose value is prescribed to be kept as is (K-robustness). Moreover,\nnon-robust"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 33,
+        "chunk_id": 2,
+        "content": "r the tails of\nthe respective distributions on Hou, and slightly less so on Pro (for both types of f). Accounting for C-\nand K-robustness at the same time leads to larger costs than accounting for only one of the two, as it is\nreasonable to expect. On average, the cost that comes from accounting for robustness alone is limited (up\nto 6.5× the ideal cost, see Inc), especially in light of the results found for when perturbations take place,\ndescribed in Sec. 9.3 (additional intervention due to perturbations can lead to 100× times larger costs for\nnon-robust counterfactual explanations, see Inc on Fig. 9).\nC. Statistical signiﬁcance\nWe report the statistical signiﬁcance for the results displayed in Sec. 9.3. For each data set and type\nof perturbation, we perform the Kruskall-Wallis tests (since we cannot assume normality) to determine\nwhether signiﬁcant diﬀerences are present between the relative cost induced by applying the diﬀerent notion\nof robustness. In all cases, the outcome of the"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 7,
+        "chunk_id": 2,
+        "content": "E methods in the general\ncase. Therefore, the authors propose to move away from\nsingle-instance CEs and instead consider (diverse) sets of\nCEs.\nUnder some assumptions, the authors prove that a\nrelaxed form of robustness can be satisﬁed whereby sets of\nexplanations generated for similar inputs are guaranteed to\ncontain similar CEs.\n8\nSummary and Outlook\nWe conducted a comprehensive and ﬁne-grained analysis of\nrobust CE generation approaches and categorised them into\nthe type of robustness they consider. In doing so, we identi-\nﬁed some open research questions that are shared across the\nrobustness spectrum. We discuss them in this section, pro-\nviding an outlook for the future of this emerging research\nﬁeld.\nRobustness vs cost trade-oﬀs.\nSeveral works discuss\nthe existence of a trade-oﬀbetween the cost of a CE and\nits robustness.\nSpeciﬁcally, increasing cost is often dis-\ncussed as a necessary condition for improving a CE’s ro-\nbustness [Upadhyay et al., 2021; Pawelczyk et al., 2023a]."
+      }
+    ],
+    "Latency_Seconds": 13.46,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q028",
+    "Question": "How can the two robustness concerns in Section 5.4.2 of the Karimi et al. survey be conceptually aligned with Jiang et al.'s Input Changes (IC) and Model Multiplicity (MM) categories, and why is this not an exact one-to-one taxonomy?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "The concern that similar individuals should receive similar recourse is conceptually close to Jiang et al.'s Input Changes (IC), which asks for consistent explanations for similar inputs. The concern that recourse should be somewhat invariant to the decision-making system trained on the same dataset is conceptually close to Model Multiplicity (MM), which concerns multiple near-optimal models for the same task. This is an interpretive alignment, not an exact taxonomy equivalence: Karimi et al. describe broad recourse concerns, while Jiang et al. formally distinguish four robustness settings (MC, MM, NE and IC).",
+    "Generated_Answer": "The two robustness concerns mentioned in Section 5.4.2 of the Karimi et al. survey can be conceptually aligned with Jiang et al.'s Input Changes (IC) and Model Multiplicity (MM) categories as follows:\n\n1. **Input Changes (IC):**\n   - **Karimi et al. Concern:** The concern about the prediction result being pending and needing to be decided together with the counterfactual explanations (CEs).\n   - **Jiang et al. IC:** This aligns with the idea of ensuring that the validity of CEs remains valid under different input changes. In the IC category, the focus is on maintaining the validity of CEs when the input changes, which is similar to ensuring that the prediction result is robust to these changes.\n\n2. **Model Multiplicity (MM):**\n   - **Karimi et al. Concern:** The need to decide the prediction result based on multiple models and their corresponding CEs.\n   - **Jiang et al. MM:** This aligns with the idea of considering multiple models and their CEs to determine the final prediction. In the MM category, the goal is to ensure that the prediction result is robust to potential changes in the model architecture or type, which is achieved by evaluating the robustness of CEs across different models.\n\nHowever, this alignment is not an exact one-to-one taxonomy because:\n\n- **Different Scenarios:** While both categories deal with the robustness of CEs, they address",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 7,
+        "content": "CE remaining valid after retraining of linear models.\nTo quantify robustness against plausible model changes,\nthe Δ-robustness metric was proposed in [Jiang et al., 2023b].\nIntuitively, a CE is said to be Δ-robust if its validity is pre-\nserved across the whole family of models that can be ob-\n2"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 0,
+        "content": "result is ﬁxed to one produced by one of the original models,\nand the robustness target is to guard the CE validity against\npotential future changes in the classiﬁer: a robust CE should\nideally remain valid under the alternative models. This form\nof robustness is very similar to robustness against MC. The\ndiﬀerences are that the MM problem does not assume a data\ndistribution shift causing the model shifts, and there are no\nassumptions on the model types and architectures for the\noriginal model on which the CEs are generated and for the\nalternative models.\nRecent advances have also raised concerns about when the\nprediction result for one input is pending and to be decided by\nall the models under MM, instead of assuming a result from\none original model [Black et al., 2022a]. [Jiang et al., 2024]\ninvestigate the problem of deciding the prediction result to-\ngether with the CEs, with the robustness of the latter driving\nthe former. That is, the solution should be a subset of models\nunder"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 1,
+        "content": "iction result to-\ngether with the CEs, with the robustness of the latter driving\nthe former. That is, the solution should be a subset of models\nunder MM and their (valid) CEs, from which the prediction\nresults are decided.\n5.1\nRobustness Metrics\nThe robustness evaluation for the ﬁxed prediction scenario\nis very similar to the VaR for robustness against MC prob-\nlem, using validity under alternative models. These models\ncould be arbitrary models trained on (diﬀerent portions of)\nthe same dataset with high accuracy. Thus, the same valid-\nity metric gives an intuitive evaluation of how robust the CEs\nare.\nFor the pending prediction scenario, [Jiang et al., 2024]\npropose desirable properties to characterise the optimal re-\nsulting set of models and CEs. Non-emptiness requires that\nthe resulting set be not empty, and ideally it should contain\nmore than one model and CE such that the prediction result\nis collectively determined by multiple models with their ex-\nplanations (non-triviality)."
+      }
+    ],
+    "Latency_Seconds": 19.92,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q029",
+    "Question": "How does generating diverse sets of counterfactuals affect robustness and privacy, according to Jiang et al. and Karimi et al.?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Jiang et al. report that Leofante and Potyka move from single-instance CEs to diverse sets so that sets generated for similar inputs contain similar CEs (a relaxed form of robustness to input changes). Karimi et al. note that revealing multiple diverse explanations worsens the predictive-privacy problem, and that mandating a minimum number of diverse offerings would conflict with security considerations.",
+    "Generated_Answer": "Based on the provided context, there is no direct mention of how generating diverse sets of counterfactuals affects robustness and privacy according to Jiang et al. and Karimi et al. The context focuses more on the robustness of single counterfactual explanations and the development of algorithms to find such robust explanations. It discusses concepts like C-robustness and K-robustness, which pertain to the stability of counterfactual explanations under adversarial perturbations, but does not specifically address the impact of generating diverse sets of counterfactuals on robustness and privacy.\n\nFor detailed information on the effects of diverse sets of counterfactuals on robustness and privacy, one would need to refer to additional sources that specifically address these aspects.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 28,
+        "chunk_id": 1,
+        "content": "ul\nin practice, we studied how they can be made robust to adverse perturbations that may naturally happen\ndue to unfortunate circumstances, to ensure that the intervention they prescribe remains valid, and potential\nadditional intervention cost that may be needed remains limited. We presented novel notions of robustness,\nwhich concern adverse perturbations to the features that a counterfactual explanation prescribes to change\n(C-robustness) and to keep as they are (K-robustness), respectively. We have annotated ﬁve existing data\nsets with reasonable perturbations and plausibility constraints and developed a competitive counterfactual\nsearch algorithm to search for (robust) counterfactual explanations. Our experimental results show that,\nmost often than not, counterfactual explanations do not happen to be robust by accident. Consequently, if\nadverse perturbations take place, counterfactual explanations may require a much larger cost to be realized\nthan anticipated, or even make it"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "arXiv:2402.01928v1  [cs.LG]  2 Feb 2024\nRobust Counterfactual Explanations in Machine Learning: A Survey\nJunqi Jiang, Francesco Leofante, Antonio Rago, Francesca Toni\nDepartment of Computing, Imperial College London, UK\n{junqi.jiang, f.leofante, a.rago, f.toni}@imperial.ac.uk\nAbstract\nCounterfactual explanations (CEs) are advocated as\nbeing ideally suited to providing algorithmic re-\ncourse for subjects aﬀected by the predictions of\nmachine learning models. While CEs can be bene-\nﬁcial to aﬀected individuals, recent work has ex-\nposed severe issues related to the robustness of\nstate-of-the-art methods for obtaining CEs. Since a\nlack of robustness may compromise the validity of\nCEs, techniques to mitigate this risk are in order. In\nthis survey, we review works in the rapidly grow-\ning area of robust CEs and perform an in-depth\nanalysis of the forms of robustness they consider.\nWe also discuss existing solutions and their limita-\ntions, providing a solid foundation for future devel-"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 27,
+        "chunk_id": 1,
+        "content": "g the meta-information in web\nsources and the papers that describe the data sets. We have no doubt that domain experts would make\nmuch better choices than ours. Nevertheless, we argue that this is not an important limitation because, as\nlong as the community agrees that our choices are reasonable, they suﬃce to provide a sensible test bed\nfor benchmarking robustness. Hopefully, other researchers will ﬁnd our annotations to be useful for future\nexperiments on the robustness of counterfactual explanations. Similarly, we hope that other researchers will\nﬁnd CoGS to be an interesting algorithm to benchmark against.\n11. Related work\nA number of works in literature propose several new desiderata that are largely orthogonal to our notions\nof robustness but can be important to enhance the practical usability of counterfactual explanations. For\nexample, Dandl et al. [51] consider, besides proximity of z to x according to diﬀerent distances, whether\nother training points x′ are suﬃciently close"
+      }
+    ],
+    "Latency_Seconds": 11.84,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q031",
+    "Question": "Why can an invalidation caused by a C-setback always be repaired, whereas an invalidation caused by a K-perturbation may be permanent, in Virgolin and Fracaros?",
+    "Category": "multi_hop",
+    "Answerability": "Answerable",
+    "Reference_Answer": "A C-setback moves the counterfactual back toward x along the direction of the original intervention, so the intermediate point already satisfies the plausibility constraints and further intervention along the intended direction recovers z. A K-perturbation moves the point along a different direction than the intervention, possibly to a point from which no plausible intervention can reach the originally intended counterfactual (e.g., a non-actionable feature such as inflation).",
+    "Generated_Answer": "According to the context provided, an invalidation caused by a C-setback can always be repaired, whereas an invalidation caused by a K-perturbation may be permanent. This difference arises because:\n\n- A C-setback affects the features that are considered constant or uncontrollable (C-features), meaning that any change in these features would require a significant intervention to revert back to the original state. Therefore, if a C-setback occurs, it can be repaired through additional interventions to those specific features.\n\n- A K-perturbation, however, changes the features in a way that is not aligned with the direction of the intended intervention. Specifically, a K-perturbation can lead to a point \\( z' \\) from which there exists no plausible intervention to return to the original point \\( z \\). For instance, if inﬂation (a mutable but not actionable feature) is perturbed, and this perturbation is significant enough, it might lead to a situation where the original intervention strategy cannot be applied to correct the inﬂation, making the invalidation permanent.\n\nThus, the key distinction lies in how the perturbations affect the features and whether the original intervention strategy can be applied to repair the invalidation.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 9,
+        "chunk_id": 2,
+        "content": "lly, this deﬁnition says that z is vulnerable to K-perturbations if the decision boundary sur-\nrounding z is not suﬃciently loose with respect to the features in K.\nFig. 4 shows an example.\nThe\nreason why vulnerability to K-perturbations is particularly important is that, diﬀerently from the case of\nC-perturbations, a K-perturbation can invalidate the counterfactual explanation permanently. In fact, a\nK-perturbation changes z along a diﬀerent direction than the one of intervention. Thus, a K-perturbation\ncan lead to a point z′ from which there exists no plausible intervention to reach the originally-intended z\nfrom.\nFor example, consider the feature i to represent inﬂation as a mutable but not actionable feature, i.e., a\nfeature that can be changed (e.g., by global market trends) but not by the user. P will state that no (user)\nintervention can exist to change i, i.e., P imposes zi −xi = 0. However, an unfortunate circumstance such\nas a the ﬁnancial crisis of 2008 may lead to a large"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 32,
+        "chunk_id": 1,
+        "content": "tness and respective perturbations to (features in) C (i.e., C-setbacks), recall that\naccounting for this notion of robustness is intended to provide counterfactual explanations with minimal\nadditional intervention cost, the maximal C-setback were to happen. However, ideally, the returned counter-\nfactual example should still be near x, i.e., it should be a point on the boundary of f (exactly so, if the point\nis truly optimal). Thus, under optimality guarantees, f(z⋆+ wc,s)̸ = t (Proposition 2); This means that\nany C-setback should result in invalidity (i.e., all entries for perturbations to C should report 1). This does\nnot always happen in Fig. 12 because CoGS does not guarantee to discover optimal counterfactual examples\nand, thus, in many cases the returned example is not on the boundary, and the C-setback is too small to\ncross the boundary. The frequency of this phenomenon depends on the data set. Also, while accounting\nfor robustness w.r.t. C should not, in theory, decrease"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 10,
+        "chunk_id": 0,
+        "content": "Figure 4: Example of K-perturbations. The counterfactual example zv is vulnerable to K-perturbations because these can lead\nto the red area; the same is not true for zb. If it is not plausible to reduce blood pressure, then K-perturbations to zv can lead\nto permanent invalidity. Else, they can be resolved with further intervention, in terms of blood pressure.\nfunction that returns 1 for K-neighbors that share the same class of z (i.e., f(z)), and 0 for those that do\nnot. Taken a random sample of m K-neighbors, we deﬁne the following score:\nK-robustness score(z, m) = 1\nm\nm\nX\ni=1\n1f(z)(z′\ni).\n(8)\nWe remark that even if K-robustness score(z, m) = 1, we are not guaranteed that z is K-robust, because\nthe score is an approximation. Still, this score can be used to determine which counterfactual examples are\npreferable to pursue in that they are associated with a smaller risk that adverse perturbations will invalidate\nthem (permanently or not).\n7. Experimental setup\nIn this section, we"
+      }
+    ],
+    "Latency_Seconds": 17.11,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q034",
+    "Question": "What valid ratio did ARMIN reach under MCAR when five features were missing?",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Reference_Answer": "Not answerable from the corpus. The MCAR comparison varies the number of missing features over 1, 2 and 3 only (the XGBoost analysis goes up to 4, but not for ARMIN).",
+    "Generated_Answer": "Based on the information provided in the context, there is no specific valid ratio for ARMIN when five features were missing under the MCAR situation. The context mentions experimental results for different numbers of missing features (D∗ ∈ {1, 2, 3}) but does not provide data for D∗ = 5. Therefore, the valid ratio for ARMIN under this condition cannot be determined from the given information.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 8,
+        "chunk_id": 4,
+        "content": "clined to reveal their income [Josse et al., 2019]. We\ncollected test instances x that were predicted as “expe-\nriencing 90 days past due delinquency or worse\" by an\nLR classifier h and older than the median of the feature\n“Age\" (resp. had larger incomes than the median of the fea-\nture “MonthlyIncome\"). Then, we dropped their values\nof “MonthlyIncome,\" and obtained actions a for them.\nFigure 3 shows the results of the valid ratio and average\ncost for the baselines and our method. Similar to the\nMCAR setting, we can see that the valid ratio of Imputa-\ntionAR was significantly lower than the others, and the costs of RobustAR were higher than ARMIN. These results\nindicate that our ARMIN could yield better actions than the baselines under the MAR and MNAR situations as well.\nTable 1 presents examples of the obtained actions for the same instance under the MAR situation. While Table 1(a) is\nthe optimal action for the original instance x without missing value, Tables 1(b) to 1(d) are the"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 22,
+        "chunk_id": 1,
+        "content": ".5\n0.6\n0.7\n0.8\nValid Ratio\nWineQuality\n0\n1\n2\n3\n4\nNumber of Missing Values D∗\n0.4\n0.6\n0.8\n1.0\n1.2\nAverage Cost\nWineQuality\n0\n1\n2\n3\n4\nNumber of Missing Values D∗\n0.2\n0.4\n0.6\n0.8\n1.0\nAverage Sign Agreement Score\nWineQuality\nFigure 5: Experimental results of the XGBoost classifier with missing values D∗∈{0, 1, 2, 3, 4} under the MCAR\nsituation.\nTable 2:\nExamples of actions extracted from an XGBoost classifier on the FICO dataset. Here, we generate the\nincomplete instance ˜x by dropping the value of the feature “PercentInstallTrades\" in its original instance x.\n(a) Optimal action for original instance x\nFeature\nValue\nValid\nCost\nExternalRiskEstimate\n+20\nTrue\n1.35\n(b) Optimal action for incomplete instance ˜x\nFeature\nValue\nValid\nCost\nExternalRiskEstimate\n−6\nFalse\n1.14\nMaxDelq2PublicRecLast12M\n−2\nNetFractionRevolvingBurden\n−19\nPercentTradesWBalance\n−7\n22"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 8,
+        "chunk_id": 1,
+        "content": "ng values. Thus, we consider\ntwo baselines by extending the existing methods. One is ImputationAR, which applies an existing AR method to the\nimputed instance ˆx by an existing imputation method including mean imputation, k-NN imputation [Troyanskaya et al.,\n2001], and MICE [van Buuren and Groothuis-Oudshoorn, 2011]. The other baseline is RobustAR [Dominguez-Olmedo\net al., 2022], where we replace its uncertainty set with a set of N imputation candidates sampled over I˜x.\n5.1\nComparison under MCAR situation\nFirstly, we examined each method under the MCAR situation. To simulate the MCAR mechanism, we randomly\nselected a few features for each test instance x and dropped its values of the selected features. We set the total number\nof missing features D∗∈{1, 2, 3}. We measured the valid ratio, which is the ratio that an obtained action a is valid for\nthe original instance x (i.e., h(x + a) = +1) and the average cost c(a). In Appendix D, we also report the average\nsign agreement score"
+      }
+    ],
+    "Latency_Seconds": 6.73,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q035",
+    "Question": "Which robust counterfactual explanation method performs best for neural networks in a head-to-head benchmark?",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Reference_Answer": "Not answerable from the corpus. Jiang et al. explicitly note that standardised benchmarks are lacking and that most works compare against few baselines; no head-to-head winner is established.",
+    "Generated_Answer": "Based on the provided context, there isn't a direct mention of a head-to-head benchmark comparing different robust counterfactual explanation methods for neural networks. The papers cited discuss various aspects of robust counterfactual explanations but do not explicitly compare them in a benchmark setting.\n\nThe papers referenced include:\n\n- [Hada and Carreira-Perpiñán, 2021] which explores counterfactual explanations for classification and regression trees.\n- [Hamman et al., 2023] which discusses robust counterfactual explanations for neural networks with probabilistic guarantees.\n- [Jiang et al., 2023a] and [Jiang et al., 2023b] which present provably robust and plausible counterfactual explanations for neural networks via robust optimization.\n\nWithout specific performance metrics or a direct comparison in a benchmark study, it's not possible to determine which robust counterfactual explanation method performs best for neural networks.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 1,
+        "chunk_id": 2,
+        "content": "g robust CEs systematically. Robust\nCEs make additional intervention to contrast perturbations much less costly than non-robust CEs. We\nalso ﬁnd that robustness is easier to achieve for the features to change, posing an important point of\nconsideration for the choice of what counterfactual explanation is best for the user. Our code is available\nat: https://github.com/marcovirgolin/robust-counterfactuals.\nKey words:\ncounterfactual explanation, explainable machine learning, explainable artiﬁcial intelligence,\nrobustness, uncertainty\n1. Introduction\nModern Artiﬁcial Intelligence (AI) systems often rely on machine learning models such as ensembles\nof decision trees and deep neural networks [1, 2, 3], which are massive in terms of number of parameters.\nMassive models are appealing because, under proper training and regularization regimes, they are often\nunmatched by smaller models [4, 5]. However, as massive models perform myriads of computations, it can\nbe very diﬃcult to interpret and"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 8,
+        "chunk_id": 5,
+        "content": "e Ter-\nmier. Generating robust counterfactual explanations. In\nECML PKDD, 2023.\n[Hada and Carreira-Perpiñán, 2021] Suryabhan Singh Hada\nand Miguel Á. Carreira-Perpiñán. Exploring counterfac-\ntual explanations for classiﬁcation and regression trees.\nIn ECML PKDD Workshops, 2021.\n[Hamman et al., 2023] Faisal Hamman,\nErfaun Noorani,\nSaumitra Mishra, Daniele Magazzeni, and Sanghamitra\nDutta. Robust counterfactual explanations for neural net-\nworks with probabilistic guarantees. In ICML, 2023.\n[Hancox-Li, 2020] Leif Hancox-Li. Robustness in machine\nlearning explanations: does it matter? In FAT*, 2020.\n[Jiang et al., 2023a] Junqi Jiang, Jianglin Lan, Francesco Leo-\nfante, Antonio Rago, and Francesca Toni. Provably robust\nand plausible counterfactual explanations for neural net-\nworks via robust optimisation. In ACML, 2023.\n[Jiang et al., 2023b] Junqi Jiang, Francesco Leofante, Anto-\nnio Rago, and Francesca Toni. Formalising the robustness\n8"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 27,
+        "chunk_id": 5,
+        "content": "ncertainty on x, and also account for causality. We also note that\nDominiguez et al. consider a neighborhood of uncertainty around x which is akin to Deﬁnition 1; in fact,\nsuch sort of neighborhoods are common tools in post-hoc explanation methods, e.g., the Anchor explainer\nby [67] seeks representative points for a class by assessing that the prediction of f for the points in their\nneighborhood is the same. Zhang et al. [68] propose a counterfactual search method based on linear pro-\ngramming that works for neural networks with ReLU activations; this work can be seen through the lens of\nrobustness in that the method produces regions of points that share the desired class. Finally, contemporary\nto our work, Fokkema et al. [26] provide important theoretical results that counterfactual explanations (and\n27"
+      }
+    ],
+    "Latency_Seconds": 11.59,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q037",
+    "Question": "How many papers did the initial Google Scholar keyword search return in Jiang et al.'s systematic survey before any filtering?",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Reference_Answer": "Not answerable from the corpus. The survey describes the search patterns and the filters applied, but does not report the number of results returned.",
+    "Generated_Answer": "The provided context does not contain information about a Google Scholar keyword search conducted by Jiang et al. or the number of papers returned before any filtering. The context discusses a systematic survey by Karimi, Amir-Hossein; Barthe, Gilles; Schölkopf, Bernhard; and Valera, Isabel titled \"A Survey of Algorithmic Recourse\" but does not specify the results of any initial Google Scholar search. Therefore, the information requested is not available in the retrieved evidence.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "ETH Library\nA Survey of Algorithmic Recourse:\nContrastive Explanations and\nConsequential Recommendations\nJournal Article\nAuthor(s):\nKarimi, Amir-Hossein; Barthe, Gilles; Schölkopf, Bernhard; Valera, Isabel\nPublication date:\n2023-05\nPermanent link:\nhttps://doi.org/https://doi.org/10.3929/ethz-b-000589195\nRights / license:\nCreative Commons Attribution-NonCommercial 4.0 International\nOriginally published in:\nACM Computing Surveys 55(5), https://doi.org/10.1145/3527848\nThis page was generated automatically upon download from the ETH Zurich Research Collection.\nFor more information, please consult the Terms of use."
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 6,
+        "chunk_id": 5,
+        "content": "e. Finally, we make note of those papers that provide open source implementations of their algorithm.\nsupported (c.f., Section 3). All tools generate solutions that to some extent trade off desirable\nrequirements, such as optimality, perfect coverage, efficient runtime, and access (c.f., Section 4),\nresulting in a lack of unifying comparison (c.f., Section 5). This table does not aim at serving to\nrank or be a qualitatively comparison of surveyed methods, and one has to exercise caution when\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 3,
+        "chunk_id": 2,
+        "content": "ment is a\ncommon theme throughout this work. Additionally, we identify a number of prospective research\ndirections which challenge the assumptions of existing setups, and present extensions to better\nsituate recourse in the broader ethical ML literature (Section 5).\nWho is this article for? This article aims to engage different audiences: practitioners (P), re-\nsearchers (R), and legal scholars (L). Section 2 builds on the rich literature in the philosophy of\nscience and presents a clear distinction between contrastive explanations and consequential rec-\nommendations based on the causal history of events (R, L). Table 1 presents an overview of 50+\ntechnical papers that offer recourse in a broad range of setups (P, R). Section 3 formulates the\nrecourse problem as constrained optimization and presents the variety of constraints needed to\nmodel real-world settings (R). Section 4 presents the difficulty in solving for recourse in general\nsettings and summarizes existing approximate"
+      }
+    ],
+    "Latency_Seconds": 8.3,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q038",
+    "Question": "Which algorithm in Table 1 of the Karimi et al. survey performs best?",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Reference_Answer": "Not answerable from the corpus. The survey states that Table 1 is not meant to rank or qualitatively compare the surveyed methods.",
+    "Generated_Answer": "The provided context does not contain information about an algorithm in Table 1 of the Karimi et al. survey that performs best. The context discusses various aspects of algorithmic recourse but does not present a table titled \"Table 1\" nor does it rank or compare the surveyed methods. Therefore, the information requested is not available in the retrieved evidence.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "ETH Library\nA Survey of Algorithmic Recourse:\nContrastive Explanations and\nConsequential Recommendations\nJournal Article\nAuthor(s):\nKarimi, Amir-Hossein; Barthe, Gilles; Schölkopf, Bernhard; Valera, Isabel\nPublication date:\n2023-05\nPermanent link:\nhttps://doi.org/https://doi.org/10.3929/ethz-b-000589195\nRights / license:\nCreative Commons Attribution-NonCommercial 4.0 International\nOriginally published in:\nACM Computing Surveys 55(5), https://doi.org/10.1145/3527848\nThis page was generated automatically upon download from the ETH Zurich Research Collection.\nFor more information, please consult the Terms of use."
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 6,
+        "chunk_id": 5,
+        "content": "e. Finally, we make note of those papers that provide open source implementations of their algorithm.\nsupported (c.f., Section 3). All tools generate solutions that to some extent trade off desirable\nrequirements, such as optimality, perfect coverage, efficient runtime, and access (c.f., Section 4),\nresulting in a lack of unifying comparison (c.f., Section 5). This table does not aim at serving to\nrank or be a qualitatively comparison of surveyed methods, and one has to exercise caution when\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 20,
+        "chunk_id": 1,
+        "content": "ving the full problem formulated using S.\nAlgorithm 1 Path algorithm for (3).\n1: t ←0; ρ0 ←\n1\nN ;\n2: while ρt < 1 do\n3:\nat ←MILO(ρt);\n▷Solve (3) with ρt\n4:\nρt+1 ←ˆV˜x(at | S) + 1\nN ;\n▷Update to ρt+1\n5:\nt ←t + 1;\n6: end while\n7: return {(ρ0, a0), . . . , (ρt, at)};\nPath algorithm. Our formulation has a hyperparameter\nρ that is the threshold for the empirical validity ˆV˜x(a | S).\nWe expect that the larger ρ becomes, the higher the prob-\nability that an obtained action is valid for x. In contrast,\nthe cost of an obtained action with a large ρ tends to\nbecome high [Pawelczyk et al., 2022b]. To efficiently\nanalyze such a trade-off, we propose a path algorithm in\nAlgorithm 1. It is based on the fact that the empirical\nvalidity ˆV˜x takes only 1\nN , 2\nN . . . , N\nN . Thus, we can deter-\nmine the next value of ρ to be searched by adding 1\nN to the empirical validity of a current solution, and this update is\nrepeated at most N times.\nOn the relationship to robust AR. When we set ρ = 1 and"
+      }
+    ],
+    "Latency_Seconds": 6.71,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q040",
+    "Question": "Which court first ruled that the GDPR requires algorithmic recourse to be offered?",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Reference_Answer": "Not answerable from the corpus. The Karimi et al. survey only says recourse is even argued to be a legal necessity under the GDPR; no court rulings are cited.",
+    "Generated_Answer": "The provided context does not contain any information about a specific court ruling that the GDPR requires algorithmic recourse to be offered. The context discusses various contributions and directions in the field of algorithmic recourse but does not mention any legal rulings regarding the GDPR's requirements. Therefore, the information is not available in the retrieved evidence.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 3,
+        "chunk_id": 1,
+        "content": "legal necessity (GDPR [231]). This is the concern of algorithmic recourse.\nContributions. Our review brings together the plethora of recent works on algorithmic recourse.\nIn reviewing the literature, we identify opportunities to consolidate definitions, construct technical\nbaselines for future comparison, and situate recourse in the broader ethical machine learning\n(ML) literature. The primary contribution is thus a unified overview of the definitions (Section 2),\nformulations (Section 3), and technical solutions (Section 4) for computing (nearest) contrastive\nexplanations and (minimal) consequential recommendations, across a broad range of setups. A high-\nlevel summary is curated and presented in Table 1. Clearly distinguishing between the preceding\ntwo recourse offerings and presenting their often overlooked different technical treatment is a\ncommon theme throughout this work. Additionally, we identify a number of prospective research\ndirections which challenge the assumptions of"
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 29,
+        "chunk_id": 3,
+        "content": "touri, and Bernhard Schölkopf. 2021. Algorith-\nmic recourse in partially and fully confounded settings through bounding counterfactual effects. arXiv preprint\narXiv:2106.11849 (2021).\n[233] Julius von Kügelgen, Amir-Hossein Karimi, Umang Bhatt, Isabel Valera, Adrian Weller, and Bernhard Schölkopf.\n2020. On the fairness of causal algorithmic recourse. arXiv preprint arXiv:2010.06529 (2020).\n[234] Sandra Wachter, Brent Mittelstadt, and Chris Russell. 2017. Counterfactual explanations without opening the black\nbox: Automated decisions and the GDPR. Harvard Journal of Law & Technology 31, 2 (2017), 841–887.\n[235] David E. Wallin. 1992. Legal recourse and the demand for auditing. Accounting Review 67, 1 (1992), 121–147.\n[236] Binghui Wang and Neil Zhenqiang Gong. 2018. Stealing hyperparameters in machine learning. In Proceedings of the\n2018 IEEE Symposium on Security and Privacy (SP’18). IEEE, Los Alamitos, CA, 36–52.\n[237] Pei Wang and Nuno Vasconcelos. 2020. SCOUT: Self-aware"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 16,
+        "chunk_id": 0,
+        "content": "A Survey of Algorithmic Recourse\n95:15\nsettings, such as for the actions and policies of a reinforcement learning agent [144, 145, 201, 224]\nor for recommender systems [60, 84]. Finally, explanations may also be generated for time-series\ndata [5, 16, 142], which can be extended to support online data streams and models that change\nover time [21, 61, 182, 200, 226].\n5.3\nBeyond Individualized Recourse\nSo far, the presented formulations aimed to offer recourse explanations pertaining to a single in-\ndividual and assumed that recourse recommendations would be undertaken by that individual.\nHowever, it is natural to extend the notion of recourse beyond the data subject in question, or\nbeyond a single individual in the population.\nAn example of the former setting is when the family member of a patient decides on a treatment\non their behalf when the patient cannot directly exercise their agency due to incapacitation [226].\nOne may also consider common cases in judicial processes where a"
+      }
+    ],
+    "Latency_Seconds": 5.57,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q041",
+    "Question": "What theoretical bound does ARMIN provide between empirical and expected validity, and does it give a direct numerical guarantee that a chosen ρ ensures validity for the original complete instance?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "Proposition 3 gives a high-probability estimation bound. With probability at least 1−δ, V̂(a|S) − V(a) ≤ ε_H(N,δ) = √(2 ln Π_H(N)/N) + √(ln(1/δ)/(2N)), where Π_H is the growth function for the fixed classifier h and action set A. Therefore, if the surrogate optimisation enforces V̂(a|S) ≥ ρ, the bound implies V(a) ≥ ρ − ε_H(N,δ) with the stated confidence. For a linear classifier under the paper’s assumptions, Π_H(N)=N+1. This concerns expected validity over the imputation distribution. It is not a direct universal numerical guarantee for validity on the original complete instance x: the paper says higher expected validity should raise the probability of validity for x, but identifies the direct relationship from ρ to the original instance as needing further theoretical study.",
+    "Generated_Answer": "Based on the provided context, ARMIN does not explicitly provide a theoretical bound between empirical and expected validity. The context does not mention such a theoretical relationship directly.\n\nRegarding a direct numerical guarantee that a chosen ρ ensures validity for the original complete instance, the context indicates that the effectiveness of ARMIN depends on the confidence parameter ρ. Specifically:\n\n- The larger the confidence ρ, the higher the optimal cost of the problem (equivalent to the robust AR problem).\n- Empirically, the costs increase sharply when the confidence ρ exceeds about 0.9.\n- ARMIN generally achieves higher valid ratios than RobustAR and ImputationAR, but the average costs are higher for RobustAR.\n\nHowever, the context does not provide a specific numerical guarantee that a particular ρ value ensures validity for the original complete instance. Instead, it suggests that the choice of ρ affects both the validity and the cost, and that there is no explicit theoretical bound linking these two aspects directly. \n\nTherefore, based on the information provided, we cannot derive a direct numerical guarantee from ARMIN's theoretical framework regarding the validity of the original complete instance for any chosen ρ value.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 20,
+        "chunk_id": 2,
+        "content": "to the empirical validity of a current solution, and this update is\nrepeated at most N times.\nOn the relationship to robust AR. When we set ρ = 1 and regard imputation candidates S as the uncertainty set, the\nproblem of (3) is roughly equivalent to (12), i.e., the existing robust AR problem [Dominguez-Olmedo et al., 2022].\nOne of the differences between the robust AR and our ARMIN is whether we can tune the confidence parameter ρ.\nIt is trivial that the larger the confidence ρ is, the higher the optimal cost of (3) becomes. Indeed, the existing robust\nAR methods are known to tend to provide high-cost actions [Pawelczyk et al., 2022b]. Furthermore, as shown in\nFigures 4(b), 12 and 13, we empirically confirmed that the costs increased sharply when the confidences ρ exceed about\n0.9. This may be related to our experimental results of the baseline comparison that the average cost of RobustAR was\nhigher than the others.\nD\nAdditional experimental results\nD.1\nOn the models that can handle"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 8,
+        "chunk_id": 2,
+        "content": "is valid for\nthe original instance x (i.e., h(x + a) = +1) and the average cost c(a). In Appendix D, we also report the average\nsign agreement score [Krishna et al., 2022] that evaluates the qualitative similarity between a and the optimal action a∗\nof x and the average computational time for each instance.\nFigure 2 shows the results of the valid ratio and average cost for D∗= 2. From these results, we can see that our\nARMIN attained good balances between the valid ratio and average cost than the baselines. We observe that the valid\nratio of ImputationAR was significantly lower than RobustAR and ARMIN, and that RobustAR and ARMIN stably\nachieved high valid ratios regardless of the datasets and classifiers. In addition, the average cost of RobustAR was\nalways larger than ARMIN. For example, the average cost of RobustAR for the LR classifier on the WineQuality dataset\nwas 3.59 times higher than that of ARMIN. In summary, we confirmed that our ARMIN could provide given incomplete"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 10,
+        "chunk_id": 0,
+        "content": "Algorithmic Recourse with Missing Values\nA PREPRINT\nof our task and proposed a practical solution based on mixed-integer linear optimization. Our experiments on public\ndatasets demonstrated the efficacy of ARMIN compared to existing methods.\nLimitations and future work. There are several directions to improve our ARMIN. First, our experiments demon-\nstrated that while our ARMIN could obtain better actions, it was certainly slower than the baselines. Therefore, we will\ntry to improve the efficiency of our optimization framework, e.g., by leveraging the techniques of chance-constrained\noptimization algorithms [Calafiore and Campi, 2005]. In addition, we observed that an appropriate confidence parameter\nρ varies depending on each instance x. Because running our method repeatedly by varying ρ is costly in practice,\nwe need to develop a method for determining its default value automatically. Furthermore, it is important to show\ntheoretical relationships between ρ and the expected validity"
+      }
+    ],
+    "Latency_Seconds": 13.58,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q042",
+    "Question": "What relative-cost results did Virgolin and Fracaros report when using the L2 norm instead of the L1 norm?",
+    "Category": "unanswerable",
+    "Answerability": "Unanswerable",
+    "Reference_Answer": "Not answerable from the corpus. The paper says its definitions can be adapted to the L2 norm but reports experiments only with the L1-based loss.",
+    "Generated_Answer": "The provided context does not contain any specific relative-cost results reported by Virgolin and Fracaros regarding the use of the L2 norm instead of the L1 norm. The context mentions that some works, including [20] and [23], choose the L2 norm instead of the L1 norm, but it does not provide details about the relative costs associated with these choices. Therefore, the information requested is not available in the retrieved evidence.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 4,
+        "chunk_id": 1,
+        "content": "s (e.g., [20, 23]) choose the L2-norm (||·||2, also known as Euclidean norm) instead of the L1-norm; the\ndeﬁnitions of robustness given in this paper can be easily adapted for the L2-norm. Regarding the L0-norm\n(i.e., the term || · ||0 of δ in Eq. (1)), this term explicitly promotes a form of sparsity, as it seeks to minimize\nhow many features have a diﬀerent value between z and x. This is desirable because, oftentimes, the user\ncan only reasonably focus on, and intervene upon, a limited number of features (even if this amounts to a\nlarger total cost in terms of L1 compared to intervention on all the features) [24].\n3. Perturbations & robustness\nUnfortunate circumstances (e.g., inﬂation) might lead to more or diﬀerent intervention to be needed,\ncompared to what was originally prescribed by a counterfactual explanation (e.g., increase savings by 1000\n$ to be granted credit access). Thus, instead of reaching z as intended by the counterfactual explanation, a\ndiﬀerent point z′ is"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 26,
+        "chunk_id": 5,
+        "content": "d out at a higher level, i.e., of feature groups in future work.\nThere is a number of further aspects worth mentioning when one wishes to implement a research work\nlike on counterfactual explanations into practice, including this work. For example, we use the L1-norm\nwithin Gower’s distance to measure intervention cost. In fact, literature works typically choose one distance\nmeasure (e.g., ours, or Gower’s with L2-norm instead, or other variants, see Sec. 11). Of course, realistic\nimplementation of intervention cost needs to use the a reﬁned distance which may include mixing diﬀerent\n26"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 4,
+        "chunk_id": 0,
+        "content": "increase, decrease, or change at all (for categorical features, we only consider the latter). For example for\na private individual who wishes to be granted a loan, one of such constraints may specify that they cannot\nreasonably intervene to change the value of a currency (such a feature is called mutable but not actionable),\ni.e., counterfactual explanations must have zi −xi = 0, for i representing currency value. Similarly, the\nindividual’s age may increase but not decrease, i.e., zi −xi > 0, for i representing age.\nWe particularly consider the L1-norm (i.e., the term || · ||1 of δ in Eq. (1)) because it is reasonable to\nthink that, for independent features, the total cost of intervention (i.e., the eﬀort the user must put) is\nthe sum of the costs of intervention for each feature separately, and that these costs grow linearly. Some\nworks (e.g., [20, 23]) choose the L2-norm (||·||2, also known as Euclidean norm) instead of the L1-norm; the\ndeﬁnitions of robustness given in this paper"
+      }
+    ],
+    "Latency_Seconds": 8.81,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q043",
+    "Question": "How do the four papers frame what 'robustness' of recourse or counterfactual explanations means, and do the framings agree?",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Reference_Answer": "They do not use one definition. Karimi et al.: model outputs and recourse should be stable under small input changes, and recourse should be invariant to the decision system trained on the same data. Jiang et al.: robustness is the validity of CEs under changing conditions (four forms). Virgolin and Fracaros: a CE is robust if, when invalidated, further intervention remains possible and its cost is small. Kanamori et al.: actions should not be affected by small changes to inputs (here, imputation). The key divergence is validity-preservation versus recoverability.",
+    "Generated_Answer": "The four papers provide different framings of what \"robustness\" of recourse or counterfactual explanations means:\n\n1. **[Wachter et al., 2017]**: They suggest that a robust counterfactual explanation should be close to the data manifold, implying that the explanation should be plausible and align with typical data patterns.\n\n2. **[Upadhyay et al., 2021]**: The authors discuss robust and reliable algorithmic recourse, but the specific framing of robustness is not detailed in the provided context.\n\n3. **[Virgolin and Fracaros, 2023]**: They argue that robustness of sparse counterfactual explanations involves resistance to adverse perturbations, suggesting that these explanations remain valid even when subjected to small changes or adversarial attacks.\n\n4. **[von Kügelgen et al., 2022]**: This paper discusses the fairness of causal algorithmic recourse, indicating that robustness might involve careful consideration of assumptions about the causal generative process to ensure trust in the recourse system.\n\nWhile there is some overlap in the idea that robustness involves maintaining validity under certain conditions (e.g., adversarial perturbations), the specific definitions and implications differ among the papers. Therefore, the framings do not fully agree, as they emphasize different aspects of robustness such as proximity to data manifolds, resilience to perturbations, and the impact of causal assumptions.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 1,
+        "content": "the generation of a set of\ndiﬀerent CEs for each input instead of a single CE, and plau-\nsibility means a CE should be close to the data manifold.\n3\nSystematic Survey\nWe conducted a systematic search of the existing litera-\nture on robustness of CEs.\nWe ﬁrst performed keyword\nsearches on Google Scholar using the following patterns\nfor exact matches: robust counterfactual explanation, robust-\nness of counterfactual explanation, counterfactual explana-\ntion robustness.\nFor better coverage in each pattern, the\nwords consistent (consistency) and stable (stability) were used\nin addition to robust (robustness).\nThe phrase counterfac-\ntual explanation was also interchangeable with counterfac-\ntual explanations, counterfactuals, recourse, algorithmic re-\ncourse. To narrow down the topic, we ﬁltered for technical\npapers from and after year 2017, when two seminal works\nin the CE literature were published [Tolomei et al., 2017;\nWachter et al., 2017]. For completeness, we also checked in\nGoogle"
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 17,
+        "chunk_id": 3,
+        "content": "ounterfactual-based [131, 133] explanation systems has been called into ques-\ntion. Interestingly, it has been argued that it is possible for a model to have robust predictions\nbut non-robust explanations [98], and vice versa [131] (similar to relation between fair predictions\nand fair recourse). Parallel studies argue that the sparsity of counterfactuals may contribute to\nnon-robust recourse when evaluating explanations generated under different fixed models [182].\nFinally, in the case of consequential recommendations, robustness will be affected by assumptions\nof the causal generative process (see Figure 1). Carefully reviewing assumptions and exploring\nsuch robustness issues in more detail is necessary to build trust in the recourse system and in turn\nin the algorithmic decision-making system. For recent works in this direction, which study the\nsensitivity of recourse methods to uncertainty in the features, model, or causal assumptions, refer\nto works found elsewhere [62, 66, 160,"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 10,
+        "chunk_id": 0,
+        "content": "[Upadhyay et al., 2021] Sohini Upadhyay, Shalmali Joshi,\nand Himabindu Lakkaraju. Towards robust and reliable\nalgorithmic recourse. In NeurIPS, 2021.\n[Virgolin and Fracaros, 2023] Marco Virgolin and Saverio\nFracaros.\nOn the robustness of sparse counterfactual\nexplanations to adverse perturbations.\nArtif. Intell.,\n316:103840, 2023.\n[von Kügelgen et al., 2022] Julius\nvon\nKügelgen,\nAmir-\nHossein Karimi, Umang Bhatt, Isabel Valera, Adrian\nWeller, and Bernhard Schölkopf.\nOn the fairness of\ncausal algorithmic recourse. In AAAI, 2022.\n[Wachter et al., 2017] Sandra Wachter, Brent D. Mittelstadt,\nand Chris Russell.\nCounterfactual explanations with-\nout opening the black box: Automated decisions and the\nGDPR. Harv. JL & Tech., 31:841, 2017.\n[Wang et al., 2023a] Ming Wang, Daling Wang, Wenfang\nWu, Shi Feng, and Yifei Zhang.\nT-COL: generating\ncounterfactual explanations for general user preferences\non variable machine learning systems. arXiv:2309.16146,\n2023.\n[Wang et al., 2023b] Yongjie Wang,"
+      }
+    ],
+    "Latency_Seconds": 17.3,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q044",
+    "Question": "If a small setback hits the features that a counterfactual explanation prescribes to change, is the counterfactual still considered valid and robust?",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Reference_Answer": "The papers differ. Jiang et al. define robustness to noisy execution as invariance of the CE under small perturbations (validity preserved), and place Virgolin and Fracaros in that category. Virgolin and Fracaros show (Proposition 2) that for an optimal counterfactual any C-setback necessarily makes the prediction differ from the target, so C-robustness cannot mean preserved validity; it means that further intervention is possible and cheap. Under Jiang et al.'s definition such a CE would not count as robust.",
+    "Generated_Answer": "No, if a small setback hits the features that a counterfactual explanation prescribes to change, the counterfactual explanation is not considered valid and robust. The context indicates that adverse perturbations to the features that a counterfactual explanation recommends changing (C-robustness) may render the counterfactual explanation invalid, meaning that the function value \\( f(z') \\) might not equal the target value \\( t \\) after the perturbation. \n\nSpecifically, the literature mentions:\n\n\"we now show whether the fact that best-found counterfactual explanations are typically not robust is associated with a greater chance that perturbations can make them invalid, i.e., such that \\( f(z') \\neq t \\) where \\( z' \\) is the point to which \\( z^* \\) is shifted by the perturbation.\"\n\nThis suggests that when there is an adverse perturbation to the features that the counterfactual explanation recommends changing, the resulting counterfactual explanation may no longer satisfy the condition \\( f(z') = t \\). Therefore, such counterfactual explanations would not be considered valid or robust under these conditions.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 28,
+        "chunk_id": 1,
+        "content": "ul\nin practice, we studied how they can be made robust to adverse perturbations that may naturally happen\ndue to unfortunate circumstances, to ensure that the intervention they prescribe remains valid, and potential\nadditional intervention cost that may be needed remains limited. We presented novel notions of robustness,\nwhich concern adverse perturbations to the features that a counterfactual explanation prescribes to change\n(C-robustness) and to keep as they are (K-robustness), respectively. We have annotated ﬁve existing data\nsets with reasonable perturbations and plausibility constraints and developed a competitive counterfactual\nsearch algorithm to search for (robust) counterfactual explanations. Our experimental results show that,\nmost often than not, counterfactual explanations do not happen to be robust by accident. Consequently, if\nadverse perturbations take place, counterfactual explanations may require a much larger cost to be realized\nthan anticipated, or even make it"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "On the Robustness of Sparse Counterfactual Explanations\nto Adverse Perturbations\nMarco Virgolin∗\nCentrum Wiskunde & Informatica, Science Park 123, 1098 XG Amsterdam, the Netherlands\nSaverio Fracaros\nUniversity of Trieste, via Weiss 2, 34128 Trieste, Italy\nAbstract\nCounterfactual explanations (CEs) are a powerful means for understanding how decisions made by algorithms\ncan be changed. Researchers have proposed a number of desiderata that CEs should meet to be practically\nuseful, such as requiring minimal eﬀort to enact, or complying with causal models. We consider a further\naspect to improve the usability of CEs: robustness to adverse perturbations, which may naturally happen\ndue to unfortunate circumstances. Since CEs typically prescribe a sparse form of intervention (i.e., only\na subset of the features should be changed), we study the eﬀect of addressing robustness separately for\nthe features that are recommended to be changed and those that are not. Our deﬁnitions are workable\nin"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 31,
+        "chunk_id": 2,
+        "content": "erature of robustness, and eﬀect of increasing m for the computation of the\nK-robustness score.\nB.1. Invalidity of counterfactual explanations\nWe now show whether the fact that best-found counterfactual explanations are typically not robust is\nassociated with a greater chance that perturbations can make them invalid, i.e., such that f(z′)̸ = t where z′\nis the point to which z⋆is shifted by the perturbation. Here, we do not consider whether further intervention\nmay or may not be possible. Fig. 12 shows the average frequency with which perturbations cause invalidity.\n31"
+      }
+    ],
+    "Latency_Seconds": 13.92,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q045",
+    "Question": "Can the difference between a counterfactual instance and the original instance be taken directly as the set of actions a person should perform?",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Karimi et al. say no: the actions needed to realise the counterfactual are not directly implied by the explanation, and independently manipulable features may lead to suboptimal or infeasible actions. Virgolin and Fracaros treat a counterfactual explanation as a prescription of interventions and, for simplicity, take z minus x as the explanation under a feature-independence assumption, which they themselves call simplistic.",
+    "Generated_Answer": "No, the difference between a counterfactual instance and the original instance cannot be directly taken as the set of actions a person should perform. The distinction lies in the nature of the explanations they provide:\n\n- **Counterfactual Explanations**: Highlight instances with different predictions. They show what could have been different to achieve a different outcome. For example, if a loan application was denied, a counterfactual explanation might show alternative profiles that were accepted instead.\n\n- **Consequential Recommendations**: Focus on the actions that could lead to a desired outcome. They suggest what steps should be taken to influence the model's prediction. For example, if a loan application was denied, a consequential recommendation might suggest ways to improve the profile to increase the likelihood of approval.\n\nThe context indicates that while counterfactual explanations point out what could have been different, consequential recommendations provide actionable steps to achieve a desired outcome. Therefore, the set of actions suggested by consequential recommendations are more directly actionable compared to the mere difference between counterfactual instances.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 15,
+        "chunk_id": 1,
+        "content": "vents [83].\nSpecifically in the context of XAI, it has been shown that counterfactuals can “make the decisions\nof inscrutable systems intelligible to developers and users” [36], and that people perform better\nat predicting model behavior when presented with counterfactual instances [125]. Organizations\nseek to deploy counterfactual-based explanations citing their easy-to-understand nature [30, 31]\nand GDPR compliance [234]. Finally, from a practitioner’s standpoint, not only does algorithmic\nrecourse benefit from the widely exercised practice of sharing open source implementations (see\nTable 1), but various graphical interfaces have also been developed to assist the onboarding of\nnon-technical stakeholders [46, 87, 241].\nThere are, however, several implicit assumptions made in existing setups—for example, that the\nworld dynamics are known and do not change, that the predictive (supervised) model is fixed, and\nthat changes only arise due to the actions of the individual seeking"
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 20,
+        "chunk_id": 1,
+        "content": "for the least effort from the individual.\nFurthermore, we noted that offering recourse recommendations automatically implied recourse ex-\nplanations (through simulation of the causal effect of undertaken actions), whereas the converse\nwould not. In reviewing the literature, however, we observed an underexploration of consequen-\ntial recommendations, which we attribute to its reliance on additional assumptions at the level of\nthe causal generative process of the world in which actions take place.\nWe remark that the primary emphasis of recourse is on providing actionable recommendations\nfor overcoming adverse predictions, unlike counterfactual explanations that highlight similar in-\nstances with different predictions. This subtlety is also apparent in parallel literature on adversar-\nial ML (see Section 3.6): counterfactual explanations identify the adversarial instances, whereas\nrecourse informs on how to create them. Therefore, to provide actionable recommendations under\nreal-world"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 5,
+        "chunk_id": 1,
+        "content": "(see Section 2.2 and Section 3 for\ndescriptive and technical details, respectively).\nQ1: What profile would have led to receiving the loan?\nQ2: What actions would have led me to develop this profile?1\nViewed in this manner, both contrastive explanations and consequential recommendations can\nbe classified as a counterfactual [151], in that each considers the alteration of an entity in the\nhistory of the event P, where P is the undesired model output. Thus, responses to Q1 (respectively,\nQ2) may also be called counterfactual explanations (respectively, counterfactual recommendations),\nmeaning what could have been (respectively, what could have been done) [36].2\nTo better illustrate the difference between contrastive explanations and consequential recom-\nmendations, we refer to Figure 1. According to Lewis [137, p. 217], “to explain an event is to pro-\nvide some information about its causal history.” Lipton [138, p. 256] argues that to explain why\nP rather than Q, “we must cite a causal"
+      }
+    ],
+    "Latency_Seconds": 12.17,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q047",
+    "Question": "Are algorithmic recourse and counterfactual explanations treated as the same thing across the papers?",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Not consistently. Karimi et al. stress distinguishing contrastive explanations from consequential recommendations and say the primary emphasis of recourse is actionable recommendations, unlike counterfactual explanations. Kanamori et al. describe algorithmic recourse as also referred to as counterfactual explanation, and Jiang et al. describe CEs as ideally suited to providing algorithmic recourse.",
+    "Generated_Answer": "No, algorithmic recourse and counterfactual explanations are not treated as the same thing across the papers. \n\nThe context mentions that \"counterfactual-based\" explanation systems have been called into question, indicating that while counterfactual explanations are related to recourse, they are not considered identical. The papers discuss the distinction between robust predictions and robust explanations, suggesting that these concepts are not interchangeable.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 3,
+        "chunk_id": 4,
+        "content": "ts of explanations\ncan be found elsewhere [21, 36, 157, 226]. Other works of interest are available on XAI [1, 2, 32, 68,\n79, 86, 94, 139, 150, 163], causal and counterfactual inference, [82, 95, 166, 185, 186, 206, 245], and\noptimization [33, 174, 214].\n2\nBACKGROUND\n2.1\nRecourse Definitions\nIn its relatively young field, algorithmic recourse has been defined as, for example, “an actionable\nset of changes a person can undertake in order to improve their outcome” [109], “the ability of\na person to obtain a desired outcome from a fixed model” [223], and “the systematic process of\nreversing unfavorable decisions by algorithms and bureaucracies across a range of counterfactual\nscenarios” [226]. Similarly, legal recourse pertains to actions by individuals or corporations to rem-\nedy legal difficulties [235]. Parallel to this, explanations aim to, at least in part, assist data-subjects\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 17,
+        "chunk_id": 3,
+        "content": "ounterfactual-based [131, 133] explanation systems has been called into ques-\ntion. Interestingly, it has been argued that it is possible for a model to have robust predictions\nbut non-robust explanations [98], and vice versa [131] (similar to relation between fair predictions\nand fair recourse). Parallel studies argue that the sparsity of counterfactuals may contribute to\nnon-robust recourse when evaluating explanations generated under different fixed models [182].\nFinally, in the case of consequential recommendations, robustness will be affected by assumptions\nof the causal generative process (see Figure 1). Carefully reviewing assumptions and exploring\nsuch robustness issues in more detail is necessary to build trust in the recourse system and in turn\nin the algorithmic decision-making system. For recent works in this direction, which study the\nsensitivity of recourse methods to uncertainty in the features, model, or causal assumptions, refer\nto works found elsewhere [62, 66, 160,"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 11,
+        "chunk_id": 1,
+        "content": "ecision trees. In Proceedings of the 25th International Conference on Artificial Intelligence and Statistics, pages 1846–1870,\n2022.\nA.-H. Karimi, G. Barthe, B. Balle, and I. Valera. Model-agnostic counterfactual explanations for consequential decisions. In\nProceedings of the 23rd International Conference on Artificial Intelligence and Statistics, pages 895–905, 2020a.\nA.-H. Karimi, J. von Kügelgen, B. Schölkopf, and I. Valera. Algorithmic recourse under imperfect causal knowledge: a probabilistic\napproach. In Proceedings of the 34th Conference on Neural Information Processing Systems, pages 265–277, 2020b.\nA.-H. Karimi, B. Schölkopf, and I. Valera. Algorithmic recourse: From counterfactual explanations to interventions. In Proceedings\nof the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 353–362, 2021.\nA.-H. Karimi, G. Barthe, B. Schölkopf, and I. Valera. A survey of algorithmic recourse: Contrastive explanations and consequential\nrecommendations. ACM"
+      }
+    ],
+    "Latency_Seconds": 7.23,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q048",
+    "Question": "For inputs with missing feature values, should recourse be valid for any possible value of the missing features, or only with high probability?",
+    "Category": "cross_paper_disagreement_and_tension",
+    "Answerability": "Answerable",
+    "Reference_Answer": "Jiang et al. describe validity across any missing-feature values as an ideal robustness requirement. ARMIN operationalizes a probabilistic trade-off: it defines expected validity over an imputation distribution and minimizes action cost subject to expected validity being at least ρ (estimated empirically from sampled imputations). In the main experiments Kanamori et al. use N=100 and ρ=0.75. Setting ρ=1 with the sampled imputation set is described as roughly equivalent to the existing robust-AR formulation, but this is not a guarantee over every mathematically possible missing-value completion. Larger ρ generally raises validity while also increasing cost; the paper reports sharp cost increases above about 0.9. Proposition 3 bounds empirical-to-expected validity estimation error, but the paper does not provide a universal direct numerical guarantee for the original complete instance from ρ alone.",
+    "Generated_Answer": "For inputs with missing feature values, recourse should ideally be valid for any possible value of the missing features, rather than only with high probability. The context suggests that the authors are concerned with ensuring that the recourse actions are reliable and do not depend on assumptions about the missing values. \n\nSpecifically, the paper discusses the risks associated with using a single imputation technique, which can lead to poor actions regarding validity, cost, and features to be changed. It emphasizes the importance of avoiding disclosure of private information and highlights the need for a framework that can handle missing values effectively without relying on assumptions about the missing values themselves.\n\nThus, the proposed framework, Algorithmic Recourse with Multiple Imputation (ARMIN), aims to incorporate well-known multiple imputation techniques into the AR optimization problem to ensure that the recourse actions are valid for any possible value of the missing features. This approach contrasts with a naive approach that might only consider high-probability imputed values, which could lead to suboptimal or invalid recourse actions.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 1,
+        "chunk_id": 0,
+        "content": "ALGORITHMIC RECOURSE WITH MISSING VALUES\nA PREPRINT\nKentaro Kanamori\nFujitsu Ltd.\nk.kanamori@fujitsu.com\nTakuya Takagi\nFujitsu Ltd.\ntakagi.takuya@fujitsu.com\nKen Kobayashi\nTokyo Institute of Technology\nkobayashi.k.ar@m.titech.ac.jp\nYuichi Ike\nKyushu University\nike@imi.kyushu-u.ac.jp\nMay 24, 2024\nABSTRACT\nThis paper proposes a new framework of algorithmic recourse (AR) that works even in the presence\nof missing values. AR aims to provide a recourse action for altering the undesired prediction result\ngiven by a classifier. Existing AR methods assume that we can access complete information on\nthe features of an input instance. However, we often encounter missing values in a given instance\n(e.g., due to privacy concerns), and previous studies have not discussed such a practical situation. In\nthis paper, we first empirically and theoretically show the risk that a naive approach with a single\nimputation technique fails to obtain good actions regarding their validity, cost, and features to"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 1,
+        "chunk_id": 3,
+        "content": "lues on purpose, e.g., due to their privacy concerns [Schenker et al., 2006]. Indeed, some recent studies\nhave pointed out the risk that an adversary can leverage recourse actions to infer private information about the data held\nby decision-makers [Pawelczyk et al., 2023]. To alleviate this risk, it is important to allow users to avoid disclosing\nsome feature values corresponding to their private information (e.g., their income). However, almost all of the existing\nAR methods assume that the complete information of an input instance x is given [Verma et al., 2020, Guidotti, 2022].\nTherefore, we need to discuss how to handle missing values in AR and develop a new framework that works without\nacquiring the true value of the missing features.\nA common way to handle missing values is imputation that replaces them with plausible values [Little and Rubin,\n2019]. In the context of AR, however, imputation can often affect resulting actions, as demonstrated below. Figure 1\narXiv:2304.14606v2"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 9,
+        "chunk_id": 4,
+        "content": "Conclusion\nThis paper proposed the first framework of algorithmic recourse (AR) that works even in the presence of missing values,\nnamed algorithmic recourse with multiple imputation (ARMIN). We first discussed the problem of AR with missing\nvalues. We empirically and theoretically showed the risk that a naive approach with a single imputation technique often\nfails to obtain good actions regarding their validity, cost, and features to be changed. To alleviate this risk, we formulated\nthe task of obtaining a valid and low-cost action for a given incomplete instance. Our main idea is to incorporate\nwell-known multiple imputation techniques into the AR optimization problem. Then, we provided theoretical analyses\n9"
+      }
+    ],
+    "Latency_Seconds": 11.77,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q052",
+    "Question": "What three components make up the CoGS loss in Virgolin and Fracaros, and under which open-source license is the released code distributed?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "The paper provides a GitHub repository URL but does not specify a separate software license for the code. The article itself is published under CC BY 4.0; that article license should not be assumed to license the repository's software. The repository root currently has no LICENSE file or detected code license, so the code license is unspecified in the sources checked.",
+    "Generated_Answer": "The CoGS loss in Virgolin and Fracaros' work is not explicitly detailed in the provided context. The context mentions that Virgolin and Fracaros add a robustness term similar to IR to Eq (2) and minimize it via a genetic algorithm, but it does not specify the components of the CoGS loss.\n\nRegarding the open-source license of the released code, the context does not provide this information either. Therefore, based on the information available:\n\n- The components of the CoGS loss in Virgolin and Fracaros' work cannot be determined from the provided context.\n- The open-source license under which the released code is distributed cannot be identified from the provided context.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 6,
+        "chunk_id": 3,
+        "content": "-\nsion models and using the method of [Wachter et al., 2017]\nas the base CE method), IR can be expressed analytically,\nand a probabilistic robustness guarantee in terms of IR can\nbe obtained through setting the class score. To tackle these\nstrong assumptions and their inherent limitations on prac-\nticality, [Guyomard et al., 2023] relax the deﬁnition of IR to\ncapture class scores with which they provide a tighter up-\nper bound on the exact IR. Then, the upper bound approxi-\nmation by Monte Carlo estimation is plugged into the loss\nfunction and CEs are optimised in the same manner as in\n[Pawelczyk et al., 2023a]. In [Virgolin and Fracaros, 2023], a\nrobustness term which is similar to IR is added to Eq (2), and\nthen minimised via a genetic algorithm.\nProbabilistic\napproaches.\nThe\nmethods\nof\n[Dominguez-Olmedo et al., 2022;\nMaragno et al., 2023;\nLeofante and Lomuscio, 2023] eﬀectively obtain a region\ncontaining valid CE points.\nSuch regions could also be\ncharacterised by probability"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 14,
+        "chunk_id": 4,
+        "content": "and mutation, the quality (ﬁtness) of oﬀspring solutions is evaluated using the loss\nfunction (Eq. (9)) as ﬁtness function (minimization is sought). Finally, we use tournament selection [46]) to\nform the population for the next generation.\nWe set CoGS to allow for plausibility constraints (P) to be speciﬁed. If plausibility constraints are used,\nthen mutation is restricted to plausible changes (e.g., the feature that represents age can only increase). If\nmutation makes a numerical feature obtain a value bigger than maxi (resp., smaller than mini), then the\nvalue of that feature is set to maxi (resp., mini).\nCoGS is written in Python and relies heavily on NumPy [47] for the sake the speed (e.g., the population\nis encoded as a matrix and crossover and mutation operate upon it with matrix operations).\n14"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 13,
+        "chunk_id": 1,
+        "content": "rate runtimes to those of CoGS (other settings are default). For DiCE, we consider two\nconﬁgurations (“a” and “b”). The loss used (except for DiCE a) is Eq. (9).\nCoGS\nSetting\nValue\nPopulation size\n1000\nNum. generations\n100\nTournament size\n2\nsmut\n25%\nDiCE (a, b)\nSetting\nValue\nMethod\nGenetic\nTotal CEs\na : 20, b : 100\nMax. iterations\na : 500, b : 100\nLoss weights\na : Default,\nb : 0.5 prox., 0.5 spars., 0 div.\nGrSp\nSetting\nValue\nNum. in layer\n2000\nFirst radius\n0.1\nDecrease radius\n10\nSparse\nTrue\nLORE\nSetting\nValue\nPopulation size\n1000\nNum. generations\n10\nDiscrete use probabilities\nFalse\nContinuous function estim.\nFalse\n• Conﬁguration “a” uses the default settings except for allowing for a longer number of iteration, to\nmatch the same computational budget given to the other algorithms.\n• Conﬁguration “b” uses custom settings that are aligned to be similar to those used for CoGS, since\nboth DiCE and CoGS are genetic algorithms.\n7.3.2. GrSp\nGrSp is a greedy algorithm that iteratively samples"
+      }
+    ],
+    "Latency_Seconds": 9.72,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q053",
+    "Question": "How did Kanamori et al. split their datasets and define the cost function, and what random seed did they use?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "Supported part: each dataset was randomly split into 75% train and 25% test, and cost was the total log-percentile shift (TLPS). Missing part: the random seed is not reported.",
+    "Generated_Answer": "Based on the provided context, there is no specific information about how Kanamori et al. (including Kanamori, Kanamori, Kanamori, Kanamori, Kanamori, and Kanamori) split their datasets or defined the cost function. The context discusses their work on algorithmic recourse but does not provide details on these specific aspects. Additionally, the context does not mention anything about the use of random seeds in their methodology.\n\nThe context does provide information about other researchers' approaches to algorithmic recourse, such as the use of diverse explanations through multiple evolved instances of a genetic-based optimization approach (Sharma et al., 209), generating diverse counterfactuals by passing multiple samples from a latent space through a decoder (Downs et al., 69; Mahajan et al., 146; Pawelczyk et al., 183), and ensuring subsequent recourse does not fall within an ℓp-ball surrounding earlier explanations/recommendations (Cheng et al., 46). However, these details do not pertain to Kanamori et al.'s work.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 11,
+        "chunk_id": 0,
+        "content": "Algorithmic Recourse with Missing Values\nA PREPRINT\nKaggle.\nIBM HR Analytics Employee Attrition & Performance.\nhttps://www.kaggle.com/pavansubhasht/\nibm-hr-analytics-attrition-dataset, 2017. Accessed: 2023-01-26.\nK. Kanamori, T. Takagi, K. Kobayashi, and H. Arimura. DACE: Distribution-aware counterfactual explanation by mixed-integer\nlinear optimization. In Proceedings of the 29th International Joint Conference on Artificial Intelligence, pages 2855–2862, 2020.\nK. Kanamori, T. Takagi, K. Kobayashi, Y. Ike, K. Uemura, and H. Arimura. Ordered counterfactual explanation by mixed-integer\nlinear optimization. In Proceedings of the 35th AAAI Conference on Artificial Intelligence, pages 11564–11574, 2021.\nK. Kanamori, T. Takagi, K. Kobayashi, and Y. Ike. Counterfactual explanation trees: Transparent and consistent actionable recourse\nwith decision trees. In Proceedings of the 25th International Conference on Artificial Intelligence and Statistics, pages 1846–1870,\n2022.\nA.-H. Karimi, G."
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 11,
+        "chunk_id": 3,
+        "content": "ex model (e.g., multilayer perceptron) results in different solutions as a result of dif-\nferent random seeds. Sharma et al. [209] show that multiple evolved instances of the genetic-based\noptimization approach can be used as diverse explanations, hence benefiting from not requiring\nmultiple re-runs of the optimizer. Downs et al. [69], Mahajan et al. [146], and Pawelczyk et al. [183]\ngenerate diverse counterfactuals by passing multiple samples from a latent space that is shared be-\ntween factual and counterfactual instances through a decoder, and filtering those instances that\ncorrectly flip the prediction.\nIn the second camp, Russell [205] pursues a strategy whereby subsequent runs of the optimizer\nwould prevent changing features in the same manner as prior explanations/recommendations.\nKarimi et al. [113] continue in this direction and suggest that subsequent recourse should not\nfall within an ℓp-ball surrounding any of the earlier explanations/recommendations. Cheng et al.\n[46] and"
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 8,
+        "chunk_id": 3,
+        "content": "solve the formulations defined here.\n3.1\nOptimization Objective\nGenerally, it is difficult to define dissimilarity (dist) between individuals or cost functions for ef-\nfort expended by individuals. Notably, this challenge was first discussed in the algorithmic fairness\nliterature [73, 107] and later echoed throughout the algorithmic recourse community [21, 226]. In\nfact, “the law provides no formal guidance as to the proper metric for determining what reasons\nare most salient” [208]. Despite this, existing works have presented various ad hoc formulations\nwith sensible intuitive justifications or practical allowance, which we review in the following.\n3.1.1\nOn dist. Wachter et al. [234] define dist as the Manhattan distance, weighted by the\ninverse median absolute deviation (MAD):\ndist(x,xF) =\n\u0002\nk ∈[D]\n|xk −xF\nk |\nMADk\nMADk = medianj ∈P(|Xj,k −medianl ∈P(Xl,k)|).\n(3)\nThis distance has several desirable properties, including accounting and correcting for the dif-\nferent ranges across"
+      }
+    ],
+    "Latency_Seconds": 15.52,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q054",
+    "Question": "What subsampling settings does ARMIN's heuristic use, and what formal worst-case time-complexity bound does the paper prove for it?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "Supported part: N' = 10 subsampled candidates, P = 10 repetitions, with a 60-second limit per solution. Missing part: the paper proves no formal worst-case time-complexity bound; it only reports empirical runtimes and notes ARMIN is slower than the baselines.",
+    "Generated_Answer": "The provided context does not contain specific details about the subsampling settings used in ARMIN's heuristic or any formal worst-case time-complexity bounds proven for it. The context mentions that the heuristic divides the problem into a set of a few small problems by subsampling the imputation candidates, but it does not specify the exact settings or provide a formal complexity analysis. \n\nFor the worst-case time-complexity bound, the context states that \"it could improve the quality of actions without increasing the overall computational time,\" indicating potential efficiency improvements but not providing a formal bound. \n\nTherefore, based on the information available in the provided context, the answer is:\n\n- Subsampling settings: The context mentions that ARMIN uses a heuristic approach involving subsampling the imputation candidates to divide the problem into smaller subproblems. However, the specific settings are not detailed.\n- Worst-case time-complexity bound: No formal worst-case time-complexity bound is proven or provided in the context.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 7,
+        "chunk_id": 2,
+        "content": "ppendix C.3, we propose a heuristic\napproach that divides the problem into a set of a few small problems by subsampling the imputation candidates. We\nconfirmed that it could improve the quality of actions without increasing the overall computational time.\n5\nExperiments\nTo investigate the efficacy of our ARMIN, we conducted experiments on public datasets. The code was implemented in\nPython 3.10 with scikit-learn 1.0.2 and Gurobi 10.0.3. The experiments were conducted on Ubuntu 20.04 with Intel\nXeon E-2274G 4.0 GHz CPU and 32 GB memory.\nOur experimental evaluation aims to answer the following questions: (i) How are the validity and cost of the recourse\nactions obtained by our ARMIN compared to those by the baselines? (ii) How does our ARMIN behave under more\nrealistic missing mechanisms compared to the baselines? (iii) How is the trade-off between the validity and cost\ndepending on our confidence parameter ρ? Due to page limitations, our implementation details and the complete results"
+      },
+      {
+        "rank": 2,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 10,
+        "chunk_id": 0,
+        "content": "Algorithmic Recourse with Missing Values\nA PREPRINT\nof our task and proposed a practical solution based on mixed-integer linear optimization. Our experiments on public\ndatasets demonstrated the efficacy of ARMIN compared to existing methods.\nLimitations and future work. There are several directions to improve our ARMIN. First, our experiments demon-\nstrated that while our ARMIN could obtain better actions, it was certainly slower than the baselines. Therefore, we will\ntry to improve the efficiency of our optimization framework, e.g., by leveraging the techniques of chance-constrained\noptimization algorithms [Calafiore and Campi, 2005]. In addition, we observed that an appropriate confidence parameter\nρ varies depending on each instance x. Because running our method repeatedly by varying ρ is costly in practice,\nwe need to develop a method for determining its default value automatically. Furthermore, it is important to show\ntheoretical relationships between ρ and the expected validity"
+      },
+      {
+        "rank": 3,
+        "source": "ALGORITHMIC RECOURSE WITH MISSING VALUES.pdf",
+        "page": 8,
+        "chunk_id": 2,
+        "content": "is valid for\nthe original instance x (i.e., h(x + a) = +1) and the average cost c(a). In Appendix D, we also report the average\nsign agreement score [Krishna et al., 2022] that evaluates the qualitative similarity between a and the optimal action a∗\nof x and the average computational time for each instance.\nFigure 2 shows the results of the valid ratio and average cost for D∗= 2. From these results, we can see that our\nARMIN attained good balances between the valid ratio and average cost than the baselines. We observe that the valid\nratio of ImputationAR was significantly lower than RobustAR and ARMIN, and that RobustAR and ARMIN stably\nachieved high valid ratios regardless of the datasets and classifiers. In addition, the average cost of RobustAR was\nalways larger than ARMIN. For example, the average cost of RobustAR for the LR classifier on the WineQuality dataset\nwas 3.59 times higher than that of ARMIN. In summary, we confirmed that our ARMIN could provide given incomplete"
+      }
+    ],
+    "Latency_Seconds": 13.06,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q056",
+    "Question": "How do Upadhyay et al. generate robust counterfactuals for plausible model changes according to Jiang et al., and what VaR did the method achieve on the Adult dataset?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "Supported part: they solve a min-max problem producing the best CE under the largest admissible model change (an inner maximisation of the loss over weight perturbations and an outer minimisation over the CE). Missing part: the survey gives no numeric VaR for this method on any named dataset.",
+    "Generated_Answer": "According to the context provided, Upadhyay et al. (2021) consider plausible model changes as updates to model parameters whose magnitude is bounded by a small constant. This approach aims to generate counterfactual explanations (CEs) that remain valid even when the model parameters undergo slight modifications within this bound.\n\nHowever, the specific details about how they generate these robust counterfactuals or the performance of their method on the Adult dataset are not provided in the given context. The context mentions that the Δ-robustness metric was proposed in [Jiang et al., 2023b] to quantify robustness against plausible model changes, but it does not specify the results achieved by Upadhyay et al.'s method on the Adult dataset. Therefore, based on the information available, we cannot determine the exact VaR (Value at Risk) achieved by Upadhyay et al.'s method on the Adult dataset.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 10,
+        "chunk_id": 0,
+        "content": "[Upadhyay et al., 2021] Sohini Upadhyay, Shalmali Joshi,\nand Himabindu Lakkaraju. Towards robust and reliable\nalgorithmic recourse. In NeurIPS, 2021.\n[Virgolin and Fracaros, 2023] Marco Virgolin and Saverio\nFracaros.\nOn the robustness of sparse counterfactual\nexplanations to adverse perturbations.\nArtif. Intell.,\n316:103840, 2023.\n[von Kügelgen et al., 2022] Julius\nvon\nKügelgen,\nAmir-\nHossein Karimi, Umang Bhatt, Isabel Valera, Adrian\nWeller, and Bernhard Schölkopf.\nOn the fairness of\ncausal algorithmic recourse. In AAAI, 2022.\n[Wachter et al., 2017] Sandra Wachter, Brent D. Mittelstadt,\nand Chris Russell.\nCounterfactual explanations with-\nout opening the black box: Automated decisions and the\nGDPR. Harv. JL & Tech., 31:841, 2017.\n[Wang et al., 2023a] Ming Wang, Daling Wang, Wenfang\nWu, Shi Feng, and Yifei Zhang.\nT-COL: generating\ncounterfactual explanations for general user preferences\non variable machine learning systems. arXiv:2309.16146,\n2023.\n[Wang et al., 2023b] Yongjie Wang,"
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 7,
+        "content": "CE remaining valid after retraining of linear models.\nTo quantify robustness against plausible model changes,\nthe Δ-robustness metric was proposed in [Jiang et al., 2023b].\nIntuitively, a CE is said to be Δ-robust if its validity is pre-\nserved across the whole family of models that can be ob-\n2"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 2,
+        "chunk_id": 3,
+        "content": "t sections, we review the problem deﬁnitions,\nevaluation metrics for robustness, solutions and theoretical\nresults for each category of robustness.\n4\nRobustness against Model Changes\nAs shown in Table 1, the majority of approaches on robust-\nness of CEs in the literature focus on robustness against MC.\nModel changes are typically deﬁned as modiﬁcations in the\nparameters of a machine learning model that do not alter its\narchitecture. These changes are typically assumed to result\nfrom retraining on inputs drawn from a slightly shifted data\ndistribution [Rawal et al., 2020]. However, model changes\nresulting from data deletion queries have also been stud-\nied [Pawelczyk et al., 2023b; Krishna et al., 2023].\nDiﬀerent characterisations of the notion of change have\nbeen proposed. [Upadhyay et al., 2021] ﬁrst considered plau-\nsible model changes, which are deﬁned as updates to model\nparameters whose magnitude is bounded by a small constant.\nThe same notion is also considered in [Black et al.,"
+      }
+    ],
+    "Latency_Seconds": 14.89,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q057",
+    "Question": "What properties do Jiang et al. (2024) propose for deciding a prediction under model multiplicity, and what empirical results validated each property?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "Supported part: the survey lists non-emptiness, non-triviality, model agreement, majority vote, counterfactual validity and counterfactual coherence. Missing part: the survey reports no empirical results for these properties.",
+    "Generated_Answer": "Jiang et al. (2024) propose two desirable properties for deciding a prediction under model multiplicity:\n\n1. **Non-emptiness**: The resulting set of models and counterfactual explanations (CEs) should not be empty. Ideally, it should contain more than one model and CE such that the prediction result is collectively determined by multiple models with their explanations (non-triviality).\n\nEmpirical validation of these properties is not detailed in the provided context. The focus is on the methodological approach rather than specific empirical validations.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 1,
+        "content": "iction result to-\ngether with the CEs, with the robustness of the latter driving\nthe former. That is, the solution should be a subset of models\nunder MM and their (valid) CEs, from which the prediction\nresults are decided.\n5.1\nRobustness Metrics\nThe robustness evaluation for the ﬁxed prediction scenario\nis very similar to the VaR for robustness against MC prob-\nlem, using validity under alternative models. These models\ncould be arbitrary models trained on (diﬀerent portions of)\nthe same dataset with high accuracy. Thus, the same valid-\nity metric gives an intuitive evaluation of how robust the CEs\nare.\nFor the pending prediction scenario, [Jiang et al., 2024]\npropose desirable properties to characterise the optimal re-\nsulting set of models and CEs. Non-emptiness requires that\nthe resulting set be not empty, and ideally it should contain\nmore than one model and CE such that the prediction result\nis collectively determined by multiple models with their ex-\nplanations (non-triviality)."
+      },
+      {
+        "rank": 2,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 4,
+        "content": "set of piece-wise\nlinear models is NP-complete.\nPending prediction scenario.\nLeveraging methods in\ncomputational argumentation, [Jiang et al., 2024] present a\nnovel argumentative ensembling method for ﬁnding a sub-\nset of the models and their CEs which satisﬁes the prop-\nerties mentioned in Section 5.1 (with the exception of ma-\njority vote). In essence, this consists in grouping similarly-\nbehaving models together to eliminate conﬂicts therebe-\ntween, then ﬁnding the maximal group of models and CEs as\nthe ﬁnal output. Alternatively, one could ﬁrst decide the pre-\ndiction result for the input using ensembling methods like\nmajority voting or the method of [Black et al., 2022a], then\nselect the group of models and CEs with this prediction as\nthe ﬁnal solution set.\n6\nRobustness against Noisy Executions\nTraditional methods compute CEs under the assumption that\nthe user receiving them will follow them to the letter. In prac-\ntice, achieving the prescribed feature values exactly might\nnot"
+      },
+      {
+        "rank": 3,
+        "source": "Robust Counterfactual Explanations in Machine Learning.pdf",
+        "page": 5,
+        "chunk_id": 0,
+        "content": "result is ﬁxed to one produced by one of the original models,\nand the robustness target is to guard the CE validity against\npotential future changes in the classiﬁer: a robust CE should\nideally remain valid under the alternative models. This form\nof robustness is very similar to robustness against MC. The\ndiﬀerences are that the MM problem does not assume a data\ndistribution shift causing the model shifts, and there are no\nassumptions on the model types and architectures for the\noriginal model on which the CEs are generated and for the\nalternative models.\nRecent advances have also raised concerns about when the\nprediction result for one input is pending and to be decided by\nall the models under MM, instead of assuming a result from\none original model [Black et al., 2022a]. [Jiang et al., 2024]\ninvestigate the problem of deciding the prediction result to-\ngether with the CEs, with the robustness of the latter driving\nthe former. That is, the solution should be a subset of models\nunder"
+      }
+    ],
+    "Latency_Seconds": 8.75,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q059",
+    "Question": "What range of test accuracy did Virgolin and Fracaros's black-box models reach, and what were their F1 scores?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "Table 1 reports average test accuracy from 0.70 to 0.93 across the five datasets and the two black-box model families (random forest and neural network). F1 scores are not reported in the paper or its appendices.",
+    "Generated_Answer": "Based on the provided context, the test accuracy of the black-box models (random forest and neural networks) ranges from 70% to more than 90% across different data sets. However, the context does not provide specific F1 scores for these models. Therefore, the range of test accuracy is:\n\n- Minimum: 70%\n- Maximum: More than 90%\n\nF1 scores are not mentioned in the given information.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 32,
+        "chunk_id": 0,
+        "content": "Table 9: Test accuracy of hyper-parameter-tuned neural networks acting as black-box models f for the considered data sets\nacross ﬁve-fold cross-validation.\nFold\nCre\nInc\nHou\nPro\nRec\n0\n0.74\n0.83\n0.94\n0.62\n0.78\n1\n0.78\n0.82\n0.93\n0.7\n0.79\n2\n0.73\n0.8\n0.91\n0.69\n0.75\n3\n0.78\n0.82\n0.91\n0.77\n0.78\n4\n0.74\n0.82\n0.96\n0.72\n0.79\nAvg.\n0.75\n0.82\n0.93\n0.7\n0.78\nThe frequencies are computed by applying, to each discovered counterfactual example, 100 perturbations that\nare sampled uniformly at random for categorical features (from the categorical possibilities) and uniformly\nor normally (with st.dev. of 0.1) for numerical features (within the numerical intervals). The ﬁgure shows\nthat when no notion of robustness is accounted for, perturbations generally have a larger chance of causing\ninvalidity of the counterfactual explanation.\nRegarding C-robustness and respective perturbations to (features in) C (i.e., C-setbacks), recall that\naccounting for this notion of robustness is intended to provide"
+      },
+      {
+        "rank": 2,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 1,
+        "chunk_id": 3,
+        "content": "hey are often\nunmatched by smaller models [4, 5]. However, as massive models perform myriads of computations, it can\nbe very diﬃcult to interpret and predict their behavior. Because of this, massive models are often called\nblack-box models, and ensuring that their use in high-stakes applications (e.g., of medicine and ﬁnance) is\nfair and responsible can be challenging [6, 7].\n∗Corresponding author\nEmail address: marco.virgolin@cwi.nl (Marco Virgolin)\nPreprint submitted to a journal\nSeptember 26, 2022\narXiv:2201.09051v3  [cs.LG]  23 Sep 2022"
+      },
+      {
+        "rank": 3,
+        "source": "On the Robustness of Sparse Counterfactual Explanations.pdf",
+        "page": 11,
+        "chunk_id": 2,
+        "content": "bout our pre-processing and\ndeﬁnition of p and P are documented in the form of comments in our code, in robust cfe/dataproc.py.\n7.2. Black-box models\nWe consider random forest and neural networks (with standard multi-layer perceptron architecture) as\nblack-box machine learning models f. We use Scikit-learn’s implementations [41]. We assume that we can\nonly access the predictions of f, and no other information such as model parameters or gradients. Our\nexperiments are repeated across a stratiﬁed ﬁve-fold cross-validation, and each model is obtained by grid-\nsearch hyper-parameter tuning. Once trained, the models obtain test accuracy varying from 70% to more\nthan 90% on average across the diﬀerent data sets, i.e., meaningful decision boundaries are learned. See A\nfor details on hyper-parameter tuning, and the accuracy of the models on the diﬀerent data sets. For the\ndiscovery of counterfactual examples, we consider observations x such that f(x)̸ = t, from the test sets of\nthe"
+      }
+    ],
+    "Latency_Seconds": 8.38,
+    "Status": "SUCCESS"
+  },
+  {
+    "Question_ID": "Q060",
+    "Question": "Which off-the-shelf verification tools does the Karimi et al. survey mention, and how do they compare in runtime?",
+    "Category": "partially_answerable",
+    "Answerability": "Partially answerable",
+    "Reference_Answer": "The survey names Z3, CVC4 and pySMT as off-the-shelf tools for verification-based recourse. More precisely, Z3 and CVC4 are SMT solvers, while pySMT is a Python framework for SMT solving. The survey does not provide a runtime comparison among them.",
+    "Generated_Answer": "The Karimi et al. survey does not mention any off-the-shelf verification tools. The context provided focuses on algorithmic recourse methods rather than verification tools. Therefore, no information about off-the-shelf verification tools or their runtime comparisons can be derived from the given context.",
+    "Retrieved_Chunks": [
+      {
+        "rank": 1,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 23,
+        "chunk_id": 0,
+        "content": "95:22\nA.-H. Karimi et al.\n[57] Leonardo De Moura and Nikolaj Bjørner. 2008. Z3: An efficient SMT solver. In Proceedings of the International\nConference on Tools and Algorithms for the Construction and Analysis of Systems. 337–340.\n[58] Raphael Mazzine Barbosa de Oliveira and David Martens. 2021. A framework and benchmarking study for counter-\nfactual generating methods on tabular data. Applied Sciences 11, 16 (2021), 7274.\n[59] Giovanni De Toni, Bruno Lepri, and Andrea Passerini. 2022. Synthesizing explainable counterfactual policies for\nalgorithmic recourse with program synthesis. arXiv preprint arXiv:2201.07135 (2022).\n[60] Sarah Dean, Sarah Rich, and Benjamin Recht. 2020. Recommendations and user agency: The reachability of\ncollaboratively-filtered information. In Proceedings of the 2020 Conference on Fairness, Accountability, and Trans-\nparency. 436–445.\n[61] Eoin Delaney, Derek Greene, and Mark T. Keane. 2021. Instance-based counterfactual explanations for time series"
+      },
+      {
+        "rank": 2,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 20,
+        "chunk_id": 4,
+        "content": "equire new definitions and techniques, and relies on the cross-disciplinary exper-\ntise of a panel of technical and social scientists. It is our hope that this document may guide further\ndiscussion and progress in this direction.\nACKNOWLEDGMENTS\nA.-H. Karimi sincerely thanks the senior authors for encouraging him to undertake the daunting\ntask of writing a first draft, which eventually resulted in this article. A.-H. Karimi is also appre-\nciative of Julius von Kügelgen and Umang Bhatt for fruitful discussions on recourse and fairness,\nMuhammad Waleed Gondal, and the anonymous reviewers for constructive feedback throughout,\nand NSERC and CLS for generous funding support.\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      },
+      {
+        "rank": 3,
+        "source": "A Survey of Algorithmic Recourse.pdf",
+        "page": 6,
+        "chunk_id": 5,
+        "content": "e. Finally, we make note of those papers that provide open source implementations of their algorithm.\nsupported (c.f., Section 3). All tools generate solutions that to some extent trade off desirable\nrequirements, such as optimality, perfect coverage, efficient runtime, and access (c.f., Section 4),\nresulting in a lack of unifying comparison (c.f., Section 5). This table does not aim at serving to\nrank or be a qualitatively comparison of surveyed methods, and one has to exercise caution when\nACM Computing Surveys, Vol. 55, No. 5, Article 95. Publication date: December 2022."
+      }
+    ],
+    "Latency_Seconds": 4.4,
+    "Status": "SUCCESS"
+  }
+]
