@@ -1,3 +1,4 @@
+<p align="center">
 # RAGTrust
 ### Can Your RAG System Prove What It Says?
 
