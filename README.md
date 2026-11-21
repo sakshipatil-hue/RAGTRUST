@@ -29,6 +29,8 @@ RAG systems can generate fluent answers containing claims that are not actually 
 
 **RAGTrust evaluates whether generated answers are grounded in evidence — and when the system should avoid answering.**
 
+## RagTrust Dashboard - https://ragtrust.onrender.com
+
 ## How It Works
 
 ```mermaid
