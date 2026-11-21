@@ -2,7 +2,7 @@
 ### Can Your RAG System Prove What It Says?
 
 <p align="center">
-  **An Evidence-Driven RAG Reliability & Evaluation Framework**
+  ####**Intelligent RAG Evaluation & Reliability Framework**
   <br/>
   Evaluating retrieval quality, verifying AI-generated claims, and identifying when a system should abstain.
 </p>
